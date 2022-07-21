@@ -8,12 +8,12 @@
 /.bundle
 
 #Temp files and log files
-/log/*.log
-/tmp
+stock_app/log/*.log
+stock_app/tmp
 
 #Rails things
-.bundle
-.cache
-.DS_Store
-.sass-cache
-build/
+stock_app/.bundle
+stock_app/.cache
+stock_app/.DS_Store
+stock_app/.sass-cache
+stock_app/build/
