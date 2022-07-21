@@ -1,0 +1,12 @@
+#Created 7/21/22 by Noah Moon
+<h1>Buy Stock</h1>
+
+<h1><%= @owned_stock.ticker %></h1>
+
+<%= form_with model: @owned_stock do |form| %>
+  Number of Shares: <%= form.text_field :shares_owned %>
+  <%= form.button "Buy Stock",  formmethod: :buy_stock%>>
+<% end %>
+
+<%= link_to 'Show', @owned_stock %> |
+<%= link_to 'Back', owned_stocks_path %>

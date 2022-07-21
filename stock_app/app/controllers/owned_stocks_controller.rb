@@ -13,6 +13,14 @@ class OwnedStocksController < ApplicationController
   def show
   end
 
+  def buy
+    @owned_stock = OwnedStock.find(params[:id])
+  end
+  def buy_stock
+    @owned_stock.increment(:owned_stock, 5)
+      render action: "update"
+
+  end
   # GET /owned_stocks/new
   def new
     @owned_stock = OwnedStock.new

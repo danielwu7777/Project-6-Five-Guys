@@ -1,7 +1,7 @@
-<h1>Trading Stock</h1>
+<h1>Trading</h1>
 
-<%= render 'form', stock: @stock %>
+<h2><%= @stock.ticker %> - price: <%=@stock.price %></h2>
 
-<%= link_to 'Buy', @stock %> |
-<%= link_to 'Show', @stock %> |
+<%= link_to 'Buy', buy_path(1) %> |
+<%= link_to 'Sell', @stock %> |
 <%= link_to 'Back', stocks_path %>
