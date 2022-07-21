@@ -5,7 +5,7 @@
 
 <%= form_with model: @owned_stock do |form| %>
   Number of Shares: <%= form.text_field :shares_owned %>
-  <%= form.button "Buy Stock",  formmethod: :buy_stock%>>
+  <%= form.button "Buy Stock" %>
 <% end %>
 
 <%= link_to 'Show', @owned_stock %> |

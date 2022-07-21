@@ -47,8 +47,10 @@ class OwnedStocksController < ApplicationController
 
   # PATCH/PUT /owned_stocks/1 or /owned_stocks/1.json
   def update
+    form_params = owned_stock_params
+    stock_params = {:shares_owned => @owned_stock.shares_owned.to_i + form_params[:shares_owned].to_i, :ticker => @owned_stock.ticker}
     respond_to do |format|
-      if @owned_stock.update(owned_stock_params)
+      if @owned_stock.update(stock_params)
         format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully updated." }
         format.json { render :show, status: :ok, location: @owned_stock }
       else

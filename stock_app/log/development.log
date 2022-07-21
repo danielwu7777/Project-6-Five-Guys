@@ -5263,3 +5263,1528 @@ Processing by OwnedStocksController#index as HTML
 Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 5854)
 
 
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 18:50:50 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 39.0ms | Allocations: 14109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.4ms | Allocations: 20829)
+Completed 200 OK in 66ms (Views: 53.4ms | ActiveRecord: 1.6ms | Allocations: 26202)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-21 18:50:51 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 402)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3855)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 6092)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 18:50:53 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1778)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5011)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 5684)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 18:50:54 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.4ms | Allocations: 303)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3974)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 5118)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 18:50:55 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4996)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 6402)
+
+
+Started GET "/owned_stocks/1?_method=patch&authenticity_token=[FILTERED]&owned_stock%5Bshares_owned%5D=11&button=" for 127.0.0.1 at 2022-07-21 18:50:56 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"shares_owned"=>"11"}, "button"=>"", "id"=>"1"}
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:74:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 350)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3436)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 4730)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 18:50:59 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1771)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4995)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 5891)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 18:51:24 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 5730)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 7091)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-21 18:51:26 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 418)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3870)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 6175)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 18:51:27 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1288)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4948)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 5604)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 18:51:28 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.6ms | Allocations: 294)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3963)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 5106)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 18:51:29 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 0.9ms | Allocations: 737)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4404)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 5523)
+
+
+Started PATCH "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:51:31 -0400
+Processing by OwnedStocksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"shares_owned"=>"16"}, "button"=>"", "id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:74:in `set_owned_stock'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:51:in `block in update'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:51:in `block in update'
+  [1m[36mOwnedStock Update (1.1ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 16], ["updated_at", "2022-07-21 22:51:31.654788"], ["id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:51:in `block in update'
+  [1m[36mTRANSACTION (107.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:51:in `block in update'
+Redirected to http://127.0.0.1:3000/owned_stocks/1
+Completed 302 Found in 120ms (ActiveRecord: 109.0ms | Allocations: 6789)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:51:31 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:74:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 327)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3428)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 4560)
+
+
+Started GET "/owned_stocks/1/edit" for 127.0.0.1 at 2022-07-21 18:51:33 -0400
+Processing by OwnedStocksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:74:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/edit.html.erb within layouts/application
+  Rendered owned_stocks/_form.html.erb (Duration: 9.9ms | Allocations: 7072)
+  Rendered owned_stocks/edit.html.erb within layouts/application (Duration: 11.0ms | Allocations: 7556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 10712)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.2ms | Allocations: 12330)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 18:51:34 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2305)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 5500)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 6030)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-21 18:52:58 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 224)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3526)
+Completed 200 OK in 10ms (Views: 3.4ms | ActiveRecord: 0.6ms | Allocations: 9651)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 18:52:59 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1555)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4832)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 5350)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 18:52:59 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.5ms | Allocations: 154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3828)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 4848)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 18:53:00 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 0.8ms | Allocations: 768)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 4205)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.4ms | Allocations: 10553)
+
+
+Started PATCH "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:53:02 -0400
+Processing by OwnedStocksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"shares_owned"=>"16"}, "button"=>"", "id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:75:in `set_owned_stock'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:52:in `block in update'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:52:in `block in update'
+  [1m[36mOwnedStock Update (0.3ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 3], ["updated_at", "2022-07-21 22:53:02.374683"], ["id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:52:in `block in update'
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:52:in `block in update'
+Redirected to http://127.0.0.1:3000/owned_stocks/1
+Completed 302 Found in 21ms (ActiveRecord: 9.1ms | Allocations: 6979)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:53:02 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:75:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3242)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 4263)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 18:53:58 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 49.0ms | Allocations: 11479)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 51.8ms | Allocations: 14708)
+Completed 200 OK in 53ms (Views: 52.3ms | ActiveRecord: 1.2ms | Allocations: 16327)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-21 18:54:00 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 220)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3555)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 5294)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 18:54:02 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1084)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 4649)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 5169)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 18:54:02 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.2ms | Allocations: 154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3833)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 4853)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 18:54:03 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.0ms | Allocations: 558)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4221)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 5420)
+
+
+Started PATCH "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:54:07 -0400
+Processing by OwnedStocksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"shares_owned"=>"7"}, "button"=>"", "id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+Redirected to http://127.0.0.1:3000/owned_stocks/1
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 3643)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:54:07 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 131)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3216)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 4222)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:55:09 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 227)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3529)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.5ms | Allocations: 11017)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 18:55:10 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.3ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 6896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 10231)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.7ms | Allocations: 10774)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-21 18:55:11 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 220)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3739)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 5470)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 18:55:12 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1053)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4756)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 5273)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 18:55:13 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.4ms | Allocations: 154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3390)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.2ms | Allocations: 4859)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 18:55:14 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 0.8ms | Allocations: 556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4212)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 5239)
+
+
+Started PATCH "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:55:17 -0400
+Processing by OwnedStocksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"shares_owned"=>"6"}, "button"=>"", "id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mOwnedStock Update (0.2ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 9], ["updated_at", "2022-07-21 22:55:17.271459"], ["id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mTRANSACTION (29.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+Redirected to http://127.0.0.1:3000/owned_stocks/1
+Completed 302 Found in 36ms (ActiveRecord: 29.3ms | Allocations: 6619)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:55:17 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 130)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3221)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 4228)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 18:55:24 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1666)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 5348)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms | Allocations: 5811)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-21 18:56:00 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 385)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 4038)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 6575)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 18:56:00 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1257)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4930)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 5575)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 18:56:01 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.4ms | Allocations: 294)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3882)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 5025)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 18:56:02 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1063)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4483)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 6627)
+
+
+Started PATCH "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:56:32 -0400
+Processing by OwnedStocksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"shares_owned"=>"9", "new_shares"=>"3"}, "button"=>"", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+[31mUnpermitted parameter: :new_shares[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+Redirected to http://127.0.0.1:3000/owned_stocks/1
+Completed 302 Found in 13ms (ActiveRecord: 1.0ms | Allocations: 14232)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:56:32 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 438)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3766)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 5229)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 18:56:34 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2776)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 5994)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 6666)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 18:57:45 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 11715)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 15135)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 1.2ms | Allocations: 17437)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-21 18:57:45 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 387)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3694)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 6617)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 18:57:46 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1320)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 4518)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 5653)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 18:57:47 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.6ms | Allocations: 304)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3507)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 5116)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 18:57:48 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 0.8ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3915)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 5730)
+
+
+Started PATCH "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:58:02 -0400
+Processing by OwnedStocksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"shares_owned"=>"5"}, "button"=>"", "id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mOwnedStock Update (0.1ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 14], ["updated_at", "2022-07-21 22:58:02.435304"], ["id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mTRANSACTION (18.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+Redirected to http://127.0.0.1:3000/owned_stocks/1
+Completed 302 Found in 25ms (ActiveRecord: 18.4ms | Allocations: 6591)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:58:02 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 323)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3408)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 4536)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 18:58:04 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2112)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 5356)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 5819)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 18:59:24 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 11722)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 15142)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.9ms | Allocations: 17445)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-21 18:59:31 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 401)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3873)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 6627)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 18:59:32 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1304)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4985)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 5641)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 18:59:32 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.6ms | Allocations: 322)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3532)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 5117)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 18:59:33 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.0ms | Allocations: 947)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 4137)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 5923)
+
+
+Started PATCH "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:59:41 -0400
+Processing by OwnedStocksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"shares_owned"=>"14", "x"=>"5"}, "button"=>"", "id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:77:in `set_owned_stock'
+[31mUnpermitted parameter: :x[0m
+[31mUnpermitted parameter: :x[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:54:in `block in update'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:54:in `block in update'
+  [1m[36mOwnedStock Update (0.2ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", nil], ["updated_at", "2022-07-21 22:59:41.598269"], ["id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:54:in `block in update'
+  [1m[36mTRANSACTION (93.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:54:in `block in update'
+Redirected to http://127.0.0.1:3000/owned_stocks/1
+Completed 302 Found in 101ms (ActiveRecord: 94.0ms | Allocations: 6690)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 18:59:41 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:77:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 321)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3406)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 4872)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 18:59:42 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2101)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 5342)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 5805)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 19:00:31 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 11720)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 15141)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.9ms | Allocations: 17444)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-21 19:00:33 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 393)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4488)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 6602)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 19:00:34 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1346)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4528)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 5636)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 19:00:35 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.5ms | Allocations: 313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3530)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 5122)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 19:00:35 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.2ms | Allocations: 767)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3962)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 5715)
+
+
+Started PATCH "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 19:00:38 -0400
+Processing by OwnedStocksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"shares_owned"=>"4"}, "button"=>"", "id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mOwnedStock Update (1.0ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 4], ["updated_at", "2022-07-21 23:00:38.897911"], ["id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mTRANSACTION (71.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+Redirected to http://127.0.0.1:3000/owned_stocks/1
+Completed 302 Found in 81ms (ActiveRecord: 73.1ms | Allocations: 6599)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 19:00:38 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 324)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3409)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 4538)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 19:00:40 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2123)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 5340)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 5803)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-21 19:00:41 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 127)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3785)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 4818)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 19:00:42 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 905)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4582)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 5044)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 19:00:43 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.3ms | Allocations: 150)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3395)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 4826)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 19:00:44 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.1ms | Allocations: 485)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4164)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 5156)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 19:01:03 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.4ms | Allocations: 866)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4318)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 6193)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 19:01:11 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 0.8ms | Allocations: 859)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 4327)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 6321)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 19:03:14 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1165)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 4612)
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 0.6ms | Allocations: 12755)
+
+
+Started PATCH "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 19:03:16 -0400
+Processing by OwnedStocksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"shares_owned"=>"4", "testparam"=>"2"}, "button"=>"", "id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:77:in `set_owned_stock'
+[31mUnpermitted parameter: :testparam[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:54:in `block in update'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:54:in `block in update'
+  [1m[36mOwnedStock Update (0.1ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 0], ["updated_at", "2022-07-21 23:03:16.481961"], ["id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:54:in `block in update'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:54:in `block in update'
+Redirected to http://127.0.0.1:3000/owned_stocks/1
+Completed 302 Found in 17ms (ActiveRecord: 7.6ms | Allocations: 11074)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 19:03:16 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:77:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 371)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3583)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 4834)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 19:03:21 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2548)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 5790)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.2ms | Allocations: 6385)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 19:03:35 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 11441)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 14670)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.9ms | Allocations: 16284)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-21 19:03:36 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 395)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3852)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 6572)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 19:03:37 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1304)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 5007)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 5663)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 19:03:38 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.7ms | Allocations: 313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3514)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 5104)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 19:03:38 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.2ms | Allocations: 729)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 4406)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 5604)
+
+
+Started PATCH "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 19:03:40 -0400
+Processing by OwnedStocksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"shares_owned"=>"0", "testparam"=>"2"}, "button"=>"", "id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:77:in `set_owned_stock'
+[31mUnpermitted parameter: :testparam[0m
+[31mUnpermitted parameter: :testparam[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:54:in `block in update'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:54:in `block in update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:54:in `block in update'
+Redirected to http://127.0.0.1:3000/owned_stocks/1
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 3721)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 19:03:40 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:77:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 132)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 3217)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 4223)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 19:03:41 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2135)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 5353)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.1ms | Allocations: 5817)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 19:04:23 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 11459)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 14688)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 1.0ms | Allocations: 16304)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-21 19:04:23 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 213)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3716)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 6003)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 19:04:25 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1053)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4730)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 5247)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 19:04:26 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.2ms | Allocations: 154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3390)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 4858)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 19:04:26 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 0.8ms | Allocations: 729)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3966)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 5597)
+
+
+Started PATCH "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 19:04:29 -0400
+Processing by OwnedStocksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"shares_owned"=>"4", "testparam"=>""}, "button"=>"", "id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+[31mUnpermitted parameter: :testparam[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mOwnedStock Update (0.1ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 4], ["updated_at", "2022-07-21 23:04:29.697700"], ["id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mTRANSACTION (102.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+Redirected to http://127.0.0.1:3000/owned_stocks/1
+Completed 302 Found in 109ms (ActiveRecord: 102.6ms | Allocations: 6625)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 19:04:29 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 131)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3216)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 4223)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 19:04:31 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2152)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 5361)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 5824)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-21 19:04:33 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3366)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.1ms | Allocations: 4802)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 19:04:34 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 905)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4503)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 5053)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 19:04:34 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.2ms | Allocations: 150)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3791)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 4814)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 19:04:35 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 0.8ms | Allocations: 560)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3795)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 5228)
+
+
+Started PATCH "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 19:04:36 -0400
+Processing by OwnedStocksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"shares_owned"=>"4", "testparam"=>""}, "button"=>"", "id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+[31mUnpermitted parameter: :testparam[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mOwnedStock Update (0.2ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 8], ["updated_at", "2022-07-21 23:04:36.334394"], ["id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+Redirected to http://127.0.0.1:3000/owned_stocks/1
+Completed 302 Found in 13ms (ActiveRecord: 6.2ms | Allocations: 5312)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 19:04:36 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3224)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 4230)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 19:08:14 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 429)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3914)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 5830)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-21 19:08:15 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:26
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2142)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 5344)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 6419)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-21 19:08:17 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 387)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4502)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 6148)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 19:08:18 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1723)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4946)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 5601)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 19:08:20 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.6ms | Allocations: 294)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3973)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 5116)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-21 19:08:22 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 905)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4586)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.1ms | Allocations: 5048)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-21 19:08:23 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.4ms | Allocations: 150)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3826)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 4817)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-21 19:08:24 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:17:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.2ms | Allocations: 758)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3948)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 5537)
+
+
+Started PATCH "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 19:08:44 -0400
+Processing by OwnedStocksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"shares_owned"=>"2"}, "button"=>"", "id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mOwnedStock Update (0.1ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 10], ["updated_at", "2022-07-21 23:08:44.816292"], ["id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+  [1m[36mTRANSACTION (15.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:53:in `block in update'
+Redirected to http://127.0.0.1:3000/owned_stocks/1
+Completed 302 Found in 22ms (ActiveRecord: 15.6ms | Allocations: 6489)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-21 19:08:44 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:76:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 130)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 3225)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 4231)
+
+
