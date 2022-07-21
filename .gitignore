@@ -1,0 +1,12 @@
+#RubyMine project
+.idea/
+
+#Test and misc files
+.rspec
+
+#Bundler config
+/.bundle
+
+#Temp files and log files
+/log/*.log
+/tmp
