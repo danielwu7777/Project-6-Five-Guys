@@ -10,6 +10,11 @@ class StocksController < ApplicationController
   def show
   end
 
+  #created 7/21/22 by Noah Moon
+  def trade
+    @stock = Stock.find(params[:id])
+  end
+
   # GET /stocks/new
   def new
     @stock = Stock.new
