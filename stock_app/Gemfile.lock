@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/ruby-jp/websocket-client-simple.git
+  revision: 857bc870cea9f273f637bea133d06ca499943de5
+  specs:
+    websocket-client-simple (0.5.1)
+      event_emitter
+      websocket
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -80,6 +88,7 @@ GEM
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     erubi (1.10.0)
+    event_emitter (0.2.6)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -224,6 +233,7 @@ DEPENDENCIES
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
+  websocket-client-simple!
 
 RUBY VERSION
    ruby 3.0.1p64
