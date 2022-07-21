@@ -10,3 +10,10 @@
 #Temp files and log files
 /log/*.log
 /tmp
+
+#Rails things
+.bundle
+.cache
+.DS_Store
+.sass-cache
+build/
