@@ -1,3 +1,5 @@
+#initialized 7/20/22 by Noah Moon
+# edited 7/21/22 by Noah Moon: added trade
 class StocksController < ApplicationController
   before_action :set_stock, only: %i[ show edit update destroy ]
 
@@ -8,6 +10,11 @@ class StocksController < ApplicationController
 
   # GET /stocks/1 or /stocks/1.json
   def show
+  end
+
+  #created 7/21/22 by Noah Moon
+  def trade
+    @stock = Stock.find(params[:id])
   end
 
   # GET /stocks/new

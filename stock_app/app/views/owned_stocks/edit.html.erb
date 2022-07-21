@@ -2,5 +2,8 @@
 
 <%= render 'form', owned_stock: @owned_stock %>
 
+<%= @owned_stock.stock.ticker %>
+
+
 <%= link_to 'Show', @owned_stock %> |
 <%= link_to 'Back', owned_stocks_path %>
