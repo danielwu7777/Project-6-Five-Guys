@@ -5,6 +5,9 @@ class OwnedStocksController < ApplicationController
   def index
     @owned_stocks = OwnedStock.all
   end
+  def show_stock
+    render "stocks/show"
+  end
 
   # GET /owned_stocks/1 or /owned_stocks/1.json
   def show
