@@ -1,0 +1,2 @@
+class OwnedStock < ApplicationRecord
+end
