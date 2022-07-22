@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   # Created 7/21/22 by Noah Moon
   get '/stocks/:id/trade', to: 'stocks#trade', as: 'trade'
   get '/owned_stocks/:id/buy', to: 'owned_stocks#buy', as: 'buy'
+  get '/owned_stocks/:id/sell', to: 'owned_stocks#sell', as: 'sell'
   patch '/owned_stocks/:id/buy_stock', to: 'owned_stocks#buy_stock', as: 'buy_stock'
+  patch '/owned_stocks/:id/sell_stock', to: 'owned_stocks#sell_stock', as: 'sell_stock'
 
 
 end
