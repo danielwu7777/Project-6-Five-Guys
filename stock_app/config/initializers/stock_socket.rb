@@ -1,4 +1,4 @@
-#Created by Jake MvVann 7/21/2022
+#Created by Jake McCann 7/21/2022
 
 require 'websocket-client-simple'
 require 'json'
@@ -14,8 +14,10 @@ StockSocket.on :message do |msg|
   msg_stock = msg_json['data'][0]['s']
   msg_time = msg_json['data'][0]['t'].to_i
   if msg_time - prev_msg_time > 1000
-    #puts msg_stock, msg_json['data'][0]['p']
-   prev_msg_time = msg_time
+    stock_record = Stock.find_by ticker: msg_stock
+    stock_record.price = msg_json['data'][0]['p'].to_f
+    stock_record.save
+    prev_msg_time = msg_time
   end
 end
 
