@@ -5,6 +5,7 @@ class OwnedStocksController < ApplicationController
   def index
     @owned_stocks = OwnedStock.all
   end
+  #created 7/21/22 by Noah Moon
   def show_stock
     render "stocks/show"
   end
@@ -13,6 +14,7 @@ class OwnedStocksController < ApplicationController
   def show
   end
 
+  #created 7/21/22 by Noah Moon
   def buy
     if OwnedStock.exists?(id: params[:id])
       @owned_stock = OwnedStock.find(params[:id])
@@ -25,10 +27,12 @@ class OwnedStocksController < ApplicationController
     end
   end
 
+  #created 7/21/22 by Noah Moon
   def sell
     @owned_stock = OwnedStock.find(params[:id])
   end
 
+  #created 7/21/22 by Noah Moon
   def buy_stock
 
     @owned_stock = OwnedStock.find_by id: params[:owned_stock][:id]
@@ -45,6 +49,7 @@ class OwnedStocksController < ApplicationController
 
   end
 
+  #created 7/21/22 by Noah Moon
   def sell_stock
 
     @owned_stock = OwnedStock.find_by id: params[:owned_stock][:id]
