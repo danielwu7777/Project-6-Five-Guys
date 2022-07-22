@@ -2,8 +2,9 @@ class OwnedStocksController < ApplicationController
   before_action :set_owned_stock, only: %i[ show edit update destroy ]
 
   # GET /owned_stocks or /owned_stocks.json
+  # Edited 7/22/22 by Noah Moon
   def index
-    @owned_stocks = OwnedStock.all
+    @owned_stocks = current_user.owned_stocks
   end
   #created 7/21/22 by Noah Moon
   def show_stock
@@ -14,25 +15,28 @@ class OwnedStocksController < ApplicationController
   def show
   end
 
-  #created 7/21/22 by Noah Moon
+  # Created 7/21/22 by Noah Moon
+  # Edited 7/22/22 by Noah Moon
   def buy
-    if OwnedStock.exists?(id: params[:id])
-      @owned_stock = OwnedStock.find(params[:id])
+    if OwnedStock.exists?(id: params[:id], user_id: current_user.id)
+      @owned_stock = OwnedStock.find(params[:id], user_id: current_user.id)
     else
       @owned_stock = OwnedStock.new stock_id: params[:id]
-      @owned_stock.user_id = 1
+      @owned_stock.user_id = current_user.id
       @owned_stock.ticker = @owned_stock.stock.ticker
       @owned_stock.shares_owned = 0
       @owned_stock.save
     end
   end
 
-  #created 7/21/22 by Noah Moon
+  # Created 7/21/22 by Noah Moon
+  # Edited 7/22/22 by Noah Moon
   def sell
-    @owned_stock = OwnedStock.find(params[:id])
+    @owned_stock = OwnedStock.find(params[:id], user_id: current_user.id)
   end
 
-  #created 7/21/22 by Noah Moon
+  # Created 7/21/22 by Noah Moon
+  # Edited 7/22/22 by Noah Moon
   def buy_stock
 
     @owned_stock = OwnedStock.find_by id: params[:owned_stock][:id]
@@ -49,7 +53,8 @@ class OwnedStocksController < ApplicationController
 
   end
 
-  #created 7/21/22 by Noah Moon
+  # Created 7/21/22 by Noah Moon
+  # Edited 7/22/22 by Noah Moon
   def sell_stock
 
     @owned_stock = OwnedStock.find_by id: params[:owned_stock][:id]
