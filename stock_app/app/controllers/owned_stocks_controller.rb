@@ -17,8 +17,18 @@ class OwnedStocksController < ApplicationController
     @owned_stock = OwnedStock.find(params[:id])
   end
   def buy_stock
-    @owned_stock.increment(:owned_stock, 5)
-      render action: "update"
+
+    @owned_stock = OwnedStock.find_by id: 1
+    if @owned_stock
+      @owned_stock.shares_owned = params[:owned_stock][:purchased].to_i + @owned_stock.shares_owned.to_i
+      @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
+      @owned_stock.save
+    end
+
+    respond_to do |format|
+        format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully Updated." }
+        format.json { render :show, status: :created, location: @owned_stock }
+      end
 
   end
   # GET /owned_stocks/new
@@ -36,7 +46,7 @@ class OwnedStocksController < ApplicationController
 
     respond_to do |format|
       if @owned_stock.save
-        format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully created." }
+        format.html { redirect_to (@owned_stock), notice: "Owned stock was successfully created." }
         format.json { render :show, status: :created, location: @owned_stock }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -50,7 +60,7 @@ class OwnedStocksController < ApplicationController
     form_params = owned_stock_params
     stock_params = {:shares_owned => @owned_stock.shares_owned.to_i + form_params[:shares_owned].to_i, :ticker => @owned_stock.ticker}
     respond_to do |format|
-      if @owned_stock.update(stock_params)
+      if @owned_stock.update(owned_stock_params)
         format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully updated." }
         format.json { render :show, status: :ok, location: @owned_stock }
       else
