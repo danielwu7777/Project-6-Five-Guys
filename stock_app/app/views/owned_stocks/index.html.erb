@@ -20,9 +20,8 @@
         <td><%= owned_stock.ticker %></td>
         <td><%= owned_stock.shares_owned %></td>
         <td><%= owned_stock.total_cost %></td>
-        <td><%= link_to 'Show', owned_stock %></td>
-        <td><%= link_to 'Edit', edit_owned_stock_path(owned_stock) %></td>
-        <td><%= link_to 'Destroy', owned_stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View Stock', owned_stock.stock %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Owned Stock', new_owned_stock_path %>
+<!--<%= link_to 'New Owned Stock', new_owned_stock_path %> -->
