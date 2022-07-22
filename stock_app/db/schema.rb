@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_21_014339) do
+ActiveRecord::Schema.define(version: 2022_07_21_231334) do
 
   create_table "owned_stocks", force: :cascade do |t|
     t.integer "user_id"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 2022_07_21_014339) do
     t.float "total_cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "integer"
+    t.integer "stock_id"
+    t.integer "purchased"
   end
 
   create_table "stocks", force: :cascade do |t|

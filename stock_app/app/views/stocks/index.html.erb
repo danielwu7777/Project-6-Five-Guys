@@ -16,9 +16,10 @@
       <tr>
         <td><%= stock.ticker %></td>
         <td><%= stock.price %></td>
+        <td><%= link_to 'Trade', trade_path(stock) %></td>
         <td><%= link_to 'Show', stock %></td>
-        <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
-        <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     <!--   <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
+        <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Stock', new_stock_path %>
+<!-- <%= link_to 'New Stock', new_stock_path %> -->
