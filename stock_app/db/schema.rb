@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_21_014339) do
+ActiveRecord::Schema.define(version: 2022_07_22_030457) do
 
   create_table "owned_stocks", force: :cascade do |t|
     t.integer "user_id"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 2022_07_21_014339) do
     t.decimal "currentBalance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "fname"
+    t.string "lname"
+    t.integer "liquidcash"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
