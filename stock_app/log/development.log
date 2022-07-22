@@ -9815,3 +9815,508 @@ Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 6317)
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mStock Create (0.2ms)[0m  [1m[32mINSERT INTO "stocks" ("ticker", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["ticker", "voo"], ["price", 80.0], ["created_at", "2022-07-22 03:51:50.907676"], ["updated_at", "2022-07-22 03:51:50.907676"]]
   [1m[36mTRANSACTION (127.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DropTablename (20220722184815)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220722184815"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateUsers (20220722191257)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220722191257"]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-07-22 15:20:12 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/noah/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/noah/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.6ms | Allocations: 500)
+Completed 200 OK in 9ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 4051)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-07-22 15:20:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-07-22 15:20:37 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/noah/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/noah/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 15.7ms | Allocations: 274)
+  Rendered /home/noah/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 10.7ms | Allocations: 615)
+  Rendered /home/noah/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 129.5ms | Allocations: 6604)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 135.1ms | Allocations: 13414)
+Completed 200 OK in 145ms (Views: 139.5ms | ActiveRecord: 0.3ms | Allocations: 20351)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-07-22 15:24:29 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@gmail.com"], ["encrypted_password", "$2a$12$u6DyUprHLMqVWbx2mmNBY.QpLr.Waeyl008aV2SvqapGEGElYaRCy"], ["created_at", "2022-07-22 19:24:29.485578"], ["updated_at", "2022-07-22 19:24:29.485578"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 409ms (ActiveRecord: 5.8ms | Allocations: 14328)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-22 15:24:29 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/noah/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/noah/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.8ms | Allocations: 268)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 1204)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-22 15:24:35 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 4463)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 8071)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 10871)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-22 15:24:35 -0400
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1269)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4376)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 4893)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-22 15:24:37 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 1.0ms | Allocations: 732)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4038)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 5452)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 15:24:37 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:19:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:20:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 5.1ms | Allocations: 4820)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 8191)
+Completed 200 OK in 17ms (Views: 8.6ms | ActiveRecord: 0.7ms | Allocations: 17287)
+
+
+Started PATCH "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 15:24:40 -0400
+Processing by OwnedStocksController#buy_stock as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "owned_stock"=>{"id"=>"1", "shares_owned"=>"36", "purchased"=>"1"}, "commit"=>"buy", "id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:38:in `buy_stock'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:41:in `buy_stock'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:42:in `buy_stock'
+  [1m[36mOwnedStock Update (0.1ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "total_cost" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 37], ["total_cost", 370.0], ["updated_at", "2022-07-22 19:24:40.850094"], ["id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:42:in `buy_stock'
+  [1m[36mTRANSACTION (66.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:42:in `buy_stock'
+Redirected to http://127.0.0.1:3000/owned_stocks/1
+Completed 302 Found in 73ms (ActiveRecord: 66.5ms | Allocations: 6571)
+
+
+Started GET "/owned_stocks/1" for 127.0.0.1 at 2022-07-22 15:24:40 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:122:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 332)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 3458)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 4667)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-22 15:24:43 -0400
+Processing by OwnedStocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks"[0m
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:23
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:23
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3147)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 6387)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.5ms | Allocations: 6982)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-22 15:25:00 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 260)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3525)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 5111)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddfNameToUser (20220722192619)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220722192619"]]
+  [1m[36mTRANSACTION (127.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddlNameToUser (20220722192630)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220722192630"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddLiquidCashToUser (20220722192707)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "liquidcash" float[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220722192707"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddInitialToUser (20220722192735)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "initialbalance" float[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220722192735"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddCurrentToUser (20220722192757)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "currentbalance" float[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220722192757"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/signup" for 127.0.0.1 at 2022-07-22 15:28:23 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/sign_up" for 127.0.0.1 at 2022-07-22 15:28:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  
+Started GET "/sign_in" for 127.0.0.1 at 2022-07-22 15:28:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/sign_in"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 15:29:44 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/noah/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/noah/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 52)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 461)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2022-07-22 15:29:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  
+Started GET "/" for 127.0.0.1 at 2022-07-22 15:30:00 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/noah/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/noah/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.0ms | Allocations: 500)
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 4735)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-22 15:30:05 -0400
+Processing by UsersController#index as HTML
+Completed 406 Not Acceptable in 10ms (ActiveRecord: 0.0ms | Allocations: 3048)
+
+
+  
+ActionController::MissingExactTemplate (UsersController#index is missing a template for request formats: text/html):
+  
+actionpack (6.1.6.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.1.6.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (6.1.6.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.6.1) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.6.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.6.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+actiontext (6.1.6.1) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.6.1) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.6.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.6.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.6.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.6.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.6.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.6.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.6.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.6.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.6.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.6.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.6.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.6.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.6.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.6.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.6.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.6.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.6.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.6.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.6.1) lib/rails/engine.rb:539:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-07-22 15:30:10 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 4.3ms | Allocations: 269)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 620)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 45.5ms | Allocations: 6101)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 51.0ms | Allocations: 12923)
+Completed 200 OK in 59ms (Views: 52.5ms | ActiveRecord: 0.5ms | Allocations: 20892)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-07-22 15:31:35 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 229)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 502)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 3040)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 6642)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 8687)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-07-22 15:31:43 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 229)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 498)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2969)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 6571)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 8567)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-07-22 15:31:44 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 44)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 115)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1586)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 4715)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 5394)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-07-22 15:31:54 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 229)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 5109)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 5184)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 7072)
+
+
+  
+ActionView::Template::Error (undefined method `fname' for #<User id: nil, email: "", created_at: nil, updated_at: nil, liquidcash: nil, initialbalance: nil, currentbalance: nil>):
+     5: 
+     6:   <div class="field">
+     7:     <%= f.label :fname %><br />
+     8:     <%= f.text_field :fname, autofocus: true, autocomplete: "First Name" %>
+     9:   </div>
+    10: 
+    11:   <div class="field">
+  
+app/views/devise/registrations/new.html.erb:8
+app/views/devise/registrations/new.html.erb:3
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-07-22 15:31:56 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3992)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 4060)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 4711)
+
+
+  
+ActionView::Template::Error (undefined method `fname' for #<User id: nil, email: "", created_at: nil, updated_at: nil, liquidcash: nil, initialbalance: nil, currentbalance: nil>):
+     5: 
+     6:   <div class="field">
+     7:     <%= f.label :fname %><br />
+     8:     <%= f.text_field :fname, autofocus: true, autocomplete: "First Name" %>
+     9:   </div>
+    10: 
+    11:   <div class="field">
+  
+app/views/devise/registrations/new.html.erb:8
+app/views/devise/registrations/new.html.erb:3
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-07-22 15:32:00 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 3992)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 4060)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 4622)
+
+
+  
+ActionView::Template::Error (undefined method `fname' for #<User id: nil, email: "", created_at: nil, updated_at: nil, liquidcash: nil, initialbalance: nil, currentbalance: nil>):
+     5: 
+     6:   <div class="field">
+     7:     <%= f.label :fname %><br />
+     8:     <%= f.text_field :fname, autofocus: true, autocomplete: "First Name" %>
+     9:   </div>
+    10: 
+    11:   <div class="field">
+  
+app/views/devise/registrations/new.html.erb:8
+app/views/devise/registrations/new.html.erb:3
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-07-22 15:33:23 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 229)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 4594)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4668)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 6538)
+
+
+  
+ActionView::Template::Error (undefined method `fname' for #<User id: nil, email: "", created_at: nil, updated_at: nil, liquidcash: nil, initialbalance: nil, currentbalance: nil>):
+    4:   <%= render "devise/shared/error_messages", resource: resource %>
+    5: 
+    6:   <div class="field">
+    7:     <%= f.text_field :fname %>
+    8:   </div>
+    9: 
+   10:   <div class="field">
+  
+app/views/devise/registrations/new.html.erb:7
+app/views/devise/registrations/new.html.erb:3
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-07-22 15:33:24 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 44)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 3830)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3898)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 4551)
+
+
+  
+ActionView::Template::Error (undefined method `fname' for #<User id: nil, email: "", created_at: nil, updated_at: nil, liquidcash: nil, initialbalance: nil, currentbalance: nil>):
+    4:   <%= render "devise/shared/error_messages", resource: resource %>
+    5: 
+    6:   <div class="field">
+    7:     <%= f.text_field :fname %>
+    8:   </div>
+    9: 
+   10:   <div class="field">
+  
+app/views/devise/registrations/new.html.erb:7
+app/views/devise/registrations/new.html.erb:3
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-07-22 15:34:10 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 229)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 498)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 6307)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 8224)
+
+
