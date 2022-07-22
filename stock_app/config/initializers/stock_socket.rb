@@ -1,3 +1,5 @@
+#Created by Jake MvVann 7/21/2022
+
 require 'websocket-client-simple'
 require 'json'
 
