@@ -1,9 +1,22 @@
 require 'websocket-client-simple'
+require 'json'
 
 ::StockSocket = WebSocket::Client::Simple.connect 'wss://ws.finnhub.io?token=cbb0nh2ad3i91bfqdnig'
+prev_msg_time = 0
+
 StockSocket.on :message do |msg|
-  puts msg.data
+  msg_json = JSON.parse(msg.data)
+  # Pings are occasionally sent, don't want exceptions happening
+  return if msg_json.nil? || msg_json['data'].nil?
+
+  msg_stock = msg_json['data'][0]['s']
+  msg_time = msg_json['data'][0]['t'].to_i
+  if msg_time - prev_msg_time > 1000
+    #puts msg_stock, msg_json['data'][0]['p']
+   prev_msg_time = msg_time
+  end
 end
+
 StockSocket.on :open do
   puts "-- websocket open (#{StockSocket.url})"
   StockSocket.send('{"type":"subscribe","symbol":"BINANCE:BTCUSDT"}')
