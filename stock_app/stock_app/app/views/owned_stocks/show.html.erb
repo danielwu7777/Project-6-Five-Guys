@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @owned_stock.user_id %>
+</p>
+
+<p>
+  <strong>Ticker:</strong>
+  <%= @owned_stock.ticker %>
+</p>
+
+<p>
+  <strong>Shares owned:</strong>
+  <%= @owned_stock.shares_owned %>
+</p>
+
+<p>
+  <strong>Total cost:</strong>
+  <%= @owned_stock.total_cost %>
+</p>
+
+<%= link_to 'Edit', edit_owned_stock_path(@owned_stock) %> |
+<%= link_to 'Back', owned_stocks_path %>
