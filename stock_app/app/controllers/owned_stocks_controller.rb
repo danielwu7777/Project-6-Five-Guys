@@ -41,10 +41,23 @@ class OwnedStocksController < ApplicationController
 
   # Created 7/21/22 by Noah Moon
   # Edited 7/22/22 by Noah Moon
+  # Edited 7/23/22 by Noah Moon
   def buy_stock
 
     @owned_stock = OwnedStock.find_by ticker: params[:transaction][:ticker], user_id: current_user.id
     @transaction = Transaction.find params[:transaction][:id]
+
+    # throws error if trying to purchase 0 or less
+    if params[:transaction][:shares].to_i <= 0
+      @buy_error = "Invalid: cannot sell less than 1 stock"
+      respond_to do |format|
+        format.html { render :sell}
+        format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
+      end
+      return
+    end
+
+    # updates database according to form
     if @owned_stock
       @owned_stock.shares_owned = params[:transaction][:shares].to_i + @owned_stock.shares_owned.to_i
       @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
@@ -54,6 +67,7 @@ class OwnedStocksController < ApplicationController
       current_user.liquidcash = current_user.liquidcash - params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
       current_user.save
     end
+
 
     if @owned_stock.valid?
       @owned_stock.save
@@ -72,10 +86,21 @@ class OwnedStocksController < ApplicationController
 
   # Created 7/21/22 by Noah Moon
   # Edited 7/22/22 by Noah Moon
+  # Edited 7/23/22 by Noah Moon
   def sell_stock
 
     @owned_stock = OwnedStock.find_by ticker: params[:transaction][:ticker], user_id: current_user.id
     @transaction = Transaction.find params[:transaction][:id]
+
+    if params[:transaction][:shares].to_i <= 0
+      @sell_error = "Invalid: cannot sell less than 1 stock"
+      respond_to do |format|
+        format.html { render :sell}
+        format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
+      end
+      return
+    end
+
     if @owned_stock
       @owned_stock.shares_owned = @owned_stock.shares_owned.to_i - params[:transaction][:shares].to_i
       @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
@@ -87,6 +112,7 @@ class OwnedStocksController < ApplicationController
       current_user.save
     end
     respond_to do |format|
+      # saves to database if sold stocks <= owned stocks, throws error otherwise
       if @owned_stock.valid?
         @owned_stock.save
 
@@ -94,8 +120,10 @@ class OwnedStocksController < ApplicationController
           format.json { render :show, status: :created, location: @owned_stock }
 
       else
-        format.html { render :buy, status: :unprocessable_entity }
+        format.html { render :sell, status: :unprocessable_entity }
         format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
+        @owned_stock.shares_owned = @owned_stock.shares_owned.to_i + params[:transaction][:shares].to_i
+        @sell_error = "Invalid: cannot sell more than owned stocks"
       end
     end
 
