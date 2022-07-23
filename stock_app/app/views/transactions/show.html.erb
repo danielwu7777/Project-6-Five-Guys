@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ticker:</strong>
+  <%= @transaction.ticker %>
+</p>
+
+<p>
+  <strong>Action:</strong>
+  <%= @transaction.action %>
+</p>
+
+<p>
+  <strong>Shares:</strong>
+  <%= @transaction.shares %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @transaction.time %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @transaction.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
+<%= link_to 'Back', transactions_path %>
