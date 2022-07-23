@@ -51,7 +51,7 @@ class OwnedStocksController < ApplicationController
     if params[:transaction][:shares].to_i <= 0
       @buy_error = "Invalid: cannot sell less than 1 stock"
       respond_to do |format|
-        format.html { render :sell}
+        format.html { render :buy}
         format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
       end
       return
@@ -59,17 +59,18 @@ class OwnedStocksController < ApplicationController
 
     # updates database according to form
     if @owned_stock
-      @owned_stock.shares_owned = params[:transaction][:shares].to_i + @owned_stock.shares_owned.to_i
-      @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
-      @transaction.shares = params[:transaction][:shares]
-      @transaction.time = DateTime.now
-      @transaction.save
+
       current_user.liquidcash = current_user.liquidcash - params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
 
     end
 
     respond_to do |format|
     if current_user.valid?
+      @owned_stock.shares_owned = params[:transaction][:shares].to_i + @owned_stock.shares_owned.to_i
+      @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
+      @transaction.shares = params[:transaction][:shares]
+      @transaction.time = DateTime.now
+      @transaction.save
       current_user.save
       @owned_stock.save
 
@@ -77,7 +78,7 @@ class OwnedStocksController < ApplicationController
         format.json { render :show, status: :created, location: @owned_stock }
 
     else
-      current_user.liquidcash = current_user.liquidcash + params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
+      #current_user.liquidcash = current_user.liquidcash + params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
       format.html { render :buy }
       format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
       @buy_error = current_user.errors.messages.first[1]
@@ -107,17 +108,16 @@ class OwnedStocksController < ApplicationController
 
     if @owned_stock
       @owned_stock.shares_owned = @owned_stock.shares_owned.to_i - params[:transaction][:shares].to_i
-      @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
-      @owned_stock.save
-      @transaction.shares = params[:transaction][:shares]
-      @transaction.time = DateTime.now
-      @transaction.save
-      current_user.liquidcash = current_user.liquidcash + params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
-      current_user.save
     end
     respond_to do |format|
       # saves to database if sold stocks <= owned stocks, throws error otherwise
       if @owned_stock.valid?
+        @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
+        @transaction.shares = params[:transaction][:shares]
+        @transaction.time = DateTime.now
+        @transaction.save
+        current_user.liquidcash = current_user.liquidcash + params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
+        current_user.save
         @owned_stock.save
 
           format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully Updated." }
