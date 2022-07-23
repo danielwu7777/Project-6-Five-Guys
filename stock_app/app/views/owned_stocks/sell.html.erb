@@ -3,6 +3,8 @@
 
 <h2>Shares Owned: <%=@owned_stock.shares_owned %></h2>
 
+<%= @owned_stock.errors.messages.first if @owned_stock.errors.any? %>
+
 <%= form_for(@transaction, url: sell_stock_path) do |f|%>
   <%= f.hidden_field :id %>
   <%= f.hidden_field :ticker %>

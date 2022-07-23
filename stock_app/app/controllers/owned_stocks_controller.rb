@@ -48,7 +48,6 @@ class OwnedStocksController < ApplicationController
     if @owned_stock
       @owned_stock.shares_owned = params[:transaction][:shares].to_i + @owned_stock.shares_owned.to_i
       @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
-      @owned_stock.save
       @transaction.shares = params[:transaction][:shares]
       @transaction.time = DateTime.now
       @transaction.save
@@ -56,10 +55,18 @@ class OwnedStocksController < ApplicationController
       current_user.save
     end
 
-    respond_to do |format|
+    if @owned_stock.valid?
+      @owned_stock.save
+      respond_to do |format|
         format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully Updated." }
         format.json { render :show, status: :created, location: @owned_stock }
       end
+    else
+      format.html { render :show, status: :unprocessable_entity }
+      format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
+    end
+
+
 
   end
 
@@ -79,15 +86,19 @@ class OwnedStocksController < ApplicationController
       current_user.liquidcash = current_user.liquidcash + params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
       current_user.save
     end
-
-    if @owned_stock.valid?
-
-    end
-
     respond_to do |format|
-      format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully Updated." }
-      format.json { render :show, status: :created, location: @owned_stock }
+      if @owned_stock.valid?
+        @owned_stock.save
+
+          format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully Updated." }
+          format.json { render :show, status: :created, location: @owned_stock }
+
+      else
+        format.html { render :buy, status: :unprocessable_entity }
+        format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
+      end
     end
+
 
   end
 
