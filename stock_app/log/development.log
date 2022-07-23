@@ -12321,3 +12321,79 @@ Processing by OwnedStocksController#index as HTML
 Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 6538)
 
 
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStock Create (0.3ms)[0m  [1m[32mINSERT INTO "stocks" ("ticker", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["ticker", "BINANCE:BTCUSDT"], ["price", 0.0], ["created_at", "2022-07-23 21:44:25.090840"], ["updated_at", "2022-07-23 21:44:25.090840"]]
+  [1m[36mTRANSACTION (46.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mStock Update (0.5ms)[0m  [1m[33mUPDATE "stocks" SET "price" = ?, "updated_at" = ? WHERE "stocks"."id" = ?[0m  [["price", 22261.72], ["updated_at", "2022-07-23 21:44:42.653955"], ["id", 4]]
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mTRANSACTION (25.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mStock Update (0.3ms)[0m  [1m[33mUPDATE "stocks" SET "price" = ?, "updated_at" = ? WHERE "stocks"."id" = ?[0m  [["price", 22260.42], ["updated_at", "2022-07-23 21:44:43.664008"], ["id", 4]]
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mTRANSACTION (23.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mStock Update (2.0ms)[0m  [1m[33mUPDATE "stocks" SET "price" = ?, "updated_at" = ? WHERE "stocks"."id" = ?[0m  [["price", 22262.34], ["updated_at", "2022-07-23 21:44:45.629596"], ["id", 4]]
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mTRANSACTION (38.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mStock Update (0.3ms)[0m  [1m[33mUPDATE "stocks" SET "price" = ?, "updated_at" = ? WHERE "stocks"."id" = ?[0m  [["price", 22261.19], ["updated_at", "2022-07-23 21:44:46.677242"], ["id", 4]]
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mTRANSACTION (21.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mStock Update (0.6ms)[0m  [1m[33mUPDATE "stocks" SET "price" = ?, "updated_at" = ? WHERE "stocks"."id" = ?[0m  [["price", 22261.3], ["updated_at", "2022-07-23 21:44:47.649443"], ["id", 4]]
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mTRANSACTION (31.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mStock Update (3.4ms)[0m  [1m[33mUPDATE "stocks" SET "price" = ?, "updated_at" = ? WHERE "stocks"."id" = ?[0m  [["price", 22259.36], ["updated_at", "2022-07-23 21:44:48.647928"], ["id", 4]]
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mTRANSACTION (29.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
