@@ -65,19 +65,23 @@ class OwnedStocksController < ApplicationController
       @transaction.time = DateTime.now
       @transaction.save
       current_user.liquidcash = current_user.liquidcash - params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
-      current_user.save
+
     end
 
-
-    if @owned_stock.valid?
+    respond_to do |format|
+    if current_user.valid?
+      current_user.save
       @owned_stock.save
-      respond_to do |format|
+
         format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully Updated." }
         format.json { render :show, status: :created, location: @owned_stock }
-      end
+
     else
-      format.html { render :show, status: :unprocessable_entity }
+      current_user.liquidcash = current_user.liquidcash + params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
+      format.html { render :buy }
       format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
+      @buy_error = current_user.errors.messages.first[1]
+    end
     end
 
 
@@ -123,7 +127,7 @@ class OwnedStocksController < ApplicationController
         format.html { render :sell, status: :unprocessable_entity }
         format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
         @owned_stock.shares_owned = @owned_stock.shares_owned.to_i + params[:transaction][:shares].to_i
-        @sell_error = "Invalid: cannot sell more than owned stocks"
+        @sell_error = @owned_stock.errors.messages.first[1]
       end
     end
 
