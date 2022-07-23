@@ -2,9 +2,11 @@ class OwnedStocksController < ApplicationController
   before_action :set_owned_stock, only: %i[ show edit update destroy ]
 
   # GET /owned_stocks or /owned_stocks.json
+  # Edited 7/22/22 by Noah Moon
   def index
-    @owned_stocks = OwnedStock.all
+    @owned_stocks = current_user.owned_stocks
   end
+  #created 7/21/22 by Noah Moon
   def show_stock
     render "stocks/show"
   end
@@ -12,6 +14,75 @@ class OwnedStocksController < ApplicationController
   # GET /owned_stocks/1 or /owned_stocks/1.json
   def show
   end
+
+  # Created 7/21/22 by Noah Moon
+  # Edited 7/22/22 by Noah Moon
+  def buy
+    if OwnedStock.exists?(stock_id: params[:id], user_id: current_user.id)
+      @owned_stock = OwnedStock.find_by stock_id: params[:id], user_id: current_user.id
+    else
+      @owned_stock = OwnedStock.new stock_id: params[:id]
+      @owned_stock.user_id = current_user.id
+      @owned_stock.ticker = @owned_stock.stock.ticker
+      @owned_stock.shares_owned = 0
+      @owned_stock.save
+    end
+    @transaction = Transaction.new ticker: @owned_stock.ticker, action: "buy", shares: 0, user_id: current_user.id, stock_id: params[:id]
+    @transaction.save
+  end
+
+  # Created 7/21/22 by Noah Moon
+  # Edited 7/22/22 by Noah Moon
+  def sell
+    @owned_stock = OwnedStock.find_by stock_id: params[:id], user_id: current_user.id
+    @transaction = Transaction.new ticker: @owned_stock.ticker, action: "sell", shares: 0, user_id: current_user.id, stock_id: params[:id]
+    @transaction.save
+  end
+
+  # Created 7/21/22 by Noah Moon
+  # Edited 7/22/22 by Noah Moon
+  def buy_stock
+
+    @owned_stock = OwnedStock.find_by ticker: params[:transaction][:ticker], user_id: current_user.id
+    @transaction = Transaction.find params[:transaction][:id]
+    if @owned_stock
+      @owned_stock.shares_owned = params[:transaction][:shares].to_i + @owned_stock.shares_owned.to_i
+      @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
+      @owned_stock.save
+      @transaction.shares = params[:transaction][:shares]
+      @transaction.time = DateTime.now
+      @transaction.save
+    end
+
+    respond_to do |format|
+        format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully Updated." }
+        format.json { render :show, status: :created, location: @owned_stock }
+      end
+
+  end
+
+  # Created 7/21/22 by Noah Moon
+  # Edited 7/22/22 by Noah Moon
+  def sell_stock
+
+    @owned_stock = OwnedStock.find_by ticker: params[:transaction][:ticker], user_id: current_user.id
+    @transaction = Transaction.find params[:transaction][:id]
+    if @owned_stock
+      @owned_stock.shares_owned = @owned_stock.shares_owned.to_i - params[:transaction][:shares].to_i
+      @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
+      @owned_stock.save
+      @transaction.shares = params[:transaction][:shares]
+      @transaction.time = DateTime.now
+      @transaction.save
+    end
+
+    respond_to do |format|
+      format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully Updated." }
+      format.json { render :show, status: :created, location: @owned_stock }
+    end
+
+  end
+
 
   # GET /owned_stocks/new
   def new
@@ -28,7 +99,7 @@ class OwnedStocksController < ApplicationController
 
     respond_to do |format|
       if @owned_stock.save
-        format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully created." }
+        format.html { redirect_to (@owned_stock), notice: "Owned stock was successfully created." }
         format.json { render :show, status: :created, location: @owned_stock }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,6 +110,8 @@ class OwnedStocksController < ApplicationController
 
   # PATCH/PUT /owned_stocks/1 or /owned_stocks/1.json
   def update
+    form_params = owned_stock_params
+    stock_params = {:shares_owned => @owned_stock.shares_owned.to_i + form_params[:shares_owned].to_i, :ticker => @owned_stock.ticker}
     respond_to do |format|
       if @owned_stock.update(owned_stock_params)
         format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully updated." }

@@ -1,0 +1,14 @@
+<!-- Created 7/21/22 by Noah Moon -->
+<h1>Buy Stock: <%= @owned_stock.stock.ticker %></h1>
+
+<h2>Shares Owned: <%=@owned_stock.shares_owned %></h2>
+
+<%= form_for(@transaction, url: buy_stock_path) do |f|%>
+    <%= f.hidden_field :id %>
+    <%= f.hidden_field :ticker %>
+    <%= f.number_field :shares %>
+    <%= f.submit "buy" %>
+<% end %>
+
+<%= link_to 'Show', @owned_stock %> |
+<%= link_to 'Back', owned_stocks_path %>
