@@ -27,23 +27,31 @@ class OwnedStocksController < ApplicationController
       @owned_stock.shares_owned = 0
       @owned_stock.save
     end
+    @transaction = Transaction.new ticker: @owned_stock.ticker, action: "buy", shares: 0, user_id: current_user.id, stock_id: params[:id]
+    @transaction.save
   end
 
   # Created 7/21/22 by Noah Moon
   # Edited 7/22/22 by Noah Moon
   def sell
-    @owned_stock = OwnedStock.find(params[:id], user_id: current_user.id)
+    @owned_stock = OwnedStock.find_by stock_id: params[:id], user_id: current_user.id
+    @transaction = Transaction.new ticker: @owned_stock.ticker, action: "sell", shares: 0, user_id: current_user.id, stock_id: params[:id]
+    @transaction.save
   end
 
   # Created 7/21/22 by Noah Moon
   # Edited 7/22/22 by Noah Moon
   def buy_stock
 
-    @owned_stock = OwnedStock.find_by id: params[:owned_stock][:id]
+    @owned_stock = OwnedStock.find_by ticker: params[:transaction][:ticker], user_id: current_user.id
+    @transaction = Transaction.find params[:transaction][:id]
     if @owned_stock
-      @owned_stock.shares_owned = params[:owned_stock][:purchased].to_i + @owned_stock.shares_owned.to_i
+      @owned_stock.shares_owned = params[:transaction][:shares].to_i + @owned_stock.shares_owned.to_i
       @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
       @owned_stock.save
+      @transaction.shares = params[:transaction][:shares]
+      @transaction.time = DateTime.now
+      @transaction.save
     end
 
     respond_to do |format|
@@ -57,11 +65,15 @@ class OwnedStocksController < ApplicationController
   # Edited 7/22/22 by Noah Moon
   def sell_stock
 
-    @owned_stock = OwnedStock.find_by id: params[:owned_stock][:id]
+    @owned_stock = OwnedStock.find_by ticker: params[:transaction][:ticker], user_id: current_user.id
+    @transaction = Transaction.find params[:transaction][:id]
     if @owned_stock
-      @owned_stock.shares_owned = @owned_stock.shares_owned.to_i - params[:owned_stock][:purchased].to_i
+      @owned_stock.shares_owned = @owned_stock.shares_owned.to_i - params[:transaction][:shares].to_i
       @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
       @owned_stock.save
+      @transaction.shares = params[:transaction][:shares]
+      @transaction.time = DateTime.now
+      @transaction.save
     end
 
     respond_to do |format|

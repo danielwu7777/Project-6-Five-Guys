@@ -10979,3 +10979,1345 @@ Processing by OwnedStocksController#index as HTML
 Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 6485)
 
 
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTransactions (20220723001016)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "ticker" varchar, "action" varchar, "shares" integer, "time" datetime, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220723001016"]]
+  [1m[36mTRANSACTION (11.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-07-22 20:17:22 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+Completed 401 Unauthorized in 52ms (ActiveRecord: 0.0ms | Allocations: 3678)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-07-22 20:17:23 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 722)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 4867)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/noah/Documents/Project-6-Five-Guys/stock_app/public/packs
+[Webpacker] Hash: 0fe7dcd9d8f9ebcf52de
+Version: webpack 4.46.0
+Time: 388ms
+Built at: 07/22/2022 8:17:24 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-2e212f7c8f867558ac6e.js    121 KiB  application  [emitted] [immutable]  application
+js/application-2e212f7c8f867558ac6e.js.map    136 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-2e212f7c8f867558ac6e.js js/application-2e212f7c8f867558ac6e.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2109.6ms | Allocations: 35255)
+Completed 200 OK in 2124ms (Views: 2116.2ms | ActiveRecord: 0.4ms | Allocations: 45193)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-07-22 20:17:32 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"moon.503@osu.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "moon.503@osu.edu"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 186ms (ActiveRecord: 0.2ms | Allocations: 6903)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-22 20:17:33 -0400
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 4336)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 7933)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.4ms | Allocations: 10554)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-22 20:17:39 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.8ms | Allocations: 332)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3779)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 6824)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:17:40 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 4.2ms | Allocations: 3320)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 6779)
+Completed 200 OK in 34ms (Views: 8.2ms | ActiveRecord: 1.4ms | Allocations: 28921)
+
+
+Started POST "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 20:17:44 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/owned_stocks/1/buy_stock"):
+  
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:17:48 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.0ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1429)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4811)
+Completed 200 OK in 12ms (Views: 5.6ms | ActiveRecord: 0.4ms | Allocations: 10668)
+
+
+Started POST "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 20:18:10 -0400
+Processing by OwnedStocksController#buy_stock as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "transaction"=>{"id"=>"", "ticker"=>"test", "shares"=>"1"}, "commit"=>"buy", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.7ms | Allocations: 10384)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/owned_stocks_controller.rb:44:in `buy_stock'
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:18:50 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 5.8ms | Allocations: 5130)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 8592)
+Completed 200 OK in 44ms (Views: 19.0ms | ActiveRecord: 2.0ms | Allocations: 28709)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:19:01 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 9.9ms | Allocations: 5150)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 8608)
+Completed 200 OK in 45ms (Views: 13.2ms | ActiveRecord: 2.2ms | Allocations: 34524)
+
+
+Started POST "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 20:19:03 -0400
+Processing by OwnedStocksController#buy_stock as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "transaction"=>{"id"=>"", "ticker"=>"test", "shares"=>"1"}, "commit"=>"buy", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 2275)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/owned_stocks_controller.rb:44:in `buy_stock'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "test"], ["LIMIT", 1]]
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["ticker", "test"], ["user_id", 3], ["LIMIT", 1]]
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:21:31 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 6.6ms | Allocations: 5380)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 9231)
+Completed 200 OK in 41ms (Views: 12.0ms | ActiveRecord: 3.1ms | Allocations: 35883)
+
+
+Started POST "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 20:21:32 -0400
+Processing by OwnedStocksController#buy_stock as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "transaction"=>{"id"=>"", "ticker"=>"test", "shares"=>"1"}, "commit"=>"buy", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["ticker", "test"], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:44:in `buy_stock'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 3011)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/owned_stocks_controller.rb:46:in `buy_stock'
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:21:44 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 5.4ms | Allocations: 5130)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 8587)
+Completed 200 OK in 32ms (Views: 9.2ms | ActiveRecord: 1.8ms | Allocations: 34480)
+
+
+Started POST "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 20:21:45 -0400
+Processing by OwnedStocksController#buy_stock as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "transaction"=>{"id"=>"", "ticker"=>"test", "shares"=>"1"}, "commit"=>"buy", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["ticker", "test"], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:44:in `buy_stock'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:47:in `buy_stock'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:48:in `buy_stock'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:48:in `buy_stock'
+  [1m[36mOwnedStock Update (0.2ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "total_cost" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 3], ["total_cost", 30.0], ["updated_at", "2022-07-23 00:21:45.133527"], ["id", 6]]
+  ↳ app/controllers/owned_stocks_controller.rb:48:in `buy_stock'
+  [1m[36mTRANSACTION (208.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:48:in `buy_stock'
+Redirected to http://127.0.0.1:3000/owned_stocks/6
+Completed 302 Found in 218ms (ActiveRecord: 208.7ms | Allocations: 9692)
+
+
+Started GET "/owned_stocks/6" for 127.0.0.1 at 2022-07-22 20:21:45 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:129:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 268.4ms | Allocations: 661)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 271.3ms | Allocations: 4011)
+Completed 200 OK in 274ms (Views: 271.6ms | ActiveRecord: 0.1ms | Allocations: 6428)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-22 20:21:47 -0400
+Processing by OwnedStocksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:23
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2585)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 6110)
+Completed 200 OK in 67ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 10973)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-22 20:22:23 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 70.0ms | Allocations: 533)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 72.7ms | Allocations: 4098)
+Completed 200 OK in 85ms (Views: 73.4ms | ActiveRecord: 0.9ms | Allocations: 18361)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-22 20:22:24 -0400
+Processing by StocksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2139)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 5608)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 7496)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-22 20:22:24 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.5ms | Allocations: 304)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3735)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 6457)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:22:25 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 6246)
+Completed 200 OK in 22ms (Views: 5.6ms | ActiveRecord: 1.0ms | Allocations: 24383)
+
+
+Started POST "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 20:22:26 -0400
+Processing by OwnedStocksController#buy_stock as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "transaction"=>{"id"=>"", "ticker"=>"test", "shares"=>"1"}, "commit"=>"buy", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["ticker", "test"], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:44:in `buy_stock'
+  [1m[36mTransaction Load (0.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:45:in `buy_stock'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms | Allocations: 3359)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Transaction with 'id'=):
+  
+app/controllers/owned_stocks_controller.rb:45:in `buy_stock'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddStockToTransaction (20220723002734)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "transactions" ADD "stock_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220723002734"]]
+  [1m[36mTRANSACTION (28.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:30:08 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms | Allocations: 17772)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'stock_id' for Transaction.):
+  
+app/controllers/owned_stocks_controller.rb:30:in `buy'
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:30:10 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 3158)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'stock_id' for Transaction.):
+  
+app/controllers/owned_stocks_controller.rb:30:in `buy'
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-22 20:30:13 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.2ms | Allocations: 233)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3832)
+Completed 200 OK in 9ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 10199)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:30:14 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 3667)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'stock_id' for Transaction.):
+  
+app/controllers/owned_stocks_controller.rb:30:in `buy'
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:30:39 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTransaction Create (17.5ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "action", "shares", "user_id", "created_at", "updated_at", "stock_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["ticker", "test"], ["action", "buy"], ["shares", 0], ["user_id", 3], ["created_at", "2022-07-23 00:30:39.896782"], ["updated_at", "2022-07-23 00:30:39.896782"], ["stock_id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 6.5ms | Allocations: 3933)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 11783)
+Completed 200 OK in 90ms (Views: 16.6ms | ActiveRecord: 28.0ms | Allocations: 52326)
+
+
+Started PATCH "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 20:30:42 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/owned_stocks/1/buy_stock"):
+  
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:30:48 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.0ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTransaction Create (0.1ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "action", "shares", "user_id", "created_at", "updated_at", "stock_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["ticker", "test"], ["action", "buy"], ["shares", 0], ["user_id", 3], ["created_at", "2022-07-23 00:30:48.844011"], ["updated_at", "2022-07-23 00:30:48.844011"], ["stock_id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (23.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1504)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4959)
+Completed 200 OK in 39ms (Views: 5.2ms | ActiveRecord: 23.6ms | Allocations: 14332)
+
+
+Started PATCH "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 20:31:07 -0400
+  
+ArgumentError (Invalid route name, already in use: 'buy_stock' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+https://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:24:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:31:11 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "action", "shares", "user_id", "created_at", "updated_at", "stock_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["ticker", "test"], ["action", "buy"], ["shares", 0], ["user_id", 3], ["created_at", "2022-07-23 00:31:11.774115"], ["updated_at", "2022-07-23 00:31:11.774115"], ["stock_id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (28.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2663)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 6128)
+Completed 200 OK in 68ms (Views: 6.3ms | ActiveRecord: 30.6ms | Allocations: 38915)
+
+
+Started PATCH "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 20:31:24 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/owned_stocks/1/buy_stock"):
+  
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:31:28 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTransaction Create (0.1ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "action", "shares", "user_id", "created_at", "updated_at", "stock_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["ticker", "test"], ["action", "buy"], ["shares", 0], ["user_id", 3], ["created_at", "2022-07-23 00:31:28.778840"], ["updated_at", "2022-07-23 00:31:28.778840"], ["stock_id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1434)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 4744)
+Completed 200 OK in 26ms (Views: 4.8ms | ActiveRecord: 13.1ms | Allocations: 13854)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:31:55 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "action", "shares", "user_id", "created_at", "updated_at", "stock_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["ticker", "test"], ["action", "buy"], ["shares", 0], ["user_id", 3], ["created_at", "2022-07-23 00:31:55.692020"], ["updated_at", "2022-07-23 00:31:55.692020"], ["stock_id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (52.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2663)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 6128)
+Completed 200 OK in 97ms (Views: 10.5ms | ActiveRecord: 55.0ms | Allocations: 39244)
+
+
+Started PATCH "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 20:31:57 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/owned_stocks/1/buy_stock"):
+  
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:31:59 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.0ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "action", "shares", "user_id", "created_at", "updated_at", "stock_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["ticker", "test"], ["action", "buy"], ["shares", 0], ["user_id", 3], ["created_at", "2022-07-23 00:31:59.083049"], ["updated_at", "2022-07-23 00:31:59.083049"], ["stock_id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (22.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1434)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 4745)
+Completed 200 OK in 38ms (Views: 5.2ms | ActiveRecord: 23.4ms | Allocations: 13882)
+
+
+Started PATCH "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 20:32:05 -0400
+Processing by OwnedStocksController#buy_stock as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "transaction"=>{"id"=>"6", "ticker"=>"test", "shares"=>"1"}, "commit"=>"buy", "id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["ticker", "test"], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:44:in `buy_stock'
+  [1m[36mTransaction Load (0.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:45:in `buy_stock'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:48:in `buy_stock'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+  [1m[36mOwnedStock Update (0.3ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "total_cost" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 4], ["total_cost", 40.0], ["updated_at", "2022-07-23 00:32:05.982808"], ["id", 6]]
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+  [1m[36mTRANSACTION (19.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+Redirected to http://127.0.0.1:3000/owned_stocks/6
+Completed 302 Found in 52ms (ActiveRecord: 22.1ms | Allocations: 32459)
+
+
+Started GET "/owned_stocks/6" for 127.0.0.1 at 2022-07-22 20:32:06 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:131:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 413)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 4028)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 6761)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-22 20:32:06 -0400
+Processing by OwnedStocksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:23
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2679)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 6216)
+Completed 200 OK in 14ms (Views: 9.1ms | ActiveRecord: 0.3ms | Allocations: 10158)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-22 20:32:10 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 483)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 4073)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 8094)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-22 20:32:11 -0400
+Processing by StocksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1627)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 5059)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 7421)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-22 20:32:12 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.6ms | Allocations: 305)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3736)
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 6462)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:32:12 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "action", "shares", "user_id", "created_at", "updated_at", "stock_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["ticker", "test"], ["action", "buy"], ["shares", 0], ["user_id", 3], ["created_at", "2022-07-23 00:32:12.998593"], ["updated_at", "2022-07-23 00:32:12.998593"], ["stock_id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (24.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1654)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4920)
+Completed 200 OK in 48ms (Views: 5.4ms | ActiveRecord: 25.1ms | Allocations: 16345)
+
+
+Started PATCH "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 20:32:14 -0400
+Processing by OwnedStocksController#buy_stock as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "transaction"=>{"id"=>"7", "ticker"=>"test", "shares"=>"1"}, "commit"=>"buy", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Load (0.0ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["ticker", "test"], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:44:in `buy_stock'
+  [1m[36mTransaction Load (0.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:45:in `buy_stock'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:48:in `buy_stock'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+  [1m[36mOwnedStock Update (0.2ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "total_cost" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 5], ["total_cost", 50.0], ["updated_at", "2022-07-23 00:32:14.436517"], ["id", 6]]
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+Redirected to http://127.0.0.1:3000/owned_stocks/6
+Completed 302 Found in 18ms (ActiveRecord: 7.6ms | Allocations: 8228)
+
+
+Started GET "/owned_stocks/6" for 127.0.0.1 at 2022-07-22 20:32:14 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:131:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 118)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3458)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 5564)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-22 20:33:08 -0400
+Processing by OwnedStocksController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.2ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:23
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 11916)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 15395)
+Completed 200 OK in 25ms (Views: 13.9ms | ActiveRecord: 1.4ms | Allocations: 25867)
+
+
+Started GET "/stocks/1" for 127.0.0.1 at 2022-07-22 20:33:10 -0400
+Processing by StocksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:68:in `set_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/show.html.erb within layouts/application
+  Rendered stocks/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 194)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3933)
+Completed 200 OK in 11ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 7409)
+
+
+Started GET "/stocks" for 127.0.0.1 at 2022-07-22 20:33:10 -0400
+Processing by StocksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1358)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4819)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 7054)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-22 20:33:11 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.3ms | Allocations: 152)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3611)
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 6188)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:33:13 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "action", "shares", "user_id", "created_at", "updated_at", "stock_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["ticker", "test"], ["action", "buy"], ["shares", 0], ["user_id", 3], ["created_at", "2022-07-23 00:33:13.260152"], ["updated_at", "2022-07-23 00:33:13.260152"], ["stock_id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (60.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1715)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 5097)
+Completed 200 OK in 90ms (Views: 10.1ms | ActiveRecord: 61.8ms | Allocations: 21670)
+
+
+Started PATCH "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 20:33:14 -0400
+Processing by OwnedStocksController#buy_stock as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "transaction"=>{"id"=>"8", "ticker"=>"test", "shares"=>"1"}, "commit"=>"buy", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["ticker", "test"], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:44:in `buy_stock'
+  [1m[36mTransaction Load (0.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:45:in `buy_stock'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:48:in `buy_stock'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+  [1m[36mOwnedStock Update (1.2ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "total_cost" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 6], ["total_cost", 60.0], ["updated_at", "2022-07-23 00:33:14.886109"], ["id", 6]]
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+  [1m[36mTRANSACTION (37.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:52:in `buy_stock'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:52:in `buy_stock'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:52:in `buy_stock'
+  [1m[36mTransaction Update (0.9ms)[0m  [1m[33mUPDATE "transactions" SET "shares" = ?, "time" = ?, "updated_at" = ? WHERE "transactions"."id" = ?[0m  [["shares", 1], ["time", "2022-07-23 00:33:14.927125"], ["updated_at", "2022-07-23 00:33:14.930850"], ["id", 8]]
+  ↳ app/controllers/owned_stocks_controller.rb:52:in `buy_stock'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:52:in `buy_stock'
+Redirected to http://127.0.0.1:3000/owned_stocks/6
+Completed 302 Found in 63ms (ActiveRecord: 45.8ms | Allocations: 15532)
+
+
+Started GET "/owned_stocks/6" for 127.0.0.1 at 2022-07-22 20:33:14 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:133:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 122)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3460)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 5705)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-22 20:33:16 -0400
+Processing by OwnedStocksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.3ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:23
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1675)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 5118)
+Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 0.6ms | Allocations: 7159)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2022-07-22 20:33:22 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering transactions/index.html.erb within layouts/application
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/views/transactions/index.html.erb:18
+  Rendered transactions/index.html.erb within layouts/application (Duration: 23.6ms | Allocations: 2613)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 6186)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.2ms | Allocations: 8815)
+
+
+Started DELETE "/transactions/1" for 127.0.0.1 at 2022-07-22 20:33:35 -0400
+Processing by TransactionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:63:in `set_transaction'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+  [1m[36mTransaction Destroy (0.9ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (27.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+Redirected to http://127.0.0.1:3000/transactions
+Completed 302 Found in 35ms (ActiveRecord: 28.8ms | Allocations: 6149)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2022-07-22 20:33:35 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering transactions/index.html.erb within layouts/application
+  [1m[36mTransaction Load (0.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/views/transactions/index.html.erb:18
+  Rendered transactions/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1849)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 5195)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 6775)
+
+
+Started DELETE "/transactions/2" for 127.0.0.1 at 2022-07-22 20:33:36 -0400
+Processing by TransactionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:63:in `set_transaction'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+  [1m[36mTransaction Destroy (0.7ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (14.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+Redirected to http://127.0.0.1:3000/transactions
+Completed 302 Found in 22ms (ActiveRecord: 15.4ms | Allocations: 5868)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2022-07-22 20:33:36 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering transactions/index.html.erb within layouts/application
+  [1m[36mTransaction Load (0.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/views/transactions/index.html.erb:18
+  Rendered transactions/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1691)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5017)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 6581)
+
+
+Started DELETE "/transactions/3" for 127.0.0.1 at 2022-07-22 20:33:37 -0400
+Processing by TransactionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:63:in `set_transaction'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (17.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+Redirected to http://127.0.0.1:3000/transactions
+Completed 302 Found in 23ms (ActiveRecord: 17.4ms | Allocations: 5495)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2022-07-22 20:33:38 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering transactions/index.html.erb within layouts/application
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/views/transactions/index.html.erb:18
+  Rendered transactions/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1534)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 4860)
+Completed 200 OK in 15ms (Views: 10.3ms | ActiveRecord: 0.8ms | Allocations: 6424)
+
+
+Started DELETE "/transactions/4" for 127.0.0.1 at 2022-07-22 20:33:39 -0400
+Processing by TransactionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:63:in `set_transaction'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (13.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+Redirected to http://127.0.0.1:3000/transactions
+Completed 302 Found in 20ms (ActiveRecord: 14.2ms | Allocations: 5868)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2022-07-22 20:33:39 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering transactions/index.html.erb within layouts/application
+  [1m[36mTransaction Load (0.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/views/transactions/index.html.erb:18
+  Rendered transactions/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1377)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4703)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 6267)
+
+
+Started DELETE "/transactions/5" for 127.0.0.1 at 2022-07-22 20:33:41 -0400
+Processing by TransactionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:63:in `set_transaction'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+  [1m[36mTransaction Destroy (0.2ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+Redirected to http://127.0.0.1:3000/transactions
+Completed 302 Found in 12ms (ActiveRecord: 5.7ms | Allocations: 5868)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2022-07-22 20:33:41 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering transactions/index.html.erb within layouts/application
+  [1m[36mTransaction Load (0.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/views/transactions/index.html.erb:18
+  Rendered transactions/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1219)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 4565)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 6130)
+
+
+Started DELETE "/transactions/6" for 127.0.0.1 at 2022-07-22 20:33:42 -0400
+Processing by TransactionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:63:in `set_transaction'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+  [1m[36mTransaction Destroy (0.8ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+Redirected to http://127.0.0.1:3000/transactions
+Completed 302 Found in 19ms (ActiveRecord: 12.6ms | Allocations: 5873)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2022-07-22 20:33:42 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering transactions/index.html.erb within layouts/application
+  [1m[36mTransaction Load (0.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/views/transactions/index.html.erb:18
+  Rendered transactions/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1062)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4413)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 5978)
+
+
+Started DELETE "/transactions/7" for 127.0.0.1 at 2022-07-22 20:33:43 -0400
+Processing by TransactionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:63:in `set_transaction'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+  [1m[36mTransaction Destroy (0.1ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (27.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/transactions_controller.rb:52:in `destroy'
+Redirected to http://127.0.0.1:3000/transactions
+Completed 302 Found in 35ms (ActiveRecord: 28.1ms | Allocations: 5871)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2022-07-22 20:33:43 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering transactions/index.html.erb within layouts/application
+  [1m[36mTransaction Load (0.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/views/transactions/index.html.erb:18
+  Rendered transactions/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 905)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 4232)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 5796)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-22 20:33:49 -0400
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1269)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4601)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 4970)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-22 20:33:50 -0400
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Processing by StocksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:15
+  Rendered stocks/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1268)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4600)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 4967)
+
+
+Started GET "/stocks/1/trade" for 127.0.0.1 at 2022-07-22 20:33:52 -0400
+Processing by StocksController#trade as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:15:in `trade'
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/trade.html.erb within layouts/application
+  Rendered stocks/trade.html.erb within layouts/application (Duration: 0.3ms | Allocations: 144)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3608)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 6178)
+
+
+Started GET "/owned_stocks/1/buy" for 127.0.0.1 at 2022-07-22 20:33:53 -0400
+Processing by OwnedStocksController#buy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:21:in `buy'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."stock_id" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["stock_id", 1], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:22:in `buy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("ticker", "action", "shares", "user_id", "created_at", "updated_at", "stock_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["ticker", "test"], ["action", "buy"], ["shares", 0], ["user_id", 3], ["created_at", "2022-07-23 00:33:53.047850"], ["updated_at", "2022-07-23 00:33:53.047850"], ["stock_id", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:31:in `buy'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/buy.html.erb within layouts/application
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/buy.html.erb:2
+  Rendered owned_stocks/buy.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1462)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 4772)
+Completed 200 OK in 25ms (Views: 4.7ms | ActiveRecord: 6.7ms | Allocations: 14390)
+
+
+Started PATCH "/owned_stocks/1/buy_stock" for 127.0.0.1 at 2022-07-22 20:33:55 -0400
+Processing by OwnedStocksController#buy_stock as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "transaction"=>{"id"=>"9", "ticker"=>"test", "shares"=>"2"}, "commit"=>"buy", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Load (0.0ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ? AND "owned_stocks"."user_id" = ? LIMIT ?[0m  [["ticker", "test"], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:44:in `buy_stock'
+  [1m[36mTransaction Load (0.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:45:in `buy_stock'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:48:in `buy_stock'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+  [1m[36mOwnedStock Update (0.9ms)[0m  [1m[33mUPDATE "owned_stocks" SET "shares_owned" = ?, "total_cost" = ?, "updated_at" = ? WHERE "owned_stocks"."id" = ?[0m  [["shares_owned", 8], ["total_cost", 80.0], ["updated_at", "2022-07-23 00:33:55.048214"], ["id", 6]]
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+  [1m[36mTRANSACTION (105.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:49:in `buy_stock'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:52:in `buy_stock'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:52:in `buy_stock'
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:52:in `buy_stock'
+  [1m[36mTransaction Update (1.0ms)[0m  [1m[33mUPDATE "transactions" SET "shares" = ?, "time" = ?, "updated_at" = ? WHERE "transactions"."id" = ?[0m  [["shares", 2], ["time", "2022-07-23 00:33:55.160122"], ["updated_at", "2022-07-23 00:33:55.163694"], ["id", 9]]
+  ↳ app/controllers/owned_stocks_controller.rb:52:in `buy_stock'
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/owned_stocks_controller.rb:52:in `buy_stock'
+Redirected to http://127.0.0.1:3000/owned_stocks/6
+Completed 302 Found in 136ms (ActiveRecord: 117.0ms | Allocations: 14757)
+
+
+Started GET "/owned_stocks/6" for 127.0.0.1 at 2022-07-22 20:33:55 -0400
+Processing by OwnedStocksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/owned_stocks_controller.rb:133:in `set_owned_stock'
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/show.html.erb within layouts/application
+  Rendered owned_stocks/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 118)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3475)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 5581)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-22 20:33:56 -0400
+Processing by OwnedStocksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:23
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1686)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 5527)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 7151)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2022-07-22 20:34:01 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering transactions/index.html.erb within layouts/application
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/views/transactions/index.html.erb:18
+  Rendered transactions/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1081)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4404)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.2ms | Allocations: 5960)
+
+
+Started GET "/owned_stocks" for 127.0.0.1 at 2022-07-22 20:34:13 -0400
+Processing by OwnedStocksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering owned_stocks/index.html.erb within layouts/application
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/owned_stocks/index.html.erb:17
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/owned_stocks/index.html.erb:23
+  Rendered owned_stocks/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1641)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4953)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 6538)
+
+
