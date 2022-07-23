@@ -52,6 +52,8 @@ class OwnedStocksController < ApplicationController
       @transaction.shares = params[:transaction][:shares]
       @transaction.time = DateTime.now
       @transaction.save
+      current_user.liquidcash = current_user.liquidcash - params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
+      current_user.save
     end
 
     respond_to do |format|
@@ -74,6 +76,12 @@ class OwnedStocksController < ApplicationController
       @transaction.shares = params[:transaction][:shares]
       @transaction.time = DateTime.now
       @transaction.save
+      current_user.liquidcash = current_user.liquidcash + params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
+      current_user.save
+    end
+
+    if @owned_stock.valid?
+
     end
 
     respond_to do |format|
