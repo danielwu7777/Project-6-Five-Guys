@@ -18,8 +18,8 @@ class OwnedStocksController < ApplicationController
   # Created 7/21/22 by Noah Moon
   # Edited 7/22/22 by Noah Moon
   def buy
-    if OwnedStock.exists?(id: params[:id], user_id: current_user.id)
-      @owned_stock = OwnedStock.find(params[:id], user_id: current_user.id)
+    if OwnedStock.exists?(stock_id: params[:id], user_id: current_user.id)
+      @owned_stock = OwnedStock.find_by stock_id: params[:id], user_id: current_user.id
     else
       @owned_stock = OwnedStock.new stock_id: params[:id]
       @owned_stock.user_id = current_user.id
