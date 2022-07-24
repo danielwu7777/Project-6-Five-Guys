@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   # Created 7/23/2022 by Jake McCann
   # Updates the value of users account when stock price updates
-  def self.update_value
+  def self.price_update
 
   end
 end

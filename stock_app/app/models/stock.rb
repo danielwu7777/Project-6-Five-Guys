@@ -3,13 +3,14 @@
 class Stock < ApplicationRecord
   has_many :owned_stocks
   has_many :transactions
-  after_commit :update_value, on: :update
+  #Registers update_value to fire when Stock updated
+  after_commit :price_update, on: :update
 
   # Created 7/23/22 by Jake McCann
   # Fires update on OwnedStock and User when stock value changes
-  def update_value
-    OwnedStock.update_value ticker, price
-    User.update_value
+  def price_update
+    OwnedStock.price_update ticker, price
+    User.price_update
   end
 
 end

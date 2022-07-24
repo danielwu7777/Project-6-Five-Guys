@@ -8,7 +8,7 @@ class OwnedStock < ApplicationRecord
   # Updates the cost of record of OwnedStock when stock price updates
   # ticker: stock symbol for stock whose price was updated
   # new_price: new price of stock
-  def self.update_value ticker, new_price
+  def self.price_update ticker, new_price
     where(:ticker => ticker).each do |record|
       record.total_cost = record.shares_owned * new_price
       record.save
