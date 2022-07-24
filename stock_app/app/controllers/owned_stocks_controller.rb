@@ -4,7 +4,7 @@ class OwnedStocksController < ApplicationController
   # GET /owned_stocks or /owned_stocks.json
   # Edited 7/22/22 by Noah Moon
   def index
-    @owned_stocks = current_user.owned_stocks
+    @owned_stocks = current_user.owned_stocks.filter{|stock| stock.shares_owned > 0}
   end
 
   # GET /owned_stocks/1 or /owned_stocks/1.json
@@ -15,8 +15,10 @@ class OwnedStocksController < ApplicationController
   # Edited 7/22/22 by Noah Moon
   def buy
     if OwnedStock.exists?(stock_id: params[:id], user_id: current_user.id)
+      #finds owned stock
       @owned_stock = OwnedStock.find_by stock_id: params[:id], user_id: current_user.id
     else
+      # creates new owned stock
       @owned_stock = OwnedStock.new stock_id: params[:id]
       @owned_stock.user_id = current_user.id
       @owned_stock.ticker = @owned_stock.stock.ticker
@@ -31,8 +33,14 @@ class OwnedStocksController < ApplicationController
   # Edited 7/22/22 by Noah Moon
   def sell
     @owned_stock = OwnedStock.find_by stock_id: params[:id], user_id: current_user.id
-    @transaction = Transaction.new ticker: @owned_stock.ticker, action: "sell", shares: 0, user_id: current_user.id, stock_id: params[:id]
-    @transaction.save
+    if @owned_stock && @owned_stock.shares_owned > 0
+      @transaction = Transaction.new ticker: @owned_stock.ticker, action: "sell", shares: 0, user_id: current_user.id, stock_id: params[:id]
+      @transaction.save
+    else
+      @sell_error = "Must own stock to sell"
+      @stock = Stock.find params[:id]
+    end
+
   end
 
   # Created 7/21/22 by Noah Moon
@@ -44,7 +52,7 @@ class OwnedStocksController < ApplicationController
 
     # throws error if trying to purchase 0 or less
     if params[:transaction][:shares].to_i <= 0
-      @buy_error = "Invalid: cannot sell less than 1 stock"
+      @buy_error = "Invalid: cannot buy less than 1 stock"
       respond_to do |format|
         format.html { render :buy}
       end
