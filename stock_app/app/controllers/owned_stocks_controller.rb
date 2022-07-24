@@ -6,10 +6,6 @@ class OwnedStocksController < ApplicationController
   def index
     @owned_stocks = current_user.owned_stocks
   end
-  #created 7/21/22 by Noah Moon
-  def show_stock
-    render "stocks/show"
-  end
 
   # GET /owned_stocks/1 or /owned_stocks/1.json
   def show
@@ -43,7 +39,6 @@ class OwnedStocksController < ApplicationController
   # Edited 7/22/22 by Noah Moon
   # Edited 7/23/22 by Noah Moon
   def buy_stock
-
     @owned_stock = OwnedStock.find_by ticker: params[:transaction][:ticker], user_id: current_user.id
     @transaction = Transaction.find params[:transaction][:id]
 
@@ -52,17 +47,13 @@ class OwnedStocksController < ApplicationController
       @buy_error = "Invalid: cannot sell less than 1 stock"
       respond_to do |format|
         format.html { render :buy}
-        format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
       end
       return
     end
 
     # updates database according to form
-    if @owned_stock
-
       current_user.liquidcash = current_user.liquidcash - params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
 
-    end
 
     respond_to do |format|
     if current_user.valid?
@@ -73,14 +64,13 @@ class OwnedStocksController < ApplicationController
       @transaction.save
       current_user.save
       @owned_stock.save
-
         format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully Updated." }
+        format.html { redirect_to transaction_url(@transaction), notice: "Owned stock was successfully Updated." }
         format.json { render :show, status: :created, location: @owned_stock }
-
     else
       #current_user.liquidcash = current_user.liquidcash + params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
       format.html { render :buy }
-      format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
+      # format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
       @buy_error = current_user.errors.messages.first[1]
     end
     end
