@@ -9,6 +9,7 @@
 
 #Temp files and log files
 stock_app/log/*.log
+stock_app/log/development.log
 stock_app/tmp
 
 #Rails things
@@ -17,3 +18,6 @@ stock_app/.cache
 stock_app/.DS_Store
 stock_app/.sass-cache
 stock_app/build/
+
+# Ignore node_modules
+stock_app/node_modules/
