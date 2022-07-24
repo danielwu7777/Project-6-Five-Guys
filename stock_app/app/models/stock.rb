@@ -10,7 +10,6 @@ class Stock < ApplicationRecord
   # Fires update on OwnedStock and User when stock value changes
   def price_update
     OwnedStock.price_update ticker, price
-    User.price_update
   end
 
 end
