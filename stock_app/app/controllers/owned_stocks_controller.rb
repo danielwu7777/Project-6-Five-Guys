@@ -13,18 +13,13 @@ class OwnedStocksController < ApplicationController
 
   # Created 7/21/22 by Noah Moon
   # Edited 7/22/22 by Noah Moon
+  # Edited 7/25/22 by Noah Moon
   def buy
-    if OwnedStock.exists?(stock_id: params[:id], user_id: current_user.id)
-      #finds owned stock
-      @owned_stock = OwnedStock.find_by stock_id: params[:id], user_id: current_user.id
-    else
+    @owned_stock = OwnedStock.find_by stock_id: params[:id], user_id: current_user.id
+    unless @owned_stock
       # creates new owned stock
-      @owned_stock = OwnedStock.new stock_id: params[:id]
-      @owned_stock.user_id = current_user.id
-      @owned_stock.ticker = @owned_stock.stock.ticker
-      @owned_stock.shares_owned = 0
-      @owned_stock.current_value = 0
-      @owned_stock.total_cost = 0
+      @owned_stock = OwnedStock.new stock_id: params[:id], user_id: current_user.id, ticker: Stock.find(params[:id]).ticker,
+                                    shares_owned: 0, current_value: 0, total_cost: 0
       @owned_stock.save
     end
     @transaction = Transaction.new ticker: @owned_stock.ticker, action: "buy", shares: 0, user_id: current_user.id, stock_id: params[:id]
@@ -48,46 +43,37 @@ class OwnedStocksController < ApplicationController
   # Created 7/21/22 by Noah Moon
   # Edited 7/22/22 by Noah Moon
   # Edited 7/23/22 by Noah Moon
+  # Edited 7/25/22 by Noah Moon
   def buy_stock
     @owned_stock = OwnedStock.find_by ticker: params[:transaction][:ticker], user_id: current_user.id
     @transaction = Transaction.find params[:transaction][:id]
 
     # throws error if trying to purchase 0 or less
     if params[:transaction][:shares].to_i <= 0
-      @buy_error = "Invalid: cannot buy less than 1 stock"
-      respond_to do |format|
-        format.html { render :buy}
-      end
+      respond_to{|format| format.html{redirect_to :buy, alert: "Invalid Entry: Cannot purchase less than 1 share"}}
       return
     end
 
     # updates database according to form
-      current_user.liquidcash = current_user.liquidcash - params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
+    current_user.liquidcash = current_user.liquidcash - params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
 
 
     respond_to do |format|
-    if current_user.valid?
-      @owned_stock.shares_owned = params[:transaction][:shares].to_i + @owned_stock.shares_owned.to_i
-      @owned_stock.current_value = @owned_stock.shares_owned * @owned_stock.stock.price
-      @owned_stock.total_cost = @owned_stock.total_cost + params[:transaction][:shares].to_i * @owned_stock.stock.price
-      @transaction.shares = params[:transaction][:shares]
-      @transaction.time = DateTime.now
-      @transaction.save
-      current_user.save
-      @owned_stock.save
-        format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully Updated." }
-        format.html { redirect_to transaction_url(@transaction), notice: "Owned stock was successfully Updated." }
-        format.json { render :show, status: :created, location: @owned_stock }
-    else
-      #current_user.liquidcash = current_user.liquidcash + params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
-      format.html { render :buy }
-      # format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
-      @buy_error = current_user.errors.messages.first[1]
+      if current_user.valid?
+        @owned_stock.shares_owned = params[:transaction][:shares].to_i + @owned_stock.shares_owned.to_i
+        @owned_stock.current_value = @owned_stock.shares_owned * @owned_stock.stock.price
+        @owned_stock.total_cost = @owned_stock.total_cost + params[:transaction][:shares].to_i * @owned_stock.stock.price
+        @transaction.shares = params[:transaction][:shares]
+        @transaction.time = DateTime.now
+        @transaction.save
+        current_user.save
+        @owned_stock.save
+          format.html { redirect_to owned_stock_url(@owned_stock), notice: "Purchase Successfully Completed" }
+          format.json { render :show, status: :created, location: @owned_stock }
+      else
+        format.html { redirect_to :buy, alert: current_user.errors.messages.first[1][0]}
+      end
     end
-    end
-
-
-
   end
 
   # Created 7/21/22 by Noah Moon
