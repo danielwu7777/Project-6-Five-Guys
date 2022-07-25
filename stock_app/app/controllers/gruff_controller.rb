@@ -19,7 +19,7 @@ class GruffController < ApplicationController
 
     g.labels = {0 => '2004', 2 => '2005', 4 => '2006'}
 
-    g.write("/public/images/chart/chart.png") 
+    send_data(g.to_image.to_blob, :disposition => 'inline', :type => 'image/png', :filename => "gruff.png")
   end
 
 end

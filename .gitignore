@@ -19,3 +19,6 @@ stock_app/.sass-cache
 stock_app/build/
 *.log
 *.log
+*.log
+stock_app/log/development.log
+stock_app/log/development.log

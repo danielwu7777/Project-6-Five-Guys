@@ -15955,3 +15955,107 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 56ms (Views: 55.6ms | ActiveRecord: 0.0ms | Allocations: 6281)
 
 
+Started GET "/users/sign_in" for ::1 at 2022-07-25 01:17:29 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+Completed 404 Not Found in 17ms (ActiveRecord: 1.5ms | Allocations: 5680)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_in):
+  
+app/controllers/users_controller.rb:63:in `set_user'
+Started GET "/gruff/show" for ::1 at 2022-07-25 01:17:44 -0400
+Processing by GruffController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gruff/show.html.erb within layouts/application
+  Rendered gruff/show.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3972)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4049)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 5660)
+
+
+  
+ActionView::Template::Error (The asset "gruff.png" is not present in the asset pipeline.
+):
+    1: <h1>Gruff#show</h1>
+    2: <p>Find me in app/views/gruff/show.html.erb</p>
+    3: <%= image_tag("gruff.png", :alt => "Image missing") %>
+  
+app/views/gruff/show.html.erb:3
+Started GET "/gruff/show" for ::1 at 2022-07-25 01:19:31 -0400
+Processing by GruffController#show as HTML
+Completed 500 Internal Server Error in 131ms (Allocations: 6312)
+
+
+  
+Magick::ImageMagickError (no decode delegate for this image format `' @ error/blob.c/ImageToBlob/2057):
+  
+app/controllers/gruff_controller.rb:22:in `to_blob'
+app/controllers/gruff_controller.rb:22:in `show'
+Started GET "/gruff/show" for ::1 at 2022-07-25 01:25:11 -0400
+Processing by GruffController#show as HTML
+Completed 500 Internal Server Error in 97ms (Allocations: 3548)
+
+
+  
+Magick::ImageMagickError (WriteBlob Failed `C:/Users/highn/Desktop/CSE3901/project6/Project-6-Five-Guys/stock_app/app/assets/images/chart/chart.png' @ error/png.c/MagickPNGErrorHandler/1716):
+  
+app/controllers/gruff_controller.rb:22:in `show'
+Started GET "/gruff/show" for ::1 at 2022-07-25 01:31:03 -0400
+Processing by GruffController#show as HTML
+Completed 500 Internal Server Error in 95ms (Allocations: 3316)
+
+
+  
+Magick::ImageMagickError (WriteBlob Failed `C:/Users/highn/Desktop/CSE3901/project6/Project-6-Five-Guys/stock_app/public/images/chart/chart.png' @ error/png.c/MagickPNGErrorHandler/1716):
+  
+app/controllers/gruff_controller.rb:22:in `show'
+Started GET "/gruff/show" for ::1 at 2022-07-25 01:32:14 -0400
+Processing by GruffController#show as HTML
+Completed 500 Internal Server Error in 90ms (Allocations: 3314)
+
+
+  
+Magick::ImageMagickError (WriteBlob Failed `/public/images/chart/chart.png' @ error/png.c/MagickPNGErrorHandler/1716):
+  
+app/controllers/gruff_controller.rb:22:in `show'
+Started GET "/gruff/show" for ::1 at 2022-07-25 01:36:32 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GruffController#show as HTML
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 0.0ms | Allocations: 6437)
+
+
+  
+Magick::ImageMagickError (WriteBlob Failed `/public/images/chart/chart.png' @ error/png.c/MagickPNGErrorHandler/1716):
+  
+app/controllers/gruff_controller.rb:22:in `show'
+Started GET "/gruff/show" for ::1 at 2022-07-25 01:48:33 -0400
+  
+NameError (undefined local variable or method `map' for #<ActionDispatch::Routing::Mapper:0x0000014d97592668 @set=#<ActionDispatch::Routing::RouteSet:0x0000014d9679b7a8>, @draw_paths=[#<Pathname:C:/Users/highn/Desktop/CSE3901/project6/Project-6-Five-Guys/stock_app/config/routes>], @scope=#<ActionDispatch::Routing::Mapper::Scope:0x0000014d97592618 @hash={:path_names=>{:new=>"new", :edit=>"edit"}}, @parent=#<ActionDispatch::Routing::Mapper::Scope:0x0000014d97738d50 @hash=nil, @parent=nil, @scope_level=nil>, @scope_level=nil>, @concerns={}>
+Did you mean?  tap):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for ::1 at 2022-07-25 01:48:33 -0400
+Started GET "/" for ::1 at 2022-07-25 01:48:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/gruff/show" for ::1 at 2022-07-25 01:50:03 -0400
+Processing by GruffController#show as HTML
+Completed 500 Internal Server Error in 86ms (Allocations: 3427)
+
+
+  
+Magick::ImageMagickError (no decode delegate for this image format `' @ error/blob.c/ImageToBlob/2057):
+  
+app/controllers/gruff_controller.rb:22:in `to_blob'
+app/controllers/gruff_controller.rb:22:in `show'

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'gruff/show'
   resources :owned_stocks
   resources :stocks
