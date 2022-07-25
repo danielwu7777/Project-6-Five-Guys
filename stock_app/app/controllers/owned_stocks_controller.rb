@@ -23,6 +23,8 @@ class OwnedStocksController < ApplicationController
       @owned_stock.user_id = current_user.id
       @owned_stock.ticker = @owned_stock.stock.ticker
       @owned_stock.shares_owned = 0
+      @owned_stock.current_value = 0
+      @owned_stock.total_cost = 0
       @owned_stock.save
     end
     @transaction = Transaction.new ticker: @owned_stock.ticker, action: "buy", shares: 0, user_id: current_user.id, stock_id: params[:id]
@@ -66,7 +68,8 @@ class OwnedStocksController < ApplicationController
     respond_to do |format|
     if current_user.valid?
       @owned_stock.shares_owned = params[:transaction][:shares].to_i + @owned_stock.shares_owned.to_i
-      @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
+      @owned_stock.current_value = @owned_stock.shares_owned * @owned_stock.stock.price
+      @owned_stock.total_cost = @owned_stock.total_cost + params[:transaction][:shares].to_i * @owned_stock.stock.price
       @transaction.shares = params[:transaction][:shares]
       @transaction.time = DateTime.now
       @transaction.save

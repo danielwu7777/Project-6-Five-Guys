@@ -10,6 +10,7 @@
       <th>Ticker</th>
       <th>Shares owned</th>
       <th>Total cost</th>
+      <th>Current Value</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= owned_stock.ticker %></td>
         <td><%= owned_stock.shares_owned %></td>
         <td><%= owned_stock.total_cost %></td>
+        <td><%= owned_stock.current_value %></td>
         <td><%= link_to 'View Stock', owned_stock.stock %></td>
 
       </tr>
