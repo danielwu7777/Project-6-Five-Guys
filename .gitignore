@@ -9,6 +9,7 @@
 
 #Temp files and log files
 stock_app/log/*.log
+stock_app/log/development.log
 stock_app/tmp
 
 #Rails things
@@ -17,3 +18,76 @@ stock_app/.cache
 stock_app/.DS_Store
 stock_app/.sass-cache
 stock_app/build/
+
+# Ignore node_modules
+stock_app/node_modules/
+
+stock_app/*.rbc
+stock_app/capybara-*.html
+stock_app/.rspec
+stock_app//db/*.sqlite3
+stock_app/db/*.sqlite3-journal
+stock_app/db/*.sqlite3-[0-9]*
+stock_app/public/system
+stock_app/coverage/
+stock_app/spec/tmp
+stock_app/*.orig
+stock_app/rerun.txt
+stock_app/pickle-email-*.html
+
+# Ignore all logfiles and tempfiles.
+stock_app/log/*
+stock_app/tmp/*
+!stock_app/log/.keep
+!stock_app/tmp/.keep
+
+# TODO Comment out this rule if you are OK with secrets being uploaded to the repo
+stock_app/config/initializers/secret_token.rb
+stock_app/config/master.key
+
+# Only include if you have production secrets in this file, which is no longer a Rails default
+# config/secrets.yml
+
+# dotenv, dotenv-rails
+# TODO Comment out these rules if environment variables can be committed
+stock_app/.env
+stock_app/.env*.local
+
+## Environment normalization:
+stock_app/.bundle
+stock_app/vendor/bundle
+
+# these should all be checked in to normalize the environment:
+# Gemfile.lock, .ruby-version, .ruby-gemset
+
+# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
+stock_app/.rvmrc
+
+# if using bower-rails ignore default bower_components path bower.json files
+stock_app/vendor/assets/bower_components
+stock_app/*.bowerrc
+stock_app/bower.json
+
+# Ignore pow environment settings
+stock_app/.powenv
+
+# Ignore Byebug command history file.
+stock_app/.byebug_history
+
+# Ignore node_modules
+stock_app/node_modules/
+
+# Ignore precompiled javascript packs
+stock_app/public/packs
+stock_app/public/packs-test
+stock_app/public/assets
+
+# Ignore yarn files
+stock_app/yarn-error.log
+stock_app/yarn-debug.log*
+stock_app/.yarn-integrity
+
+# Ignore uploaded files in development
+stock_app/storage/*
+!stock_app//storage/.keep
+stock_app/public/uploads

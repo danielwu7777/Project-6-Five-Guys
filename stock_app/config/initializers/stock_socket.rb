@@ -1,6 +1,7 @@
 #Created by Jake McCann 7/21/2022
 
 require 'websocket-client-simple'
+require_relative '../../app/controllers/stocks_controller'
 require 'json'
 
 ::StockSocket = WebSocket::Client::Simple.connect 'wss://ws.finnhub.io?token=cbb0nh2ad3i91bfqdnig'
@@ -16,7 +17,7 @@ StockSocket.on :message do |msg|
   if msg_time - prev_msg_time > 1000
     stock_record = Stock.find_by ticker: msg_stock
     stock_record.price = msg_json['data'][0]['p'].to_f
-    stock_record.save
+    StocksController.price_change msg_stock, stock_record.price
     prev_msg_time = msg_time
   end
 end

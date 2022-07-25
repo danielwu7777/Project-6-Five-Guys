@@ -19317,3 +19317,69 @@ Completed 200 OK in 110ms (Views: 80.7ms | ActiveRecord: 1.5ms | Allocations: 24
   ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
   [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ?[0m  [["ticker", "BINANCE:BTCUSDT"]]
   ↳ app/models/owned_stock.rb:12:in `price_update'
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mStock Update (0.4ms)[0m  [1m[33mUPDATE "stocks" SET "price" = ?, "updated_at" = ? WHERE "stocks"."id" = ?[0m  [["price", 21862.29], ["updated_at", "2022-07-25 04:01:47.767479"], ["id", 4]]
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mTRANSACTION (35.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mOwnedStock Load (0.3ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ?[0m  [["ticker", "BINANCE:BTCUSDT"]]
+  ↳ app/models/owned_stock.rb:12:in `price_update'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:17:in `block in <main>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mStock Update (0.3ms)[0m  [1m[33mUPDATE "stocks" SET "price" = ?, "updated_at" = ? WHERE "stocks"."id" = ?[0m  [["price", 21864.75], ["updated_at", "2022-07-25 04:01:48.712228"], ["id", 4]]
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mTRANSACTION (36.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ config/initializers/stock_socket.rb:19:in `block in <main>'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ?[0m  [["ticker", "BINANCE:BTCUSDT"]]
+  ↳ app/models/owned_stock.rb:12:in `price_update'
+DEPRECATION WARNING: Initialization autoloaded the constants ApplicationHelper, HomeHelper, OwnedStocksHelper, TransactionsHelper, UsersHelper, DeviseHelper, and ApplicationController.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ApplicationHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/jake/Documents/Project-6-Five-Guys/stock_app/config/environment.rb:5)
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ config/initializers/stock_socket.rb:18:in `block in <main>'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:18:in `block in <main>'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? ORDER BY "stocks"."id" ASC LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:72:in `price_change'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ?[0m  [["ticker", "BINANCE:BTCUSDT"]]
+  ↳ app/controllers/stocks_controller.rb:74:in `price_change'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:18:in `block in <main>'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? ORDER BY "stocks"."id" ASC LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:72:in `price_change'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ?[0m  [["ticker", "BINANCE:BTCUSDT"]]
+  ↳ app/controllers/stocks_controller.rb:74:in `price_change'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ config/initializers/stock_socket.rb:18:in `block in <main>'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? ORDER BY "stocks"."id" ASC LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:72:in `price_change'
+  [1m[36mOwnedStock Load (0.1ms)[0m  [1m[34mSELECT "owned_stocks".* FROM "owned_stocks" WHERE "owned_stocks"."ticker" = ?[0m  [["ticker", "BINANCE:BTCUSDT"]]
+  ↳ app/controllers/stocks_controller.rb:74:in `price_change'

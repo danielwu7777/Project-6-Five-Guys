@@ -62,6 +62,20 @@ class StocksController < ApplicationController
     end
   end
 
+  # Created 7/24/2022 by Jake McCann
+  #
+  # Updates model and view on price change
+  # ticker: stock symbol
+  # new_price: price after update
+  def self.price_change ticker, new_price
+    # Update stock
+    Stock.where(:ticker => ticker).first.update_price new_price
+    # Update owned_stock
+    OwnedStocksController.update_price ticker, new_price
+    # Update user
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_stock
