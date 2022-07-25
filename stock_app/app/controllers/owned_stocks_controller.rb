@@ -64,8 +64,7 @@ class OwnedStocksController < ApplicationController
         @transaction.save
         current_user.save
         @owned_stock.save
-        respond_to{|format| format.html { redirect_to owned_stock_url(@owned_stock), notice: "Purchase Successfully Completed" }
-        format.json { render :show, status: :created, location: @owned_stock }}
+        respond_to{|format| format.html { redirect_to owned_stock_url(@owned_stock), notice: "Purchase Successfully Completed" } }
       else
         # Throws error if not enough liquid cash to complete order
         respond_to{|format| format.html { redirect_to :buy, alert: current_user.errors.messages.first[1][0]}}
