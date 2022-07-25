@@ -113,7 +113,8 @@ class OwnedStocksController < ApplicationController
     respond_to do |format|
       # saves to database if sold stocks <= owned stocks, throws error otherwise
       if @owned_stock.valid?
-        @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
+        @owned_stock.current_value = @owned_stock.shares_owned * @owned_stock.stock.price
+        @owned_stock.total_cost = @owned_stock.total_cost.to_f - params[:transaction][:shares].to_f * @owned_stock.stock.price
         @transaction.shares = params[:transaction][:shares]
         @transaction.time = DateTime.now
         @transaction.save
