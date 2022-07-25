@@ -2043,3 +2043,34 @@ Processing by OwnedStocksController#new as HTML
 Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 5879)
 
 
+Started GET "/" for 127.0.0.1 at 2022-07-24 23:19:42 -0400
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/railties-6.1.6.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.2ms | Allocations: 625)
+Completed 200 OK in 52ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 5119)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-07-24 23:24:41 -0400
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:18
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1625)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/webpacker-5.4.3/lib/webpacker/webpack_runner.rb:23:in `exec': No such file or directory - C:\\Users\\highn\\Desktop\\CSE3901\\project6\\Project-6-Five-Guys\\stock_app\\node_modules\\.bin/webpack (Errno::ENOENT)
+	from C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/webpacker-5.4.3/lib/webpacker/webpack_runner.rb:23:in `block in run'
+	from C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/webpacker-5.4.3/lib/webpacker/webpack_runner.rb:22:in `chdir'
+	from C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/webpacker-5.4.3/lib/webpacker/webpack_runner.rb:22:in `run'
+	from C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/webpacker-5.4.3/lib/webpacker/runner.rb:6:in `run'
+	from ./bin/webpack:17:in `block in <main>'
+	from ./bin/webpack:16:in `chdir'
+	from ./bin/webpack:16:in `<main>'
+
+  Rendered layout layouts/application.html.erb (Duration: 2827.1ms | Allocations: 224258)
+Completed 200 OK in 2848ms (Views: 2835.6ms | ActiveRecord: 0.3ms | Allocations: 227170)
+
+
