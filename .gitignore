@@ -17,3 +17,5 @@ stock_app/.cache
 stock_app/.DS_Store
 stock_app/.sass-cache
 stock_app/build/
+*.log
+*.log
