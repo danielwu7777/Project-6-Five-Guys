@@ -3,6 +3,30 @@
 
 <h2><%= @stock.ticker %> - price: <%=@stock.price %></h2>
 
+
+<h2>Transaction History</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Action</th>
+    <th>Shares</th>
+    <th>Time</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @transactions.each do |transaction| %>
+    <tr>
+      <td><%= transaction.action %></td>
+      <td><%= transaction.shares %></td>
+      <td><%= transaction.time %></td>
+      <td><%= link_to 'Show', transaction %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Buy', buy_path(@stock.id) %> |
 <%= link_to 'Sell', sell_path(@stock.id) %> |
 <%= link_to 'Back', stocks_path %>

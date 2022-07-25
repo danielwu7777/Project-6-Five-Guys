@@ -4,6 +4,7 @@ class TransactionsController < ApplicationController
   # GET /transactions or /transactions.json
   def index
     @transactions = current_user.transactions
+    @valid_transactions = @transactions.filter{|transaction|transaction.shares > 0}
   end
 
   # GET /transactions/1 or /transactions/1.json

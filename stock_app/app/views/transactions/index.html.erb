@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @transactions.each do |transaction| %>
+    <% @valid_transactions.each do |transaction| %>
       <tr>
         <td><%= transaction.ticker %></td>
         <td><%= transaction.action %></td>
@@ -34,4 +34,4 @@
 
 
 
-<%= link_to 'New Transaction', new_transaction_path %>
+<!-- <%= link_to 'New Transaction', new_transaction_path %> -->
