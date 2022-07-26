@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.1'
 
 # Imported by Jake McCann
+gem 'jquery-rails'
+# Imported by Jake McCann
 # Simple websocket client
 gem 'websocket-client-simple', git: 'https://github.com/ruby-jp/websocket-client-simple.git'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
