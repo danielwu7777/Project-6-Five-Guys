@@ -161,6 +161,12 @@ class OwnedStocksController < ApplicationController
     UsersController.update_portfolio_value impacted_users, old_price, new_price
   end
 
+  # Created 7/26/22 by Jake McCann
+  # updates @owned_stocks to new values in db for polling
+  def price_change_polling
+    @owned_stocks = OwnedStock.all
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_owned_stock
