@@ -15,9 +15,8 @@ StockSocket.on :message do |msg|
   msg_stock = msg_json['data'][0]['s']
   msg_time = msg_json['data'][0]['t'].to_i
   if msg_time - prev_msg_time > 1000
-    stock_record = Stock.find_by ticker: msg_stock
-    stock_record.price = msg_json['data'][0]['p'].to_f
-    StocksController.price_change msg_stock, stock_record.price
+    new_price = msg_json['data'][0]['p'].to_f
+    StocksController.price_change msg_stock, new_price
     prev_msg_time = msg_time
   end
 end

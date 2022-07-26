@@ -72,11 +72,11 @@ class StocksController < ApplicationController
   # new_price: price after update
   def self.price_change ticker, new_price
     # Update stock
-    Stock.where(:ticker => ticker).first.update_price new_price
+    stock_record = Stock.where(:ticker => ticker).first
+    old_price = stock_record.price
+    stock_record.update_price new_price
     # Update owned_stock
-    OwnedStocksController.update_price ticker, new_price
-    # Update user
-
+    OwnedStocksController.update_price ticker, old_price, new_price
   end
 
   private

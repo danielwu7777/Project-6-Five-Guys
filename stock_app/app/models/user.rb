@@ -5,12 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :owned_stocks
   has_many :transactions
-  validates :liquidcash, numericality: {greater_than_or_equal_to: 0, message: "Error: not enough funds"}
+  #validates :liquidcash, numericality: {greater_than_or_equal_to: 0, message: "Error: not enough funds"}
 
   # Created 7/25/2022 by Jake McCann
-  # Updates the value of users account when stock price changes
-  # old_price: num_stock_owned * pre_update_stock_price
-  # new_price: num_stock_owned * post_update_stock_price
-  def update_value
+  #
+  # Updates users portfolio value
+  # old_price: price before update
+  # new_price: price after update
+  def update_portfolio_value old_price, new_price
+    self.currentbalance += new_price - old_price
+    self.save
   end
 end

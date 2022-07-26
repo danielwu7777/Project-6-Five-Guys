@@ -57,6 +57,17 @@ class UsersController < ApplicationController
     end
   end
 
+  # Created 7/25/2022 by Jake McCann
+  #
+  # Updates users portfolio value in model and view
+  # impacted_users: array of id's of users whose portfolio was impacted by change
+  # old_price: price before update
+  # new_price: price after update
+  def self.update_portfolio_value impacted_users, old_price, new_price
+    puts impacted_users
+    impacted_users.each { |user_id|  User.find(user_id).update_portfolio_value old_price, new_price}
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

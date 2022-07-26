@@ -155,8 +155,10 @@ class OwnedStocksController < ApplicationController
   # Updates model and view on price change
   # ticker: stock symbol
   # new_price: price after update
-  def self.update_price ticker, new_price
-    impacted_users = OwnedStock.where(:ticker => ticker).each {|owned_stock| owned_stock.update_price new_price }
+  def self.update_price ticker, old_price, new_price
+    impacted_users = []
+    OwnedStock.where(:ticker => ticker).each {|owned_stock| impacted_users.push owned_stock.update_price(new_price) }
+    UsersController.update_portfolio_value impacted_users, old_price, new_price
   end
 
   private
