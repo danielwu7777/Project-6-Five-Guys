@@ -16059,3 +16059,646 @@ Magick::ImageMagickError (no decode delegate for this image format `' @ error/bl
   
 app/controllers/gruff_controller.rb:22:in `to_blob'
 app/controllers/gruff_controller.rb:22:in `show'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20220726230940)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "views" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220726230940"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 1"], ["views", 28], ["created_at", "2022-07-25 23:13:32.435425"], ["updated_at", "2022-07-25 23:13:32.435757"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 2"], ["views", 55], ["created_at", "2022-07-24 23:13:32.445637"], ["updated_at", "2022-07-24 23:13:32.445708"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 3"], ["views", 86], ["created_at", "2022-07-23 23:13:32.450513"], ["updated_at", "2022-07-23 23:13:32.450574"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 4"], ["views", 62], ["created_at", "2022-07-22 23:13:32.455288"], ["updated_at", "2022-07-22 23:13:32.455349"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 5"], ["views", 34], ["created_at", "2022-07-21 23:13:32.460227"], ["updated_at", "2022-07-21 23:13:32.460288"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 6"], ["views", 18], ["created_at", "2022-07-20 23:13:32.464871"], ["updated_at", "2022-07-20 23:13:32.464935"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 7"], ["views", 48], ["created_at", "2022-07-19 23:13:32.469730"], ["updated_at", "2022-07-19 23:13:32.469790"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 8"], ["views", 87], ["created_at", "2022-07-18 23:13:32.474327"], ["updated_at", "2022-07-18 23:13:32.474392"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 9"], ["views", 26], ["created_at", "2022-07-17 23:13:32.479044"], ["updated_at", "2022-07-17 23:13:32.479106"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 10"], ["views", 55], ["created_at", "2022-07-16 23:13:32.483913"], ["updated_at", "2022-07-16 23:13:32.483984"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 11"], ["views", 66], ["created_at", "2022-07-15 23:13:32.488783"], ["updated_at", "2022-07-15 23:13:32.488844"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 12"], ["views", 22], ["created_at", "2022-07-14 23:13:32.493529"], ["updated_at", "2022-07-14 23:13:32.493590"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 13"], ["views", 51], ["created_at", "2022-07-13 23:13:32.498126"], ["updated_at", "2022-07-13 23:13:32.498186"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 14"], ["views", 89], ["created_at", "2022-07-12 23:13:32.502823"], ["updated_at", "2022-07-12 23:13:32.502887"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 15"], ["views", 24], ["created_at", "2022-07-11 23:13:32.507623"], ["updated_at", "2022-07-11 23:13:32.507683"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 16"], ["views", 100], ["created_at", "2022-07-10 23:13:32.512441"], ["updated_at", "2022-07-10 23:13:32.512508"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 17"], ["views", 67], ["created_at", "2022-07-09 23:13:32.517270"], ["updated_at", "2022-07-09 23:13:32.517335"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 18"], ["views", 28], ["created_at", "2022-07-08 23:13:32.522112"], ["updated_at", "2022-07-08 23:13:32.522178"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 19"], ["views", 66], ["created_at", "2022-07-07 23:13:32.526748"], ["updated_at", "2022-07-07 23:13:32.526807"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 20"], ["views", 76], ["created_at", "2022-07-06 23:13:32.531429"], ["updated_at", "2022-07-06 23:13:32.531491"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 21"], ["views", 76], ["created_at", "2022-07-05 23:13:32.536077"], ["updated_at", "2022-07-05 23:13:32.536137"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 22"], ["views", 16], ["created_at", "2022-07-04 23:13:32.541129"], ["updated_at", "2022-07-04 23:13:32.541194"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 23"], ["views", 49], ["created_at", "2022-07-03 23:13:32.545886"], ["updated_at", "2022-07-03 23:13:32.545958"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 24"], ["views", 57], ["created_at", "2022-07-02 23:13:32.550741"], ["updated_at", "2022-07-02 23:13:32.550807"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 25"], ["views", 62], ["created_at", "2022-07-01 23:13:32.555929"], ["updated_at", "2022-07-01 23:13:32.556011"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 26"], ["views", 30], ["created_at", "2022-06-30 23:13:32.561612"], ["updated_at", "2022-06-30 23:13:32.561697"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 27"], ["views", 50], ["created_at", "2022-06-29 23:13:32.566902"], ["updated_at", "2022-06-29 23:13:32.566966"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 28"], ["views", 82], ["created_at", "2022-06-28 23:13:32.572541"], ["updated_at", "2022-06-28 23:13:32.572610"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 29"], ["views", 72], ["created_at", "2022-06-27 23:13:32.578371"], ["updated_at", "2022-06-27 23:13:32.578435"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 30"], ["views", 80], ["created_at", "2022-06-26 23:13:32.584227"], ["updated_at", "2022-06-26 23:13:32.584303"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 31"], ["views", 22], ["created_at", "2022-06-25 23:13:32.590813"], ["updated_at", "2022-06-25 23:13:32.590898"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 32"], ["views", 24], ["created_at", "2022-06-24 23:13:32.597540"], ["updated_at", "2022-06-24 23:13:32.597640"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 33"], ["views", 74], ["created_at", "2022-06-23 23:13:32.604421"], ["updated_at", "2022-06-23 23:13:32.604512"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 34"], ["views", 39], ["created_at", "2022-06-22 23:13:32.613004"], ["updated_at", "2022-06-22 23:13:32.613091"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 35"], ["views", 97], ["created_at", "2022-06-21 23:13:32.619218"], ["updated_at", "2022-06-21 23:13:32.619303"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 36"], ["views", 25], ["created_at", "2022-06-20 23:13:32.624958"], ["updated_at", "2022-06-20 23:13:32.625051"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 37"], ["views", 18], ["created_at", "2022-06-19 23:13:32.630870"], ["updated_at", "2022-06-19 23:13:32.631056"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 38"], ["views", 90], ["created_at", "2022-06-18 23:13:32.636571"], ["updated_at", "2022-06-18 23:13:32.636642"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 39"], ["views", 37], ["created_at", "2022-06-17 23:13:32.641966"], ["updated_at", "2022-06-17 23:13:32.642043"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 40"], ["views", 76], ["created_at", "2022-06-16 23:13:32.647405"], ["updated_at", "2022-06-16 23:13:32.647471"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 41"], ["views", 32], ["created_at", "2022-06-15 23:13:32.653124"], ["updated_at", "2022-06-15 23:13:32.653195"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 42"], ["views", 17], ["created_at", "2022-06-14 23:13:32.658512"], ["updated_at", "2022-06-14 23:13:32.658589"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 43"], ["views", 78], ["created_at", "2022-06-13 23:13:32.663714"], ["updated_at", "2022-06-13 23:13:32.663787"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 44"], ["views", 70], ["created_at", "2022-06-12 23:13:32.669184"], ["updated_at", "2022-06-12 23:13:32.669253"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 45"], ["views", 54], ["created_at", "2022-06-11 23:13:32.674564"], ["updated_at", "2022-06-11 23:13:32.674636"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 46"], ["views", 64], ["created_at", "2022-06-10 23:13:32.679816"], ["updated_at", "2022-06-10 23:13:32.679915"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 47"], ["views", 42], ["created_at", "2022-06-09 23:13:32.685717"], ["updated_at", "2022-06-09 23:13:32.685814"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 48"], ["views", 51], ["created_at", "2022-06-08 23:13:32.691300"], ["updated_at", "2022-06-08 23:13:32.691378"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 49"], ["views", 66], ["created_at", "2022-06-07 23:13:32.696455"], ["updated_at", "2022-06-07 23:13:32.696518"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 50"], ["views", 15], ["created_at", "2022-06-06 23:13:32.701780"], ["updated_at", "2022-06-06 23:13:32.701861"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 51"], ["views", 63], ["created_at", "2022-06-05 23:13:32.706819"], ["updated_at", "2022-06-05 23:13:32.706885"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 52"], ["views", 15], ["created_at", "2022-06-04 23:13:32.712543"], ["updated_at", "2022-06-04 23:13:32.712635"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 53"], ["views", 71], ["created_at", "2022-06-03 23:13:32.717989"], ["updated_at", "2022-06-03 23:13:32.718213"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 54"], ["views", 85], ["created_at", "2022-06-02 23:13:32.723083"], ["updated_at", "2022-06-02 23:13:32.723150"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 55"], ["views", 83], ["created_at", "2022-06-01 23:13:32.729382"], ["updated_at", "2022-06-01 23:13:32.729494"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 56"], ["views", 87], ["created_at", "2022-05-31 23:13:32.734727"], ["updated_at", "2022-05-31 23:13:32.734794"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 57"], ["views", 49], ["created_at", "2022-05-30 23:13:32.739726"], ["updated_at", "2022-05-30 23:13:32.739792"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 58"], ["views", 27], ["created_at", "2022-05-29 23:13:32.744957"], ["updated_at", "2022-05-29 23:13:32.745039"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 59"], ["views", 95], ["created_at", "2022-05-28 23:13:32.750196"], ["updated_at", "2022-05-28 23:13:32.750269"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 60"], ["views", 33], ["created_at", "2022-05-27 23:13:32.755505"], ["updated_at", "2022-05-27 23:13:32.755569"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 61"], ["views", 38], ["created_at", "2022-05-26 23:13:32.760372"], ["updated_at", "2022-05-26 23:13:32.760445"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 62"], ["views", 37], ["created_at", "2022-05-25 23:13:32.765500"], ["updated_at", "2022-05-25 23:13:32.765570"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 63"], ["views", 35], ["created_at", "2022-05-24 23:13:32.770371"], ["updated_at", "2022-05-24 23:13:32.770435"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 64"], ["views", 79], ["created_at", "2022-05-23 23:13:32.775512"], ["updated_at", "2022-05-23 23:13:32.775579"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 65"], ["views", 60], ["created_at", "2022-05-22 23:13:32.780454"], ["updated_at", "2022-05-22 23:13:32.780520"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 66"], ["views", 100], ["created_at", "2022-05-21 23:13:32.785575"], ["updated_at", "2022-05-21 23:13:32.785641"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 67"], ["views", 74], ["created_at", "2022-05-20 23:13:32.790535"], ["updated_at", "2022-05-20 23:13:32.790608"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 68"], ["views", 94], ["created_at", "2022-05-19 23:13:32.795598"], ["updated_at", "2022-05-19 23:13:32.795666"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 69"], ["views", 72], ["created_at", "2022-05-18 23:13:32.800601"], ["updated_at", "2022-05-18 23:13:32.800668"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 70"], ["views", 79], ["created_at", "2022-05-17 23:13:32.805804"], ["updated_at", "2022-05-17 23:13:32.805871"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 71"], ["views", 73], ["created_at", "2022-05-16 23:13:32.811608"], ["updated_at", "2022-05-16 23:13:32.811691"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 72"], ["views", 97], ["created_at", "2022-05-15 23:13:32.816758"], ["updated_at", "2022-05-15 23:13:32.816824"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 73"], ["views", 19], ["created_at", "2022-05-14 23:13:32.822081"], ["updated_at", "2022-05-14 23:13:32.822151"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 74"], ["views", 40], ["created_at", "2022-05-13 23:13:32.827663"], ["updated_at", "2022-05-13 23:13:32.827730"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 75"], ["views", 41], ["created_at", "2022-05-12 23:13:32.832976"], ["updated_at", "2022-05-12 23:13:32.833045"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 76"], ["views", 67], ["created_at", "2022-05-11 23:13:32.838105"], ["updated_at", "2022-05-11 23:13:32.838171"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 77"], ["views", 78], ["created_at", "2022-05-10 23:13:32.843405"], ["updated_at", "2022-05-10 23:13:32.843467"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 78"], ["views", 39], ["created_at", "2022-05-09 23:13:32.848268"], ["updated_at", "2022-05-09 23:13:32.848356"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 79"], ["views", 45], ["created_at", "2022-05-08 23:13:32.853442"], ["updated_at", "2022-05-08 23:13:32.853506"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 80"], ["views", 32], ["created_at", "2022-05-07 23:13:32.858706"], ["updated_at", "2022-05-07 23:13:32.858784"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 81"], ["views", 67], ["created_at", "2022-05-06 23:13:32.863779"], ["updated_at", "2022-05-06 23:13:32.863850"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 82"], ["views", 21], ["created_at", "2022-05-05 23:13:32.868708"], ["updated_at", "2022-05-05 23:13:32.868785"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 83"], ["views", 23], ["created_at", "2022-05-04 23:13:32.873606"], ["updated_at", "2022-05-04 23:13:32.873669"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 84"], ["views", 37], ["created_at", "2022-05-03 23:13:32.878642"], ["updated_at", "2022-05-03 23:13:32.878704"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 85"], ["views", 86], ["created_at", "2022-05-02 23:13:32.884047"], ["updated_at", "2022-05-02 23:13:32.884122"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 86"], ["views", 59], ["created_at", "2022-05-01 23:13:32.889587"], ["updated_at", "2022-05-01 23:13:32.889665"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 87"], ["views", 64], ["created_at", "2022-04-30 23:13:32.894747"], ["updated_at", "2022-04-30 23:13:32.894809"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 88"], ["views", 86], ["created_at", "2022-04-29 23:13:32.899897"], ["updated_at", "2022-04-29 23:13:32.899960"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 89"], ["views", 29], ["created_at", "2022-04-28 23:13:32.905852"], ["updated_at", "2022-04-28 23:13:32.905914"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 90"], ["views", 84], ["created_at", "2022-04-27 23:13:32.912059"], ["updated_at", "2022-04-27 23:13:32.912125"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 91"], ["views", 45], ["created_at", "2022-04-26 23:13:32.918261"], ["updated_at", "2022-04-26 23:13:32.918335"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 92"], ["views", 41], ["created_at", "2022-04-25 23:13:32.924024"], ["updated_at", "2022-04-25 23:13:32.924086"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 93"], ["views", 31], ["created_at", "2022-04-24 23:13:32.929900"], ["updated_at", "2022-04-24 23:13:32.929970"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 94"], ["views", 75], ["created_at", "2022-04-23 23:13:32.934883"], ["updated_at", "2022-04-23 23:13:32.935004"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 95"], ["views", 72], ["created_at", "2022-04-22 23:13:32.940032"], ["updated_at", "2022-04-22 23:13:32.940094"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 96"], ["views", 67], ["created_at", "2022-04-21 23:13:32.945416"], ["updated_at", "2022-04-21 23:13:32.945493"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 97"], ["views", 64], ["created_at", "2022-04-20 23:13:32.950581"], ["updated_at", "2022-04-20 23:13:32.950651"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 98"], ["views", 20], ["created_at", "2022-04-19 23:13:32.955815"], ["updated_at", "2022-04-19 23:13:32.955898"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 99"], ["views", 20], ["created_at", "2022-04-18 23:13:32.960814"], ["updated_at", "2022-04-18 23:13:32.960892"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 100"], ["views", 40], ["created_at", "2022-04-17 23:13:32.966003"], ["updated_at", "2022-04-17 23:13:32.966064"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2022-07-26 19:13:57 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant PostController
+Did you mean?  PostsController):
+  
+Started GET "/post/index" for ::1 at 2022-07-26 19:14:46 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/post/index"):
+  
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 1"], ["views", 75], ["created_at", "2022-07-25 23:17:39.992672"], ["updated_at", "2022-07-25 23:17:39.992820"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 2"], ["views", 28], ["created_at", "2022-07-24 23:17:40.004051"], ["updated_at", "2022-07-24 23:17:40.004127"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 3"], ["views", 66], ["created_at", "2022-07-23 23:17:40.008886"], ["updated_at", "2022-07-23 23:17:40.008951"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 4"], ["views", 93], ["created_at", "2022-07-22 23:17:40.013714"], ["updated_at", "2022-07-22 23:17:40.013778"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 5"], ["views", 24], ["created_at", "2022-07-21 23:17:40.018730"], ["updated_at", "2022-07-21 23:17:40.018793"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 6"], ["views", 53], ["created_at", "2022-07-20 23:17:40.023525"], ["updated_at", "2022-07-20 23:17:40.023591"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 7"], ["views", 21], ["created_at", "2022-07-19 23:17:40.028717"], ["updated_at", "2022-07-19 23:17:40.028778"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 8"], ["views", 41], ["created_at", "2022-07-18 23:17:40.033700"], ["updated_at", "2022-07-18 23:17:40.033768"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 9"], ["views", 78], ["created_at", "2022-07-17 23:17:40.038796"], ["updated_at", "2022-07-17 23:17:40.038858"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 10"], ["views", 49], ["created_at", "2022-07-16 23:17:40.043638"], ["updated_at", "2022-07-16 23:17:40.043703"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 11"], ["views", 25], ["created_at", "2022-07-15 23:17:40.048745"], ["updated_at", "2022-07-15 23:17:40.048811"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 12"], ["views", 17], ["created_at", "2022-07-14 23:17:40.053828"], ["updated_at", "2022-07-14 23:17:40.053891"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 13"], ["views", 69], ["created_at", "2022-07-13 23:17:40.059725"], ["updated_at", "2022-07-13 23:17:40.059791"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 14"], ["views", 80], ["created_at", "2022-07-12 23:17:40.065574"], ["updated_at", "2022-07-12 23:17:40.065644"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 15"], ["views", 100], ["created_at", "2022-07-11 23:17:40.071488"], ["updated_at", "2022-07-11 23:17:40.071553"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 16"], ["views", 98], ["created_at", "2022-07-10 23:17:40.077261"], ["updated_at", "2022-07-10 23:17:40.077325"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 17"], ["views", 35], ["created_at", "2022-07-09 23:17:40.083353"], ["updated_at", "2022-07-09 23:17:40.083422"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 18"], ["views", 15], ["created_at", "2022-07-08 23:17:40.088381"], ["updated_at", "2022-07-08 23:17:40.088449"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 19"], ["views", 34], ["created_at", "2022-07-07 23:17:40.093112"], ["updated_at", "2022-07-07 23:17:40.093176"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 20"], ["views", 61], ["created_at", "2022-07-06 23:17:40.098061"], ["updated_at", "2022-07-06 23:17:40.098126"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 21"], ["views", 60], ["created_at", "2022-07-05 23:17:40.103210"], ["updated_at", "2022-07-05 23:17:40.103272"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 22"], ["views", 63], ["created_at", "2022-07-04 23:17:40.107959"], ["updated_at", "2022-07-04 23:17:40.108027"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 23"], ["views", 80], ["created_at", "2022-07-03 23:17:40.112798"], ["updated_at", "2022-07-03 23:17:40.112864"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 24"], ["views", 86], ["created_at", "2022-07-02 23:17:40.118029"], ["updated_at", "2022-07-02 23:17:40.118091"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 25"], ["views", 81], ["created_at", "2022-07-01 23:17:40.123155"], ["updated_at", "2022-07-01 23:17:40.123220"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 26"], ["views", 66], ["created_at", "2022-06-30 23:17:40.128427"], ["updated_at", "2022-06-30 23:17:40.128492"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 27"], ["views", 18], ["created_at", "2022-06-29 23:17:40.133280"], ["updated_at", "2022-06-29 23:17:40.133342"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 28"], ["views", 42], ["created_at", "2022-06-28 23:17:40.138098"], ["updated_at", "2022-06-28 23:17:40.138162"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 29"], ["views", 95], ["created_at", "2022-06-27 23:17:40.143420"], ["updated_at", "2022-06-27 23:17:40.143495"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 30"], ["views", 40], ["created_at", "2022-06-26 23:17:40.148725"], ["updated_at", "2022-06-26 23:17:40.148788"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 31"], ["views", 59], ["created_at", "2022-06-25 23:17:40.154038"], ["updated_at", "2022-06-25 23:17:40.154107"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 32"], ["views", 27], ["created_at", "2022-06-24 23:17:40.159004"], ["updated_at", "2022-06-24 23:17:40.159073"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 33"], ["views", 56], ["created_at", "2022-06-23 23:17:40.163950"], ["updated_at", "2022-06-23 23:17:40.164012"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 34"], ["views", 53], ["created_at", "2022-06-22 23:17:40.168567"], ["updated_at", "2022-06-22 23:17:40.168632"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 35"], ["views", 90], ["created_at", "2022-06-21 23:17:40.173471"], ["updated_at", "2022-06-21 23:17:40.173534"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 36"], ["views", 30], ["created_at", "2022-06-20 23:17:40.181121"], ["updated_at", "2022-06-20 23:17:40.181198"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 37"], ["views", 82], ["created_at", "2022-06-19 23:17:40.186629"], ["updated_at", "2022-06-19 23:17:40.186691"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 38"], ["views", 89], ["created_at", "2022-06-18 23:17:40.191577"], ["updated_at", "2022-06-18 23:17:40.191651"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 39"], ["views", 98], ["created_at", "2022-06-17 23:17:40.196519"], ["updated_at", "2022-06-17 23:17:40.196583"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 40"], ["views", 89], ["created_at", "2022-06-16 23:17:40.201614"], ["updated_at", "2022-06-16 23:17:40.201677"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 41"], ["views", 78], ["created_at", "2022-06-15 23:17:40.206716"], ["updated_at", "2022-06-15 23:17:40.206806"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 42"], ["views", 52], ["created_at", "2022-06-14 23:17:40.212441"], ["updated_at", "2022-06-14 23:17:40.212521"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 43"], ["views", 60], ["created_at", "2022-06-13 23:17:40.218292"], ["updated_at", "2022-06-13 23:17:40.218364"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 44"], ["views", 27], ["created_at", "2022-06-12 23:17:40.223653"], ["updated_at", "2022-06-12 23:17:40.223717"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 45"], ["views", 100], ["created_at", "2022-06-11 23:17:40.228977"], ["updated_at", "2022-06-11 23:17:40.229046"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 46"], ["views", 33], ["created_at", "2022-06-10 23:17:40.233943"], ["updated_at", "2022-06-10 23:17:40.234005"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 47"], ["views", 67], ["created_at", "2022-06-09 23:17:40.239077"], ["updated_at", "2022-06-09 23:17:40.239155"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 48"], ["views", 29], ["created_at", "2022-06-08 23:17:40.244199"], ["updated_at", "2022-06-08 23:17:40.244264"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 49"], ["views", 46], ["created_at", "2022-06-07 23:17:40.249054"], ["updated_at", "2022-06-07 23:17:40.249123"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 50"], ["views", 84], ["created_at", "2022-06-06 23:17:40.253988"], ["updated_at", "2022-06-06 23:17:40.254065"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 51"], ["views", 61], ["created_at", "2022-06-05 23:17:40.259403"], ["updated_at", "2022-06-05 23:17:40.259475"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 52"], ["views", 27], ["created_at", "2022-06-04 23:17:40.264749"], ["updated_at", "2022-06-04 23:17:40.264818"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 53"], ["views", 85], ["created_at", "2022-06-03 23:17:40.270025"], ["updated_at", "2022-06-03 23:17:40.270105"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 54"], ["views", 30], ["created_at", "2022-06-02 23:17:40.274943"], ["updated_at", "2022-06-02 23:17:40.275005"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 55"], ["views", 63], ["created_at", "2022-06-01 23:17:40.279866"], ["updated_at", "2022-06-01 23:17:40.279929"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 56"], ["views", 57], ["created_at", "2022-05-31 23:17:40.284916"], ["updated_at", "2022-05-31 23:17:40.284979"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 57"], ["views", 32], ["created_at", "2022-05-30 23:17:40.290096"], ["updated_at", "2022-05-30 23:17:40.290162"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 58"], ["views", 30], ["created_at", "2022-05-29 23:17:40.295069"], ["updated_at", "2022-05-29 23:17:40.295131"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 59"], ["views", 21], ["created_at", "2022-05-28 23:17:40.299825"], ["updated_at", "2022-05-28 23:17:40.299912"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 60"], ["views", 19], ["created_at", "2022-05-27 23:17:40.305046"], ["updated_at", "2022-05-27 23:17:40.305112"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 61"], ["views", 50], ["created_at", "2022-05-26 23:17:40.310021"], ["updated_at", "2022-05-26 23:17:40.310084"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 62"], ["views", 61], ["created_at", "2022-05-25 23:17:40.315097"], ["updated_at", "2022-05-25 23:17:40.315161"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 63"], ["views", 92], ["created_at", "2022-05-24 23:17:40.320269"], ["updated_at", "2022-05-24 23:17:40.320338"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 64"], ["views", 23], ["created_at", "2022-05-23 23:17:40.324946"], ["updated_at", "2022-05-23 23:17:40.325006"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 65"], ["views", 18], ["created_at", "2022-05-22 23:17:40.329846"], ["updated_at", "2022-05-22 23:17:40.329923"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 66"], ["views", 23], ["created_at", "2022-05-21 23:17:40.335010"], ["updated_at", "2022-05-21 23:17:40.335076"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 67"], ["views", 99], ["created_at", "2022-05-20 23:17:40.339942"], ["updated_at", "2022-05-20 23:17:40.340011"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 68"], ["views", 62], ["created_at", "2022-05-19 23:17:40.345434"], ["updated_at", "2022-05-19 23:17:40.345501"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 69"], ["views", 98], ["created_at", "2022-05-18 23:17:40.350384"], ["updated_at", "2022-05-18 23:17:40.350452"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 70"], ["views", 98], ["created_at", "2022-05-17 23:17:40.355412"], ["updated_at", "2022-05-17 23:17:40.355473"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 71"], ["views", 36], ["created_at", "2022-05-16 23:17:40.360271"], ["updated_at", "2022-05-16 23:17:40.360339"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 72"], ["views", 79], ["created_at", "2022-05-15 23:17:40.365714"], ["updated_at", "2022-05-15 23:17:40.365778"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 73"], ["views", 74], ["created_at", "2022-05-14 23:17:40.372845"], ["updated_at", "2022-05-14 23:17:40.372927"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 74"], ["views", 44], ["created_at", "2022-05-13 23:17:40.379040"], ["updated_at", "2022-05-13 23:17:40.379102"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 75"], ["views", 100], ["created_at", "2022-05-12 23:17:40.385209"], ["updated_at", "2022-05-12 23:17:40.385279"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 76"], ["views", 59], ["created_at", "2022-05-11 23:17:40.391177"], ["updated_at", "2022-05-11 23:17:40.391243"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 77"], ["views", 71], ["created_at", "2022-05-10 23:17:40.396862"], ["updated_at", "2022-05-10 23:17:40.396931"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 78"], ["views", 85], ["created_at", "2022-05-09 23:17:40.402716"], ["updated_at", "2022-05-09 23:17:40.402781"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 79"], ["views", 64], ["created_at", "2022-05-08 23:17:40.407744"], ["updated_at", "2022-05-08 23:17:40.407808"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 80"], ["views", 61], ["created_at", "2022-05-07 23:17:40.412535"], ["updated_at", "2022-05-07 23:17:40.412598"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 81"], ["views", 22], ["created_at", "2022-05-06 23:17:40.417970"], ["updated_at", "2022-05-06 23:17:40.418041"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 82"], ["views", 91], ["created_at", "2022-05-05 23:17:40.422977"], ["updated_at", "2022-05-05 23:17:40.423042"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 83"], ["views", 84], ["created_at", "2022-05-04 23:17:40.427699"], ["updated_at", "2022-05-04 23:17:40.427761"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 84"], ["views", 57], ["created_at", "2022-05-03 23:17:40.432792"], ["updated_at", "2022-05-03 23:17:40.432859"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 85"], ["views", 30], ["created_at", "2022-05-02 23:17:40.437973"], ["updated_at", "2022-05-02 23:17:40.438033"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 86"], ["views", 39], ["created_at", "2022-05-01 23:17:40.443003"], ["updated_at", "2022-05-01 23:17:40.443068"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 87"], ["views", 91], ["created_at", "2022-04-30 23:17:40.448473"], ["updated_at", "2022-04-30 23:17:40.448539"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 88"], ["views", 70], ["created_at", "2022-04-29 23:17:40.453753"], ["updated_at", "2022-04-29 23:17:40.453826"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 89"], ["views", 25], ["created_at", "2022-04-28 23:17:40.458723"], ["updated_at", "2022-04-28 23:17:40.458784"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 90"], ["views", 100], ["created_at", "2022-04-27 23:17:40.463638"], ["updated_at", "2022-04-27 23:17:40.463704"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 91"], ["views", 31], ["created_at", "2022-04-26 23:17:40.469071"], ["updated_at", "2022-04-26 23:17:40.469138"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 92"], ["views", 20], ["created_at", "2022-04-25 23:17:40.474186"], ["updated_at", "2022-04-25 23:17:40.474249"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 93"], ["views", 27], ["created_at", "2022-04-24 23:17:40.479380"], ["updated_at", "2022-04-24 23:17:40.479461"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 94"], ["views", 45], ["created_at", "2022-04-23 23:17:40.484925"], ["updated_at", "2022-04-23 23:17:40.484999"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 95"], ["views", 55], ["created_at", "2022-04-22 23:17:40.490004"], ["updated_at", "2022-04-22 23:17:40.490082"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 96"], ["views", 96], ["created_at", "2022-04-21 23:17:40.494948"], ["updated_at", "2022-04-21 23:17:40.495013"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 97"], ["views", 89], ["created_at", "2022-04-20 23:17:40.500173"], ["updated_at", "2022-04-20 23:17:40.500238"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 98"], ["views", 55], ["created_at", "2022-04-19 23:17:40.505219"], ["updated_at", "2022-04-19 23:17:40.505282"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 99"], ["views", 29], ["created_at", "2022-04-18 23:17:40.510224"], ["updated_at", "2022-04-18 23:17:40.510290"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "views", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title 100"], ["views", 23], ["created_at", "2022-04-17 23:17:40.515128"], ["updated_at", "2022-04-17 23:17:40.515189"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/post/index" for ::1 at 2022-07-26 19:18:00 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/post/index"):
+  
+Started GET "/" for ::1 at 2022-07-26 19:18:03 -0400
+  
+ActionController::RoutingError (uninitialized constant PostController
+Did you mean?  PostsController):
+  

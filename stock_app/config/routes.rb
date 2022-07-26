@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root "post#index"
+  resources :posts
   get 'gruff/show'
   resources :owned_stocks
   resources :stocks
