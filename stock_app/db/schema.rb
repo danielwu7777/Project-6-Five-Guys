@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_23_002734) do
+ActiveRecord::Schema.define(version: 2022_07_25_145111) do
 
   create_table "owned_stocks", force: :cascade do |t|
     t.integer "user_id"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2022_07_23_002734) do
     t.string "integer"
     t.integer "stock_id"
     t.integer "purchased"
+    t.float "current_value"
   end
 
   create_table "stocks", force: :cascade do |t|

@@ -8,11 +8,14 @@ class StocksController < ApplicationController
 
   # GET /stocks/1 or /stocks/1.json
   def show
+    @stock = Stock.find(params[:id])
   end
 
   #created 7/21/22 by Noah Moon
   def trade
     @stock = Stock.find(params[:id])
+    @transactions = current_user.transactions
+    @transactions = @transactions.filter{|transaction|transaction.shares > 0 && transaction.ticker == @stock.ticker}
   end
 
   # GET /stocks/new

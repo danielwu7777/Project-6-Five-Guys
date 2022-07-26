@@ -4,11 +4,7 @@ class OwnedStocksController < ApplicationController
   # GET /owned_stocks or /owned_stocks.json
   # Edited 7/22/22 by Noah Moon
   def index
-    @owned_stocks = current_user.owned_stocks
-  end
-  #created 7/21/22 by Noah Moon
-  def show_stock
-    render "stocks/show"
+    @owned_stocks = current_user.owned_stocks.filter{|stock| stock.shares_owned > 0}
   end
 
   # GET /owned_stocks/1 or /owned_stocks/1.json
@@ -17,14 +13,13 @@ class OwnedStocksController < ApplicationController
 
   # Created 7/21/22 by Noah Moon
   # Edited 7/22/22 by Noah Moon
+  # Edited 7/25/22 by Noah Moon
   def buy
-    if OwnedStock.exists?(stock_id: params[:id], user_id: current_user.id)
-      @owned_stock = OwnedStock.find_by stock_id: params[:id], user_id: current_user.id
-    else
-      @owned_stock = OwnedStock.new stock_id: params[:id]
-      @owned_stock.user_id = current_user.id
-      @owned_stock.ticker = @owned_stock.stock.ticker
-      @owned_stock.shares_owned = 0
+    @owned_stock = OwnedStock.find_by stock_id: params[:id], user_id: current_user.id
+    unless @owned_stock
+      # creates new owned stock
+      @owned_stock = OwnedStock.new stock_id: params[:id], user_id: current_user.id, ticker: Stock.find(params[:id]).ticker,
+                                    shares_owned: 0, current_value: 0, total_cost: 0
       @owned_stock.save
     end
     @transaction = Transaction.new ticker: @owned_stock.ticker, action: "buy", shares: 0, user_id: current_user.id, stock_id: params[:id]
@@ -35,103 +30,74 @@ class OwnedStocksController < ApplicationController
   # Edited 7/22/22 by Noah Moon
   def sell
     @owned_stock = OwnedStock.find_by stock_id: params[:id], user_id: current_user.id
-    @transaction = Transaction.new ticker: @owned_stock.ticker, action: "sell", shares: 0, user_id: current_user.id, stock_id: params[:id]
-    @transaction.save
+    if @owned_stock && @owned_stock.shares_owned > 0
+      @transaction = Transaction.new ticker: @owned_stock.ticker, action: "sell", shares: 0, user_id: current_user.id, stock_id: params[:id]
+      @transaction.save
+    else
+      @stock = Stock.find params[:id]
+      respond_to{|format| format.html{redirect_to @stock, alert: "Error: Must own stock to sell"}}
+    end
+
   end
 
   # Created 7/21/22 by Noah Moon
   # Edited 7/22/22 by Noah Moon
   # Edited 7/23/22 by Noah Moon
+  # Edited 7/25/22 by Noah Moon
   def buy_stock
-
     @owned_stock = OwnedStock.find_by ticker: params[:transaction][:ticker], user_id: current_user.id
     @transaction = Transaction.find params[:transaction][:id]
 
     # throws error if trying to purchase 0 or less
     if params[:transaction][:shares].to_i <= 0
-      @buy_error = "Invalid: cannot sell less than 1 stock"
-      respond_to do |format|
-        format.html { render :buy}
-        format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
-      end
+      respond_to{|format| format.html{redirect_to :buy, alert: "Invalid Entry: Cannot purchase less than 1 share"}}
       return
     end
 
     # updates database according to form
-    if @owned_stock
-
-      current_user.liquidcash = current_user.liquidcash - params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
-
-    end
-
-    respond_to do |format|
-    if current_user.valid?
-      @owned_stock.shares_owned = params[:transaction][:shares].to_i + @owned_stock.shares_owned.to_i
-      @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
-      @transaction.shares = params[:transaction][:shares]
-      @transaction.time = DateTime.now
-      @transaction.save
-      current_user.save
-      @owned_stock.save
-
-        format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully Updated." }
-        format.json { render :show, status: :created, location: @owned_stock }
-
-    else
-      #current_user.liquidcash = current_user.liquidcash + params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
-      format.html { render :buy }
-      format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
-      @buy_error = current_user.errors.messages.first[1]
-    end
-    end
-
-
-
+    current_user.liquidcash = current_user.liquidcash - params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
+      if current_user.valid?
+        @owned_stock.update shares_owned: params[:transaction][:shares].to_i + @owned_stock.shares_owned.to_i,
+                            current_value: (params[:transaction][:shares].to_i + @owned_stock.shares_owned.to_i) * @owned_stock.stock.price,
+                            total_cost: @owned_stock.total_cost + params[:transaction][:shares].to_i * @owned_stock.stock.price
+        @transaction.update shares: params[:transaction][:shares], time: DateTime.now
+        @transaction.save
+        current_user.save
+        @owned_stock.save
+        respond_to{|format| format.html { redirect_to owned_stock_url(@owned_stock), notice: "Purchase Successfully Completed" } }
+      else
+        # Throws error if not enough liquid cash to complete order
+        respond_to{|format| format.html { redirect_to :buy, alert: current_user.errors.messages.first[1][0]}}
+      end
   end
 
   # Created 7/21/22 by Noah Moon
   # Edited 7/22/22 by Noah Moon
   # Edited 7/23/22 by Noah Moon
+  # Edited 7/25/22 by Noah Moon
   def sell_stock
-
     @owned_stock = OwnedStock.find_by ticker: params[:transaction][:ticker], user_id: current_user.id
     @transaction = Transaction.find params[:transaction][:id]
-
     if params[:transaction][:shares].to_i <= 0
-      @sell_error = "Invalid: cannot sell less than 1 stock"
-      respond_to do |format|
-        format.html { render :sell}
-        format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
-      end
+      respond_to{|format| format.html{redirect_to :sell, alert: "Invalid Entry: Cannot sell less than 1 share"}}
       return
     end
-
-    if @owned_stock
       @owned_stock.shares_owned = @owned_stock.shares_owned.to_i - params[:transaction][:shares].to_i
-    end
-    respond_to do |format|
       # saves to database if sold stocks <= owned stocks, throws error otherwise
       if @owned_stock.valid?
-        @owned_stock.total_cost = @owned_stock.shares_owned * @owned_stock.stock.price
-        @transaction.shares = params[:transaction][:shares]
-        @transaction.time = DateTime.now
+        @owned_stock.update current_value: @owned_stock.shares_owned * @owned_stock.stock.price,
+                            total_cost: @owned_stock.total_cost.to_f - params[:transaction][:shares].to_f * @owned_stock.stock.price
+        @transaction.update shares: params[:transaction][:shares], time: DateTime.now
         @transaction.save
         current_user.liquidcash = current_user.liquidcash + params[:transaction][:shares].to_f * @owned_stock.stock.price.to_f
         current_user.save
         @owned_stock.save
-
-          format.html { redirect_to owned_stock_url(@owned_stock), notice: "Owned stock was successfully Updated." }
-          format.json { render :show, status: :created, location: @owned_stock }
-
+        respond_to{|format| format.html { redirect_to owned_stock_url(@owned_stock), notice: "Sale Successfully Completed" }
+        format.json { render :show, status: :created, location: @owned_stock }}
       else
-        format.html { render :sell, status: :unprocessable_entity }
-        format.json { render json: @owned_stock.errors, status: :unprocessable_entity }
+        respond_to{|format| format.html{redirect_to :sell, alert: @owned_stock.errors.messages.first[1][0]}}
         @owned_stock.shares_owned = @owned_stock.shares_owned.to_i + params[:transaction][:shares].to_i
-        @sell_error = @owned_stock.errors.messages.first[1]
       end
-    end
-
-
   end
 
 

@@ -1,11 +1,10 @@
 <!-- Created 7/21/22 by Noah Moon -->
+
+<% if @owned_stock && @owned_stock.shares_owned > 0%>
 <h1>Sell Stock: <%= @owned_stock.stock.ticker %></h1>
 
 <h2>Shares Owned: <%=@owned_stock.shares_owned %></h2>
 
-<% if @sell_error != nil %>
-  <p class="error" style="color: red"><%= @sell_error %></p>
-<% end %>
 
 <%= form_for(@transaction, url: sell_stock_path) do |f|%>
   <%= f.hidden_field :id %>
@@ -16,3 +15,7 @@
 
 <%= link_to 'Show', @owned_stock %> |
 <%= link_to 'Back', owned_stocks_path %>
+<% else %>
+  <p class="error" style="color: red"><%= @sell_error %>|<%= link_to 'Buy', buy_path(@stock.id) %> |</p>
+
+<%end %>
