@@ -3,11 +3,9 @@
 <h1>Portfolio</h1>
 
 <% if user_signed_in? %>
-  <h3>Current Value: <%= current_user.currentbalance %></h3>
-  <h3>Liquid Cash: <%= current_user.liquidcash %></h3>
-  <h3>Overall Loss/Gain: <%= (current_user.currentbalance / current_user.initialbalance - 1) * 100%>%</h3>
-
-
+  <h3>Current Value: $<%= current_user.currentbalance.round(2) %></h3>
+  <h3>Liquid Cash: $<%= current_user.liquidcash.round(2) %></h3>
+  <h3>Overall Loss/Gain: <%= ((current_user.currentbalance / current_user.initialbalance - 1) * 100).round(2) %>%</h3>
 
 
 <table>
@@ -30,7 +28,7 @@
         <td><%= owned_stock.shares_owned %></td>
         <td><%= owned_stock.total_cost %></td>
         <td><%= owned_stock.current_value %></td>
-        <td><%= (owned_stock.current_value / owned_stock.total_cost - 1) * 100 %>%</td>
+        <td><%= ((owned_stock.current_value / owned_stock.total_cost - 1) * 100).round(2)  %>%</td>
         <td><%= link_to 'View Stock', owned_stock.stock %></td>
 
       </tr>
