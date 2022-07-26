@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :transactions
   devise_for :users
   resources :owned_stocks
-  resources :stocks
+  resources :stocks do
+    post :price_change_polling
+  end
   resources :users
 
 

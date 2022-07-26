@@ -1,3 +1,5 @@
+#Edited 2/26/2022 by Jake McCann
+
 class StocksController < ApplicationController
   before_action :set_stock, only: %i[ show edit update destroy ]
 
@@ -68,6 +70,27 @@ class StocksController < ApplicationController
       format.html { redirect_to stocks_url, notice: "Stock was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  # Created 7/24/2022 by Jake McCann
+  #
+  # Updates model and view on price change
+  # ticker: stock symbol
+  # new_price: price after update
+  def self.price_change ticker, new_price
+    # Update stock
+    stock_record = Stock.find_by ticker: ticker
+    old_price = stock_record.price
+    stock_record.update_price new_price
+
+    # Update owned_stock
+    OwnedStocksController.update_price ticker, old_price, new_price
+  end
+
+  # Created 7/26/22 by Jake McCann
+  # updates @stocks to new values in db for polling
+  def price_change_polling
+    @stocks = Stock.all
   end
 
   private
