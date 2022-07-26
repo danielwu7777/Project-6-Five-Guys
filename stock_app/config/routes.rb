@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :stocks
   resources :users
 
+
   # Created 7/22/22 by Noah Moon: feel free to change this
   # Home Page
   authenticated :user do
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   get '/owned_stocks/:id/sell', to: 'owned_stocks#sell', as: 'sell'
   patch '/owned_stocks/:id/buy_stock', to: 'owned_stocks#buy_stock', as: 'buy_stock'
   patch '/owned_stocks/:id/sell_stock', to: 'owned_stocks#sell_stock', as: 'sell_stock'
-
-
+  # Created 7/26/22 by Noah Moon
+  get "/login", :to => "stocks#index"
+  get "/register", :to => "stocks#index"
 end

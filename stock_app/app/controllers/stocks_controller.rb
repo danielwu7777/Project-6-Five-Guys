@@ -2,8 +2,13 @@ class StocksController < ApplicationController
   before_action :set_stock, only: %i[ show edit update destroy ]
 
   # GET /stocks or /stocks.json
+  # Edited 7/26/22 by Noah Moon
   def index
     @stocks = Stock.all
+    if current_user.currentbalance.nil? && current_user.initialbalance.nil?
+      current_user.update currentbalance: current_user.liquidcash, initialbalance: current_user.liquidcash
+      current_user.save
+    end
   end
 
   # GET /stocks/1 or /stocks/1.json
