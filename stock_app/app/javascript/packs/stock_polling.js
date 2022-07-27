@@ -2,5 +2,5 @@
 $(document).ready(function() {
     setInterval(function () {
         $.ajax({url:'stocks',success: window.location.reload()});
-    } , 5000);
+    } , 3210);
 });

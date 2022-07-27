@@ -27,7 +27,7 @@ stock_app/capybara-*.html
 stock_app/.rspec
 stock_app//db/*.sqlite3
 stock_app/db/*.sqlite3-journal
-stock_app/db/*.sqlite3-[0-9]*
+stock_app/db/*.sqlite3
 stock_app/public/system
 stock_app/coverage/
 stock_app/spec/tmp
@@ -89,5 +89,5 @@ stock_app/.yarn-integrity
 
 # Ignore uploaded files in development
 stock_app/storage/*
-!stock_app//storage/.keep
+!stock_app/storage/.keep
 stock_app/public/uploads
