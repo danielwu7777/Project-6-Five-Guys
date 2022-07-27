@@ -10,15 +10,25 @@
         "/packs/js/application-91e24bfc4cec83f5ef6e.js.map"
       ]
     },
-    "stock_polling": {
+    "owned_stock_polling": {
       "js": [
-        "/packs/js/stock_polling-3ba63aaeef26e4f81afe.js"
+        "/packs/js/owned_stock_polling-e53c1d54d0c55bab7f0b.js"
       ],
       "js.map": [
-        "/packs/js/stock_polling-3ba63aaeef26e4f81afe.js.map"
+        "/packs/js/owned_stock_polling-e53c1d54d0c55bab7f0b.js.map"
+      ]
+    },
+    "stock_polling": {
+      "js": [
+        "/packs/js/stock_polling-b5e8668401dd14490ab3.js"
+      ],
+      "js.map": [
+        "/packs/js/stock_polling-b5e8668401dd14490ab3.js.map"
       ]
     }
   },
-  "stock_polling.js": "/packs/js/stock_polling-3ba63aaeef26e4f81afe.js",
-  "stock_polling.js.map": "/packs/js/stock_polling-3ba63aaeef26e4f81afe.js.map"
+  "owned_stock_polling.js": "/packs/js/owned_stock_polling-e53c1d54d0c55bab7f0b.js",
+  "owned_stock_polling.js.map": "/packs/js/owned_stock_polling-e53c1d54d0c55bab7f0b.js.map",
+  "stock_polling.js": "/packs/js/stock_polling-b5e8668401dd14490ab3.js",
+  "stock_polling.js.map": "/packs/js/stock_polling-b5e8668401dd14490ab3.js.map"
 }
