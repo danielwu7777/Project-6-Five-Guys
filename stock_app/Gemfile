@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.1'
 
 # Imported by Jake McCann
+gem 'finnhub_ruby'
+# Imported by Jake McCann
 gem 'jquery-rails'
 # Imported by Jake McCann
 # Simple websocket client
