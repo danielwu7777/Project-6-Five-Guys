@@ -1,5 +1,5 @@
-#Edited 2/26/2022 by Jake McCann
-
+#Edited 7/26/2022 by Jake McCann
+#Edited 7/27/2022
 class StocksController < ApplicationController
   before_action :set_stock, only: %i[ show edit update destroy ]
 
