@@ -1,24 +1,34 @@
 {
-  "application.js": "/packs/js/application-91e24bfc4cec83f5ef6e.js",
-  "application.js.map": "/packs/js/application-91e24bfc4cec83f5ef6e.js.map",
+  "application.js": "/packs/js/application-dd6ecec406866d0c518d.js",
+  "application.js.map": "/packs/js/application-dd6ecec406866d0c518d.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-91e24bfc4cec83f5ef6e.js"
+        "/packs/js/application-dd6ecec406866d0c518d.js"
       ],
       "js.map": [
-        "/packs/js/application-91e24bfc4cec83f5ef6e.js.map"
+        "/packs/js/application-dd6ecec406866d0c518d.js.map"
+      ]
+    },
+    "owned_stock_polling": {
+      "js": [
+        "/packs/js/owned_stock_polling-32757ffd725fc67c8bca.js"
+      ],
+      "js.map": [
+        "/packs/js/owned_stock_polling-32757ffd725fc67c8bca.js.map"
       ]
     },
     "stock_polling": {
       "js": [
-        "/packs/js/stock_polling-3ba63aaeef26e4f81afe.js"
+        "/packs/js/stock_polling-d7ef298b53b4577fe4f3.js"
       ],
       "js.map": [
-        "/packs/js/stock_polling-3ba63aaeef26e4f81afe.js.map"
+        "/packs/js/stock_polling-d7ef298b53b4577fe4f3.js.map"
       ]
     }
   },
-  "stock_polling.js": "/packs/js/stock_polling-3ba63aaeef26e4f81afe.js",
-  "stock_polling.js.map": "/packs/js/stock_polling-3ba63aaeef26e4f81afe.js.map"
+  "owned_stock_polling.js": "/packs/js/owned_stock_polling-32757ffd725fc67c8bca.js",
+  "owned_stock_polling.js.map": "/packs/js/owned_stock_polling-32757ffd725fc67c8bca.js.map",
+  "stock_polling.js": "/packs/js/stock_polling-d7ef298b53b4577fe4f3.js",
+  "stock_polling.js.map": "/packs/js/stock_polling-d7ef298b53b4577fe4f3.js.map"
 }
