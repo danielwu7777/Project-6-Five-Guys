@@ -17,10 +17,8 @@ StockSocket.on :message do |msg|
 
   msg_json['data'].each { |entry|  stock_hash[entry['s']] = entry['p']  }
 
-  #msg_stock = msg_json['data'][0]['s']
   msg_time = msg_json['data'][0]['t'].to_i
   if msg_time - prev_msg_time > 3000
-    #new_price = msg_json['data'][0]['p'].to_f
     stock_hash.each_pair{|ticker,price|StocksController.price_change ticker, price }
     prev_msg_time = msg_time
   end
