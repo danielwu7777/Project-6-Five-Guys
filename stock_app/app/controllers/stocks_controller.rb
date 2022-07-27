@@ -17,6 +17,7 @@ class StocksController < ApplicationController
   # GET /stocks/1 or /stocks/1.json
   def show
     @stock = Stock.find(params[:id])
+    @news_articles = StocksHelper.SpecificNews(@stock.ticker)
   end
 
   #created 7/21/22 by Noah Moon

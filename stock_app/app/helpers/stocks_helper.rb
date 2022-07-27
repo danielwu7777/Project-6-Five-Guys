@@ -25,4 +25,16 @@ module StocksHelper
     end
   end
 
+  # Created 7/27/2022 by Jake McCann
+  #
+  # Fetches 5 most recent stock specific news articles from Finnhub
+  def self.SpecificNews ticker
+    desired_articles = FinnhubClient.company_news(ticker, "2020-06-01", "2022-07-27").first(5)
+    desired_articles.map! do |finnhub_article|
+      human_time = Time.at(finnhub_article.datetime)
+      NewsArticle.new(finnhub_article.category,human_time, finnhub_article.headline, finnhub_article.image,
+                      finnhub_article.source,finnhub_article.summary, finnhub_article.url)
+    end
+  end
+
 end
