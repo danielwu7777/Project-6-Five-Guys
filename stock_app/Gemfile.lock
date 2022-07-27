@@ -95,8 +95,12 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.10.0)
+    ethon (0.15.0)
+      ffi (>= 1.15.0)
     event_emitter (0.2.6)
     ffi (1.15.5)
+    finnhub_ruby (1.1.16)
+      typhoeus (~> 1.0, >= 1.0.1)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -203,6 +207,8 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
+    typhoeus (1.4.0)
+      ethon (>= 0.9.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     warden (1.2.9)
@@ -237,6 +243,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   devise
+  finnhub_ruby
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.3)
