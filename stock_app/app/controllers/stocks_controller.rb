@@ -6,6 +6,7 @@ class StocksController < ApplicationController
   # GET /stocks or /stocks.json
   # Edited 7/26/22 by Noah Moon
   def index
+    @news_articles = StocksHelper.GeneralNews
     @stocks = Stock.all
     if current_user.currentbalance.nil? && current_user.initialbalance.nil?
       current_user.update currentbalance: current_user.liquidcash, initialbalance: current_user.liquidcash
@@ -79,6 +80,7 @@ class StocksController < ApplicationController
   # new_price: price after update
   def self.price_change ticker, new_price
     # Update stock
+    StocksHelper.GeneralNews
     stock_record = Stock.find_by ticker: ticker
     old_price = stock_record.price
     stock_record.update_price new_price
