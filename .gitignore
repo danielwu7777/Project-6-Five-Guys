@@ -28,6 +28,7 @@ stock_app/.rspec
 stock_app//db/*.sqlite3
 stock_app/db/*.sqlite3-journal
 stock_app/db/*.sqlite3-[0-9]*
+stock_app/db/*.sqlite3
 stock_app/public/system
 stock_app/coverage/
 stock_app/spec/tmp
