@@ -1,0 +1,13 @@
+<!-- Created 7/27/2022 by Jake McCann -->
+
+<div>
+  <h3><%=news_article.headline%></h3>
+  <h5>By: <%=news_article.source%></h5>
+  <a href="<%=news_article.url%>">
+    <img style="width:200px;height:200px" src="<%=news_article.image%>" />
+  </a>
+  <p><%=news_article.summary%></p>
+  <p>Category: <%= news_article.category %></p>
+  <p>Published: <%= news_article.time %>
+</div>
+<br />
