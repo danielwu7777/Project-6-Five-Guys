@@ -2,6 +2,8 @@
 
 <h1>Posts</h1>
 
+<%= line_chart Post.group_by_day(:created_at).sum(:views)%>
+
 <table>
   <thead>
     <tr>

@@ -10,58 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_26_230940) do
-
-  create_table "owned_stocks", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "ticker"
-    t.integer "shares_owned"
-    t.float "total_cost"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "integer"
-    t.integer "stock_id"
-    t.integer "purchased"
-  end
+ActiveRecord::Schema.define(version: 2022_07_26_232851) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.integer "views"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "stocks", force: :cascade do |t|
-    t.string "ticker"
-    t.float "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "transactions", force: :cascade do |t|
-    t.string "ticker"
-    t.string "action"
-    t.integer "shares"
-    t.datetime "time"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "stock_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.float "liquidcash"
-    t.float "initialbalance"
-    t.float "currentbalance"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
