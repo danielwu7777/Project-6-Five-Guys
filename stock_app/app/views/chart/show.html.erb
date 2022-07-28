@@ -1,4 +1,8 @@
-<h1>Chart#show</h1>
+<h1>Month chart of <%= @stock.ticker.to_s %></h1>
+
+<p>
 <%= @data.to_s %>
-<%= line_chart [["2021-01-01", 2], ["2021-01-02", 3]] %>
+</p>
+
+<%= line_chart @chart_data %>
 <p>Find me in app/views/chart/show.html.erb</p>
