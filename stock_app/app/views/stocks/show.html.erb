@@ -12,11 +12,10 @@
 </p>
 
 
+<%= link_to 'Trade', trade_path(@stock) %>
+<!-- <%= link_to 'Edit', edit_stock_path(@stock) %> | -->
+
 <% if @news_articles.count > 0 %>
   <h1>News: </h1>
   <%= render :partial => 'news_article', :collection => @news_articles %>
 <% end %>
-
-<%= link_to 'Trade', trade_path(@stock) %>
-<!-- <%= link_to 'Edit', edit_stock_path(@stock) %> | -->
-<!--<%= link_to 'View All Stocks', stocks_path %>-->
