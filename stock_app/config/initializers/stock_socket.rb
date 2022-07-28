@@ -14,8 +14,7 @@ StockSocket.on :message do |msg|
   return if msg_json.nil? || msg_json['data'].nil?
   stock_hash = {}
 
-
-  msg_json['data'].each { |entry|  stock_hash[entry['s']] = entry['p']  }
+  msg_json['data'].each { |entry| stock_hash[entry['s']] = entry['p']  }
 
   msg_time = msg_json['data'][0]['t'].to_i
   if msg_time - prev_msg_time > 3000
@@ -27,7 +26,17 @@ end
 StockSocket.on :open do
   puts "-- websocket open (#{StockSocket.url})"
   StockSocket.send('{"type":"subscribe","symbol":"BINANCE:BTCUSDT"}')
+  sleep(1)
   StockSocket.send('{"type":"subscribe","symbol":"GOOGL"}')
+  sleep(1)
+  StockSocket.send('{"type":"subscribe","symbol":"AAPL"}')
+  sleep(1)
+  StockSocket.send('{"type":"subscribe","symbol":"AMD"}')
+  sleep(1)
+  StockSocket.send('{"type":"subscribe","symbol":"NVDA"}')
+  sleep(1)
+  StockSocket.send('{"type":"subscribe","symbol":"BINANCE:ETHUSDT"}')
+  sleep(1.5)
 end
 
 StockSocket.on :close do |e|
