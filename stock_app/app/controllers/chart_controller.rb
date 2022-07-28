@@ -12,6 +12,7 @@ class ChartController < ApplicationController
   end
 
   def show
+    @period = "Month"
     @stock = Stock.find(params[:id])
 
     @finnhub_client = FinnhubRuby::DefaultApi.new
@@ -26,6 +27,47 @@ class ChartController < ApplicationController
       @chart_data << [date.to_s, @data[index]]
       date = date + 1
    }
+      
+  end
+
+  def show_half_year
+    @period = "Half year"
+    @stock = Stock.find(params[:id])
+
+    @finnhub_client = FinnhubRuby::DefaultApi.new
+
+    date = Date.today 
+    date.to_time.to_i
+    
+    @data =  @finnhub_client.stock_candles(@stock.ticker, 'D', (date - 183).to_time.to_i, date.to_time.to_i).o
+    @chart_data = []
+
+    @data.each_index { |index| 
+      @chart_data << [date.to_s, @data[index]]
+      date = date + 1
+    }
+    
+    render :show
+  end
+
+  def show_week
+    @period = "Week"
+    @stock = Stock.find(params[:id])
+
+    @finnhub_client = FinnhubRuby::DefaultApi.new
+
+    date = Date.today 
+    date.to_time.to_i
+    
+    @data =  @finnhub_client.stock_candles(@stock.ticker, 'D', (date - 7).to_time.to_i, date.to_time.to_i).o
+    @chart_data = []
+
+    @data.each_index { |index| 
+      @chart_data << [date.to_s, @data[index]]
+      date = date + 1
+   }
+
+   render :show
       
   end
 

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'chart/show/:id', to: 'chart#show'
+  get 'chart/show_half_year/:id', to: 'chart#show_half_year'
+  get 'chart/show_week/:id', to: 'chart#show_week'
   resources :transactions
   devise_for :users
   resources :owned_stocks do
