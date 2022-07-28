@@ -36,7 +36,7 @@ StockSocket.on :open do
   StockSocket.send('{"type":"subscribe","symbol":"NVDA"}')
   sleep(1)
   StockSocket.send('{"type":"subscribe","symbol":"BINANCE:ETHUSDT"}')
-  sleep(1)
+  sleep(1.5)
 end
 
 StockSocket.on :close do |e|
