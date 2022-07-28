@@ -248,6 +248,7 @@ DEPENDENCIES
   chartkick (~> 4.2)
   devise
   finnhub_ruby
+  groupdate (~> 6.1)
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.3)

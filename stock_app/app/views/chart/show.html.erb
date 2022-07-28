@@ -1,3 +1,5 @@
+
 <h1><%= @period %> chart of <%= @stock.ticker.to_s %></h1>
 
-<%= line_chart @chart_data, xtitle: "Date", ytitle: "Price" %>
+<%= line_chart @chart_data, xtitle: "Date", ytitle: "Price", width: "1000px"%>
+

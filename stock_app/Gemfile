@@ -64,8 +64,9 @@ gem 'devise'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+#Imported by Yuhao Yan
 gem "chartkick", "~> 4.2"
 
+#Imported by Yuhao Yan
 gem "groupdate", "~> 6.1"
 
-gem "finnhub_ruby", "~> 1.1"
