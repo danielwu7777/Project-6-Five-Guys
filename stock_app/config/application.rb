@@ -1,3 +1,4 @@
+# Edited 7/25/2022 by Jake McCann
 require_relative "boot"
 
 require "rails/all"
@@ -18,5 +19,7 @@ module StockApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.autoload_paths += Dir["#{Rails.root}app/controllers"]
+    config.autoload_paths += Dir["#{Rails.root}config/initializers"]
   end
 end
