@@ -94,6 +94,12 @@ class StocksController < ApplicationController
   # updates @stocks to new values in db for polling
   def price_change_polling
     @stocks = Stock.all
+    render @stocks, :template => '_stock'
+  end
+
+  def specific_poll
+    @stock = Stock.find(params[:id])
+    render :partial => 'stock_show', :data => @stock
   end
 
   private

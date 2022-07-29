@@ -1,18 +1,10 @@
 <!-- Edited 7/27/22 by Jake McCann -->
-<%= javascript_pack_tag 'stock_polling' %>
+<%= javascript_pack_tag 'stock_specific_polling' %>
 
-<p>
-  <strong>Ticker:</strong>
-  <%= @stock.ticker %>
-</p>
+<div id="stock">
+  <%= render :partial => 'stock_show', :data => @stock %>
+</div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @stock.price %>
-</p>
-
-
-<%= link_to 'Trade', trade_path(@stock) %>
 <!-- <%= link_to 'Edit', edit_stock_path(@stock) %> | -->
 
 <% if @news_articles.count > 0 %>
