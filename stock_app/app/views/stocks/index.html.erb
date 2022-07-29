@@ -14,8 +14,9 @@
     </tr>
   </thead>
 
-  <tbody>
-  <%= render :partial => 'stock', :collection => @stocks %>
+  <tbody id="stock_table">
+    <%= render :partial => 'stock', :collection => @stocks %>
+  </tbody>
 </table>
 
 <br>
