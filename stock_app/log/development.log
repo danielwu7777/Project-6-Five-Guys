@@ -30153,3 +30153,777 @@ ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=gene
 ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.035627
 ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.031056
 ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.037957
+DEPRECATION WARNING: Initialization autoloaded the constants ApplicationHelper, HomeHelper, OwnedStocksHelper, StocksHelper, NewsArticle, TransactionsHelper, UsersHelper, DeviseHelper, and ApplicationController.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ApplicationHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/danielwu/Documents/Project-6-Five-Guys/stock_app/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2022-07-28 23:49:39 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Processing by StocksController#index as HTML
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.231973
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/danielwu/Documents/Project-6-Five-Guys/stock_app/public/packs
+[Webpacker] Hash: 1df3907f0b8184e58818
+Version: webpack 4.46.0
+Time: 1266ms
+Built at: 07/28/2022 11:49:42 PM
+                                             Asset      Size               Chunks                         Chunk Names
+            js/application-ef8b7f008ec44b0a964d.js   525 KiB          application  [emitted] [immutable]  application
+        js/application-ef8b7f008ec44b0a964d.js.map   523 KiB          application  [emitted] [dev]        application
+    js/owned_stock_polling-32757ffd725fc67c8bca.js   408 KiB  owned_stock_polling  [emitted] [immutable]  owned_stock_polling
+js/owned_stock_polling-32757ffd725fc67c8bca.js.map   391 KiB  owned_stock_polling  [emitted] [dev]        owned_stock_polling
+          js/stock_polling-139b60ad4e84b8b0ef40.js   408 KiB        stock_polling  [emitted] [immutable]  stock_polling
+      js/stock_polling-139b60ad4e84b8b0ef40.js.map   391 KiB        stock_polling  [emitted] [dev]        stock_polling
+                                     manifest.json  1.09 KiB                       [emitted]              
+Entrypoint application = js/application-ef8b7f008ec44b0a964d.js js/application-ef8b7f008ec44b0a964d.js.map
+Entrypoint owned_stock_polling = js/owned_stock_polling-32757ffd725fc67c8bca.js js/owned_stock_polling-32757ffd725fc67c8bca.js.map
+Entrypoint stock_polling = js/stock_polling-139b60ad4e84b8b0ef40.js js/stock_polling-139b60ad4e84b8b0ef40.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 644 bytes {application} [built]
+[./app/javascript/packs/owned_stock_polling.js] 199 bytes {owned_stock_polling} [built]
+[./app/javascript/packs/stock_polling.js] 417 bytes {stock_polling} [built]
+    + 110 hidden modules
+
+  [1m[36mStock Load (1.7ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:18
+  Rendered collection of stocks/_stock.html.erb [3 times] (Duration: 2.2ms | Allocations: 1019)
+  Rendered collection of stocks/_news_article.html.erb [5 times] (Duration: 0.7ms | Allocations: 299)
+  Rendered stocks/index.html.erb within layouts/application (Duration: 3235.6ms | Allocations: 9171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4652.7ms | Allocations: 120332)
+Completed 200 OK in 4903ms (Views: 4653.7ms | ActiveRecord: 2.1ms | Allocations: 135841)
+
+
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.062413
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.058934
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.051948
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.051954
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.049937
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.049397
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.061729
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.073415
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.056373
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.047158
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.064936
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.065695
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.050785
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.048913
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:ETHUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.046186
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:ETHUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.056619
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.073089
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.049326
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.068167
+  [1m[36mStock Load (2.4ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.094222
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.056342
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:ETHUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.049395
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.048815
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.075987
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.054227
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.069223
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.046464
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.050516
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.05331
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.051939
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.050364
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.05459
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.053492
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.069371
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:ETHUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.061517
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.046754
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.045456
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.047375
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.051863
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.057599
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:ETHUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.060815
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.061835
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:ETHUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.058082
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.06177
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.050143
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.045547
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.046649
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+Started POST "/stock_poll" for 127.0.0.1 at 2022-07-28 23:49:49 -0400
+Processing by StocksController#price_change_polling as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/controllers/stocks_controller.rb:97:in `price_change_polling'
+  Rendered collection of stocks/_stock.html.erb [3 times] (Duration: 1.1ms | Allocations: 605)
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.058093
+Completed 200 OK in 12ms (Views: 4.9ms | ActiveRecord: 0.8ms | Allocations: 4854)
+
+
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.052113
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.047755
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:ETHUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.051157
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.109302
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.041093
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.059931
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.049926
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+Started GET "/" for 127.0.0.1 at 2022-07-28 23:49:51 -0400
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Processing by StocksController#index as HTML
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.04645
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:18
+  Rendered collection of stocks/_stock.html.erb [3 times] (Duration: 1.3ms | Allocations: 564)
+  Rendered collection of stocks/_news_article.html.erb [5 times] (Duration: 0.2ms | Allocations: 105)
+  Rendered stocks/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3330)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 10576)
+Completed 200 OK in 71ms (Views: 19.0ms | ActiveRecord: 0.1ms | Allocations: 19023)
+
+
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.047286
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.064076
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:ETHUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.050538
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:ETHUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.042492
+Started GET "/" for 127.0.0.1 at 2022-07-28 23:49:51 -0400
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Processing by StocksController#index as HTML
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.04448
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.035726
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.03824
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.026841
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.135684
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.0ms | Allocations: 48099)
+
+
+  
+FinnhubRuby::ApiError (Error message: the server returns an error
+HTTP status code: 429
+Response headers: {"date"=>"Fri, 29 Jul 2022 03:49:51 GMT", "content-type"=>"text/plain; charset=utf-8", "content-length"=>"73", "access-control-allow-credentials"=>"true", "access-control-allow-headers"=>"Origin", "access-control-allow-methods"=>"POST, GET, OPTIONS, PUT, DELETE", "access-control-allow-origin"=>"*", "access-control-expose-headers"=>"Content-Length", "x-ratelimit-limit"=>"60", "x-ratelimit-remaining"=>"0", "x-ratelimit-reset"=>"1659066639", "cf-cache-status"=>"DYNAMIC", "expect-ct"=>"max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"", "report-to"=>"{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=J20LNdVcwPH3Gisuq7X42f2q34Dj2i5hrGwI8umf9ObJgMWhLECOy9RxJpOECKAuZfxxTLni7rg0k%2FubrZSQgoqUveVIwDTwWToAVSQM0Bkw673p25rt9MNRBOzP\"}],\"group\":\"cf-nel\",\"max_age\":604800}", "nel"=>"{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}", "server"=>"cloudflare", "cf-ray"=>"7322e31799242c6c-ORD", "alt-svc"=>"h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"}
+Response body: {"error":"API limit reached. Please try again later. Remaining Limit: 0"}):
+  
+app/helpers/stocks_helper.rb:20:in `GeneralNews'
+app/controllers/stocks_controller.rb:9:in `index'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.146724
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.039532
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.036637
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.034809
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.038454
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.039162
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.041733
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.032118
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.048176
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.037361
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.034568
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.034525
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.033367
+Started GET "/" for 127.0.0.1 at 2022-07-28 23:49:54 -0400
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Processing by StocksController#index as HTML
+Started POST "/stock_poll" for 127.0.0.1 at 2022-07-28 23:49:54 -0400
+Processing by StocksController#price_change_polling as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 807)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.6.1) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.6.1) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.8.1) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (6.1.6.1) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.6.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.6.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.6.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.6.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.6.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.6.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.6.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.6.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.6.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.6.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.6.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.6.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.6.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.6.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.6.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.6.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.6.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.6.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.6.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.6.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.6.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.6.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.6.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.6.1) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.6.1) lib/rails/engine.rb:539:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.107874
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 0.0ms | Allocations: 61607)
+
+
+  
+FinnhubRuby::ApiError (Error message: the server returns an error
+HTTP status code: 429
+Response headers: {"date"=>"Fri, 29 Jul 2022 03:49:54 GMT", "content-type"=>"text/plain; charset=utf-8", "content-length"=>"73", "access-control-allow-credentials"=>"true", "access-control-allow-headers"=>"Origin", "access-control-allow-methods"=>"POST, GET, OPTIONS, PUT, DELETE", "access-control-allow-origin"=>"*", "access-control-expose-headers"=>"Content-Length", "x-ratelimit-limit"=>"60", "x-ratelimit-remaining"=>"0", "x-ratelimit-reset"=>"1659066639", "cf-cache-status"=>"DYNAMIC", "expect-ct"=>"max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"", "report-to"=>"{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=v85ckWHaP0gU50gzJCqoDQ6bc8wrqHJRsfqej3VFh8N%2Fp%2BR9cvUAvv0yj0dNJbh8%2FumEDYkaQvtOCtvqT4yP2%2Fe4Xx2GUwK89YrAiQyamqKIkjr9pzli7DSj%2FGqk\"}],\"group\":\"cf-nel\",\"max_age\":604800}", "nel"=>"{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}", "server"=>"cloudflare", "cf-ray"=>"7322e3285a717f98-ORD", "alt-svc"=>"h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"}
+Response body: {"error":"API limit reached. Please try again later. Remaining Limit: 0"}):
+  
+app/helpers/stocks_helper.rb:20:in `GeneralNews'
+app/controllers/stocks_controller.rb:9:in `index'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.0331
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.034396
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.035505
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.038069
+Started GET "/" for 127.0.0.1 at 2022-07-28 23:49:55 -0400
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Processing by StocksController#index as HTML
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.037226
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms | Allocations: 1688)
+
+
+  
+FinnhubRuby::ApiError (Error message: the server returns an error
+HTTP status code: 429
+Response headers: {"date"=>"Fri, 29 Jul 2022 03:49:55 GMT", "content-type"=>"text/plain; charset=utf-8", "content-length"=>"73", "access-control-allow-credentials"=>"true", "access-control-allow-headers"=>"Origin", "access-control-allow-methods"=>"POST, GET, OPTIONS, PUT, DELETE", "access-control-allow-origin"=>"*", "access-control-expose-headers"=>"Content-Length", "x-ratelimit-limit"=>"60", "x-ratelimit-remaining"=>"0", "x-ratelimit-reset"=>"1659066639", "cf-cache-status"=>"DYNAMIC", "expect-ct"=>"max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"", "report-to"=>"{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=g1DvNI4O%2FPoLr9HfAYHqykZCPAzkGcZ%2BfcnjJvNpVhbkgaefhH6k72N0XmWhpGuNWQVsm2XOrcffhuKtFKffiToPwZuJtjI8vW4UvC%2BhkFjKEr183bpnSzwblwzX\"}],\"group\":\"cf-nel\",\"max_age\":604800}", "nel"=>"{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}", "server"=>"cloudflare", "cf-ray"=>"7322e32f88c57f98-ORD", "alt-svc"=>"h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"}
+Response body: {"error":"API limit reached. Please try again later. Remaining Limit: 0"}):
+  
+app/helpers/stocks_helper.rb:20:in `GeneralNews'
+app/controllers/stocks_controller.rb:9:in `index'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.034939
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.03594
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.031413
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.041184
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.031096
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.040323
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.035198
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.034953
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.04543
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.032897
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.035031
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.034796
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.046381
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.035997
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.034467
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.028812
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.036604
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.030037
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.034208
+DEPRECATION WARNING: Initialization autoloaded the constants ApplicationHelper, HomeHelper, OwnedStocksHelper, StocksHelper, NewsArticle, TransactionsHelper, UsersHelper, DeviseHelper, and ApplicationController.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ApplicationHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/danielwu/Documents/Project-6-Five-Guys/stock_app/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2022-07-28 23:51:08 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Processing by StocksController#index as HTML
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.143015
+  Rendering layout layouts/application.html.erb
+  Rendering stocks/index.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+  ↳ app/views/stocks/index.html.erb:18
+  Rendered collection of stocks/_stock.html.erb [3 times] (Duration: 1.9ms | Allocations: 1019)
+  Rendered collection of stocks/_news_article.html.erb [5 times] (Duration: 0.4ms | Allocations: 299)
+  Rendered stocks/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 7672)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 64.0ms | Allocations: 25555)
+Completed 200 OK in 228ms (Views: 66.0ms | ActiveRecord: 0.6ms | Allocations: 41007)
+
+
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.059903
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.041454
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.044013
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.048293
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.042815
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+Started POST "/stock_poll" for 127.0.0.1 at 2022-07-28 23:51:13 -0400
+Processing by StocksController#price_change_polling as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks"[0m
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.063654
+  ↳ app/controllers/stocks_controller.rb:97:in `price_change_polling'
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+  Rendered collection of stocks/_stock.html.erb [3 times] (Duration: 0.9ms | Allocations: 605)
+Completed 200 OK in 29ms (Views: 23.5ms | ActiveRecord: 0.6ms | Allocations: 25256)
+
+
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.051291
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.040377
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.060176
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.064625
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.046208
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.050074
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.073498
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.059481
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.059844
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.046508
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.047531
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.062012
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.04967
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.049906
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.045812
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.055759
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.062003
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.043609
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.048688
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.041302
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.051737
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.045261
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.054358
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.052146
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.039077
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.04954
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:ETHUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.051818
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.042442
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:ETHUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.053572
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.048916
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.061157
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.052154
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:ETHUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.04839
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.051058
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.060338
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.035369
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.088676
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.042432
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.042385
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.049955
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.048268
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.04632
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.066782
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.048158
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.057014
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.042818
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.046712
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:ETHUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.051408
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.047831
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.048476
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.050893
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.052005
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=200 return_code=ok total_time=0.049246
+  [1m[36mStock Load (0.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."ticker" = ? LIMIT ?[0m  [["ticker", "BINANCE:BTCUSDT"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:85:in `price_change'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.033501
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.030535
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.041312
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.036481
+DEPRECATION WARNING: Initialization autoloaded the constants ApplicationHelper, HomeHelper, OwnedStocksHelper, StocksHelper, NewsArticle, TransactionsHelper, UsersHelper, DeviseHelper, and ApplicationController.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ApplicationHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+In order to autoload safely at boot time, please wrap your code in a reloader
+callback this way:
+
+    Rails.application.reloader.to_prepare do
+      # Autoload classes and modules needed at boot time here.
+    end
+
+That block runs when the application boots, and every time there is a reload.
+For historical reasons, it may run twice, so it has to be idempotent.
+
+Check the "Autoloading and Reloading Constants" guide to learn more about how
+Rails autoloads and reloads.
+ (called from <main> at /home/danielwu/Documents/Project-6-Five-Guys/stock_app/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2022-07-28 23:51:52 -0400
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Processing by StocksController#index as HTML
+ETHON: Libcurl initialized
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.126323
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 0.0ms | Allocations: 5241)
+
+
+  
+FinnhubRuby::ApiError (Error message: the server returns an error
+HTTP status code: 429
+Response headers: {"date"=>"Fri, 29 Jul 2022 03:51:52 GMT", "content-type"=>"text/plain; charset=utf-8", "content-length"=>"73", "access-control-allow-credentials"=>"true", "access-control-allow-headers"=>"Origin", "access-control-allow-methods"=>"POST, GET, OPTIONS, PUT, DELETE", "access-control-allow-origin"=>"*", "access-control-expose-headers"=>"Content-Length", "x-ratelimit-limit"=>"60", "x-ratelimit-remaining"=>"0", "x-ratelimit-reset"=>"1659066728", "cf-cache-status"=>"DYNAMIC", "expect-ct"=>"max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"", "report-to"=>"{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=mGc%2FzFK3Js8PaL4HBziBtcbgVepoUzhMTYcXiFgpk2y1LmwS5kdtJ9uhwmLyplS6%2FST3wBw7pLDXJ5oIUy%2F7fmQnJacRbwvZ0u2zQ9NYjeVoo3PXeXYjlVbCkyJ%2B\"}],\"group\":\"cf-nel\",\"max_age\":604800}", "nel"=>"{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}", "server"=>"cloudflare", "cf-ray"=>"7322e6072bf12db6-ORD", "alt-svc"=>"h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"}
+Response body: {"error":"API limit reached. Please try again later. Remaining Limit: 0"}):
+  
+app/helpers/stocks_helper.rb:20:in `GeneralNews'
+app/controllers/stocks_controller.rb:9:in `index'
+Started GET "/" for 127.0.0.1 at 2022-07-28 23:51:53 -0400
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Processing by StocksController#index as HTML
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.034479
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms | Allocations: 1809)
+
+
+  
+FinnhubRuby::ApiError (Error message: the server returns an error
+HTTP status code: 429
+Response headers: {"date"=>"Fri, 29 Jul 2022 03:51:53 GMT", "content-type"=>"text/plain; charset=utf-8", "content-length"=>"73", "access-control-allow-credentials"=>"true", "access-control-allow-headers"=>"Origin", "access-control-allow-methods"=>"POST, GET, OPTIONS, PUT, DELETE", "access-control-allow-origin"=>"*", "access-control-expose-headers"=>"Content-Length", "x-ratelimit-limit"=>"60", "x-ratelimit-remaining"=>"0", "x-ratelimit-reset"=>"1659066728", "cf-cache-status"=>"DYNAMIC", "expect-ct"=>"max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"", "report-to"=>"{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=ALB0Si39bCVT0DAGlsqY5n6%2FFWoQhP82lkA3v6cQtHlnclY%2FrtjgAdUEmc4XMrYlTIE0%2F9c82hbR21lP98m6R%2Fsu1PI5Qgo16INmW18%2B9M6GjqL8OYUKeHVj9UhX\"}],\"group\":\"cf-nel\",\"max_age\":604800}", "nel"=>"{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}", "server"=>"cloudflare", "cf-ray"=>"7322e6111d142db6-ORD", "alt-svc"=>"h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400"}
+Response body: {"error":"API limit reached. Please try again later. Remaining Limit: 0"}):
+  
+app/helpers/stocks_helper.rb:20:in `GeneralNews'
+app/controllers/stocks_controller.rb:9:in `index'
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.033454
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.038019
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.056587
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.0524
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.038784
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.032604
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.043047
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.035787
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.030812
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.047933
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.036231
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.032319
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.03739
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.038826
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.039624
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.037835
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.031603
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.040592
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.043147
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.039992
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.039482
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.047415
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.029072
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.045357
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.030764
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.037481
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.038845
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.047782
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.036394
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.033671
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.032533
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.034585
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.033173
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.069331
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.044801
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.031641
+ETHON: performed EASY effective_url=https://finnhub.io/api/v1/news?category=general&token=cbb0nh2ad3i91bfqdnig response_code=429 return_code=ok total_time=0.029119
