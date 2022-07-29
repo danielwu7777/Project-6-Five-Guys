@@ -53,8 +53,6 @@ ActiveRecord::Schema.define(version: 2022_07_27_144044) do
     t.float "liquidcash"
     t.float "initialbalance"
     t.float "currentbalance"
-    t.string "fname"
-    t.string "lname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

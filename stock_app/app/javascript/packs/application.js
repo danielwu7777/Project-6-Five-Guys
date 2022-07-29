@@ -3,11 +3,8 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-// Edited 7/28/2022 by Daniel Wu: added bootstrap require
-
 //= require jquery3
 //= require jquery_ujs
-//= require bootstrap-sprockets
 //= require_tree .
 
 import Rails from "@rails/ujs"
