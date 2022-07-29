@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
   resources :transactions
   devise_for :users
-  resources :owned_stocks do
-    post :price_change_polling
-  end
-
-  resources :stocks do
-
-  end
-
+  resources :owned_stocks
+  resources :stocks
   resources :users
 
 
@@ -30,6 +24,7 @@ Rails.application.routes.draw do
   patch '/owned_stocks/:id/buy_stock', to: 'owned_stocks#buy_stock', as: 'buy_stock'
   patch '/owned_stocks/:id/sell_stock', to: 'owned_stocks#sell_stock', as: 'sell_stock'
   post 'stock_poll', to: 'stocks#price_change_polling',  as: 'poll'
+  post 'stocks/:id/stock_poll', to: 'stocks#specific_poll',  as: 'specific_poll'
   # Created 7/26/22 by Noah Moon
   get "/login", :to => "stocks#index"
   get "/register", :to => "stocks#index"
