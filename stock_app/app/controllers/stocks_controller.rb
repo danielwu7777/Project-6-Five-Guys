@@ -1,6 +1,8 @@
 #Edited 7/26/2022 by Jake McCann
 #Edited 7/27/2022
 class StocksController < ApplicationController
+  Year_Unix = 31556926
+  Month_unix = 2629743
   before_action :set_stock, only: %i[ show edit update destroy ]
 
   # GET /stocks or /stocks.json
@@ -17,6 +19,17 @@ class StocksController < ApplicationController
   # GET /stocks/1 or /stocks/1.json
   def show
     @stock = Stock.find(params[:id])
+    data = JSON.parse(FinnhubClient.stock_candles(@stock.ticker, 'D', Time.now.utc.to_i - Year_Unix, Time.now.utc.to_i).to_json)
+    puts "FIND THIS:  " + data.class.to_s
+    @chart_data = {}
+    @y_min = nil
+    data["t"].each_with_index{|ele,i|
+      @chart_data[Time.at(ele).to_date.to_s] =  [data["o"][i],data["c"][i],data["l"][i],data["h"][i]]
+      @y_min = data["l"][i] if  @y_min.nil? || data["l"][i] < @y_min
+    }
+    @y_min - 10 > 0 ? @y_min = (@y_min - 10).round : @y_min = 0
+    @date = Date.yesterday.to_s
+    @month = Date.today.prev_month.to_s
     @news_articles = StocksHelper.SpecificNews(@stock.ticker)
   end
 

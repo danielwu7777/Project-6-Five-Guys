@@ -1,3 +1,42 @@
-// Place all the styles related to the stocks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+//Edited 7/30/2022 by Noah Moon
+
+#graphs{
+  display: grid;
+}
+.box {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+#graphButtons{
+  float: right;
+  margin-right:5%;
+}
+#graphButtons button{
+
+  border: 2px solid black;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+#stockTicker{
+  margin-top: 1%;
+  text-align: center;
+}
+#stockPrice{
+  text-align: center;
+}
+#trade{
+  border: 2px solid black;
+  padding: 2px;
+  color:black;
+  font-size: large;
+}
+#trade:visited{
+  color:black;
+}
+#trade:hover{
+  color:white;
+  background-color: #068e1b;
+}
+#tradeContainer{
+  text-align: center;
+}

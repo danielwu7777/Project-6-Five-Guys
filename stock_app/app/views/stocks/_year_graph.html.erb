@@ -1,0 +1,28 @@
+<!-- Created 7/30/2022 by Noah Moon -->
+<%= candlestick_chart @chart_data, id:"year",  class: 'box',
+                      theme: 'roma',
+                      options: {
+                        title: {
+                          text: "1 Year",
+                          left: 'center'
+                        },
+                        yAxis: {
+                          name: "USD",
+                          type: 'value',
+                          min: @y_min
+                        },
+                        xAxis: {
+                          name: "Date",
+                        },
+                        dataZoom: [
+                          {
+                            id: 'dataZoomX',
+                            type: 'slider',
+                            xAxisIndex: [0],
+                            filterMode: 'filter',
+                            start: 0,
+                            end: 100
+                          }
+                        ],
+                        width: '100%'
+                      }%>
