@@ -5,9 +5,30 @@
   <%= render :partial => 'stock_show', :data => @stock %>
 </div>
 
+<%= candlestick_chart @chart_data,  class: 'box',
+                      theme: 'roma',
+                      options: {
+                        yAxis: {
+                          name: "USD",
+                          type: 'value',
+                          min: @y_min
+                        },
+                        xAxis: {
+                          name: "Date",
+                        },
+                        dataZoom: [
+                          {
+                            id: 'dataZoomX',
+                            type: 'slider',
+                            xAxisIndex: [0],
+                            filterMode: 'filter',
+                          }
+                        ]
+                      }%>
 <!-- <%= link_to 'Edit', edit_stock_path(@stock) %> | -->
 
 <% if @news_articles.count > 0 %>
   <h1>News: </h1>
+
   <%= render :partial => 'news_article', :collection => @news_articles %>
 <% end %>

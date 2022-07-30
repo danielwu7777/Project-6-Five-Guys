@@ -6,6 +6,8 @@
 //= require jquery3
 //= require jquery_ujs
 //= require_tree .
+//= require echarts.min.js
+//= require echarts/theme/dark.js
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -15,3 +17,7 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+import * as echarts from "echarts";
+import "echarts/theme/dark";
+
+window.echarts = echarts;
