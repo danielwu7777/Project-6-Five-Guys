@@ -20,7 +20,6 @@ class StocksController < ApplicationController
   def show
     @stock = Stock.find(params[:id])
     data = JSON.parse(FinnhubClient.stock_candles(@stock.ticker, 'D', Time.now.utc.to_i - Year_Unix, Time.now.utc.to_i).to_json)
-    puts "FIND THIS:  " + data.class.to_s
     @chart_data = {}
     @y_min = nil
     data["t"].each_with_index{|ele,i|
@@ -28,8 +27,6 @@ class StocksController < ApplicationController
       @y_min = data["l"][i] if  @y_min.nil? || data["l"][i] < @y_min
     }
     @y_min - 10 > 0 ? @y_min = (@y_min - 10).round : @y_min = 0
-    @date = Date.yesterday.to_s
-    @month = Date.today.prev_month.to_s
     @news_articles = StocksHelper.SpecificNews(@stock.ticker)
   end
 
