@@ -1,0 +1,26 @@
+<%= candlestick_chart @chart_data,  id: "month", class: 'box',
+                      theme: 'roma',
+                      options: {
+                        title: {
+                          text: "1 Month",
+                          left: 'center'
+                        },
+                        yAxis: {
+                          name: "USD",
+                          type: 'value',
+                          min: @y_min
+                        },
+                        xAxis: {
+                          name: "Date",
+                        },
+                        dataZoom: [
+                          {
+                            id: 'dataZoomX',
+                            type: 'slider',
+                            xAxisIndex: [0],
+                            filterMode: 'filter',
+                            start: 92,
+                            end: 100
+                          }
+                        ]
+                      }%>

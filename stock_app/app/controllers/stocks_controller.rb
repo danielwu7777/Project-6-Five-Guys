@@ -24,11 +24,12 @@ class StocksController < ApplicationController
     @chart_data = {}
     @y_min = nil
     data["t"].each_with_index{|ele,i|
-      @chart_data[Time.at(ele).to_date] =  [data["o"][i],data["c"][i],data["l"][i],data["h"][i]]
+      @chart_data[Time.at(ele).to_date.to_s] =  [data["o"][i],data["c"][i],data["l"][i],data["h"][i]]
       @y_min = data["l"][i] if  @y_min.nil? || data["l"][i] < @y_min
     }
     @y_min - 10 > 0 ? @y_min = (@y_min - 10).round : @y_min = 0
-    @date = Date.today.to_s
+    @date = Date.yesterday.to_s
+    @month = Date.today.prev_month.to_s
     @news_articles = StocksHelper.SpecificNews(@stock.ticker)
   end
 

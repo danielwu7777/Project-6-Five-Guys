@@ -1,34 +1,28 @@
 <!-- Edited 7/27/22 by Jake McCann -->
+<!-- Edited 7/30/22 by Jake McCann -->
 <%= javascript_pack_tag 'stock_specific_polling' %>
-
+<%= javascript_pack_tag 'stock', defer: true %>
+<% require 'date' %>
 <div id="stock">
   <%= render :partial => 'stock_show', :data => @stock %>
 </div>
+<p id="tradeContainer"><%= link_to 'Trade', trade_path(@stock), id: "trade" %></p>
+<div id="graphs">
+  <%= render "stocks/year_graph" %>
+  <%= render "stocks/month_graph" %>
+  <%= render "stocks/three_month_graph" %>
+</div>
+<div id="graphButtons">
+  <button id = "monthButton">1 Month</button>
+  <button id = "threeMonthButton">3 Months</button>
+  <button id = "yearButton">1 Year</button>
+</div>
 
-<%= candlestick_chart @chart_data,  class: 'box',
-                      theme: 'roma',
-                      options: {
-                        yAxis: {
-                          name: "USD",
-                          type: 'value',
-                          min: @y_min
-                        },
-                        xAxis: {
-                          name: "Date",
-                        },
-                        dataZoom: [
-                          {
-                            id: 'dataZoomX',
-                            type: 'slider',
-                            xAxisIndex: [0],
-                            filterMode: 'filter',
-                          }
-                        ]
-                      }%>
+
 <!-- <%= link_to 'Edit', edit_stock_path(@stock) %> | -->
-
 <% if @news_articles.count > 0 %>
   <h1>News: </h1>
 
   <%= render :partial => 'news_article', :collection => @news_articles %>
 <% end %>
+
