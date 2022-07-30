@@ -42,9 +42,6 @@ body{
 .nav_item:visited:hover {
     color: #068e1b;
 }
-.test_item{
-    color: black
-}
 .navbar-link:visited{
     color: black;
 }
