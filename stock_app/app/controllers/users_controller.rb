@@ -67,6 +67,10 @@ class UsersController < ApplicationController
     impacted_users.each { |user_id|  User.find(user_id).update_portfolio_value old_price, new_price}
   end
 
+  def poll
+    render :partial => 'user_money', :data => current_user
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
