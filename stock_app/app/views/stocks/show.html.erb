@@ -20,9 +20,15 @@
 
 
 <!-- <%= link_to 'Edit', edit_stock_path(@stock) %> | -->
+
+
 <% if @news_articles.count > 0 %>
   <h1>News: </h1>
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x" data-equalizer data-equalize-on="medium" >
+      <%= render :partial => 'news_article', :collection => @news_articles %>
+    </div>
+  </div>
 
-  <%= render :partial => 'news_article', :collection => @news_articles %>
 <% end %>
 
