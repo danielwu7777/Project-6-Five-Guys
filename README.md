@@ -38,4 +38,10 @@ Daniel: Documentation Manager
 
 Hao: Testing manager
 
-- Tasks: 
+- Tasks:
+    - Initialized chartkick
+    - Initialized Stock rest API
+    - Implemented live price updates to database
+    - Making chart pages for week/month/half year views.
+
+
