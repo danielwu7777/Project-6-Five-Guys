@@ -25,8 +25,6 @@ Rails.application.routes.draw do
   patch '/owned_stocks/:id/sell_stock', to: 'owned_stocks#sell_stock', as: 'sell_stock'
   post 'stock_poll', to: 'stocks#price_change_polling',  as: 'poll'
   post 'stocks/:id/stock_poll', to: 'stocks#specific_poll',  as: 'specific_poll'
-  post 'owned_stocks/account_value_poll', to: 'users#poll',  as: 'account_value_poll'
-  post 'owned_stocks/owned_stock_value_poll', to: 'owned_stocks#price_change_polling',  as: 'owned_stock_poll'
   # Created 7/26/22 by Noah Moon
   get "/login", :to => "stocks#index"
   get "/register", :to => "stocks#index"

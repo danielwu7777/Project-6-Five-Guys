@@ -164,8 +164,7 @@ class OwnedStocksController < ApplicationController
   # Created 7/26/22 by Jake McCann
   # updates @owned_stocks to new values in db for polling
   def price_change_polling
-    @owned_stocks = OwnedStock.where(:user_id => current_user.id)
-    render :partial => 'owned_stock', :collection => @owned_stocks
+    @owned_stocks = OwnedStock.all
   end
 
   private
