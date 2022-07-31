@@ -1,0 +1,9 @@
+<tr>
+  <td><%= owned_stock.user_id %></td>
+  <td><%= owned_stock.ticker %></td>
+  <td><%= owned_stock.shares_owned %></td>
+  <td><%= owned_stock.total_cost %></td>
+  <td><%= owned_stock.current_value %></td>
+  <td><%= ((owned_stock.current_value / owned_stock.total_cost - 1) * 100).round(2)  %>%</td>
+  <td><%= link_to 'View Stock', owned_stock.stock %></td>
+</tr>
