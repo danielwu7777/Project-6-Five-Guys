@@ -58,3 +58,12 @@ body{
 .navbar-link:hover{
     color: #068e1b;
 }
+.alert{
+    margin-left: 2%;
+}
+.alert-success{
+    color: green;
+}
+.alert-danger{
+    color: red;
+}
