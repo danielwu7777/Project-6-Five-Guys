@@ -12,9 +12,6 @@
   <%= f.number_field :shares %>
   <%= f.submit "sell" %>
 <% end %>
-
-<%= link_to 'Show', @owned_stock %> |
-<%= link_to 'Back', owned_stocks_path %>
 <% else %>
   <p class="error" style="color: red"><%= @sell_error %>|<%= link_to 'Buy', buy_path(@stock.id) %> |</p>
 

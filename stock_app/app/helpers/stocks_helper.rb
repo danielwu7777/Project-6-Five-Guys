@@ -17,7 +17,7 @@ module StocksHelper
   #
   # Fetches 5 most recent general news articles from Finnhub
   def self.GeneralNews
-    desired_articles = FinnhubClient.market_news('general').first(5)
+    desired_articles = FinnhubClient.market_news('general').first(6)
     desired_articles.map! do |finnhub_article|
       human_time = Time.at(finnhub_article.datetime)
       NewsArticle.new(finnhub_article.category,human_time, finnhub_article.headline, finnhub_article.image,
