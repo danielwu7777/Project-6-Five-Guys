@@ -8,7 +8,7 @@
 <% if user_signed_in? %>
   <h3>Current Value: $<%= current_user.currentbalance.round(2) %></h3>
   <h3>Liquid Cash: $<%= current_user.liquidcash.round(2) %></h3>
-  <h3>Overall Loss/Gain: <%= ((current_user.currentbalance / current_user.initialbalance - 1) * 100).round(2) %>%</h3>
+  <h3 class="<%= ((current_user.currentbalance / current_user.initialbalance - 1) * 100).round(2) >=0? "gain":"loss"%>">Overall Loss/Gain: <%= ((current_user.currentbalance / current_user.initialbalance - 1) * 100).round(2) %>%</h3>
 
 
 <table>
@@ -29,9 +29,9 @@
         <td><%= owned_stock.user_id %></td>
         <td><%= owned_stock.ticker %></td>
         <td><%= owned_stock.shares_owned %></td>
-        <td><%= owned_stock.total_cost %></td>
-        <td><%= owned_stock.current_value %></td>
-        <td><%= ((owned_stock.current_value / owned_stock.total_cost - 1) * 100).round(2)  %>%</td>
+        <td><%= owned_stock.total_cost.round(2) %></td>
+        <td><%= owned_stock.current_value.round(2) %></td>
+        <td class="<%= ((owned_stock.current_value / owned_stock.total_cost - 1) * 100).round(2) >=0? "gain":"loss"%>"><%= ((owned_stock.current_value / owned_stock.total_cost - 1) * 100).round(2)  %>%</td>
         <td><%= link_to 'View Stock', owned_stock.stock %></td>
 
       </tr>

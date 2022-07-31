@@ -1,12 +1,14 @@
 <!-- Created 7/27/2022 by Jake McCann -->
 
-<div class="cell medium-4">
-  <div class="callout" data-equalizer-watch >
-    <h3><%=news_article.headline%></h3>
-    <h5>By: <%=news_article.source%></h5>
+<div class="cell medium-6" >
+  <div class="callout" data-equalizer-watch style="height: 100%" >
+    <div class="card-divider">
+      <h3><%=news_article.headline%></h3>
+    </div>
     <a href="<%=news_article.url%>">
-      <img style="width:200px;height:200px" src="<%=news_article.image%>" />
+      <img style="width:100%" src="<%=news_article.image%>" />
     </a>
+    <h5>By: <%=news_article.source%></h5>
     <p><%=news_article.summary%></p>
     <p>Category: <%= news_article.category %></p>
     <p>Published: <%= news_article.time %></p>
